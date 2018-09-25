@@ -1,0 +1,271 @@
+16:36:02 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:36:28 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:36:31 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:38:00 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:39:42 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:42:24 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:42:30 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:43:13 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:24: fatal error: data_types.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:55: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:43:22 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:55: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:43:57 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "include/data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:55: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:44:11 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:46:07 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "include/data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:55: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:46:38 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I./include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "include/data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:46:45 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I /include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "include/data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:46:50 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "include/data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:47:04 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "include/data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:47:08 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:48:10 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+16:48:27 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:48:48 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:48:57 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "include/data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+16:49:02 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:3:10: warning: missing terminating " character
+ #include "data_types.h
+          ^
+src/X1_Node.c:3:10: error: #include expects "FILENAME" or <FILENAME>
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:49:30 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/X1_Node.c:3:0:
+include/data_types.h:24:5: error: unknown type name 'uint8_t'
+     uint8_t data;
+     ^
+include/data_types.h: In function 'request_x1_ns_green':
+include/data_types.h:39:20: warning: variable 'msg_tx' set but not used [-Wunused-but-set-variable]
+     message_data_t msg_tx;
+                    ^
+include/data_types.h: In function 'release_x1':
+include/data_types.h:51:17: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+     msg_tx.data = NULL;
+                 ^
+include/data_types.h:48:20: warning: variable 'msg_tx' set but not used [-Wunused-but-set-variable]
+     message_data_t msg_tx;
+                    ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+16:50:04 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/X1_Node.c:3:0:
+include/data_types.h:26:5: error: unknown type name 'uint8_t'
+     uint8_t data;
+     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+16:50:13 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:50:53 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:51:23 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:51:32 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:52:27 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: *** No rule to make target 'include/data_types.h', needed by 'build/x86_64-debug/src/X1_Node.o'.  Stop.
+16:52:34 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+16:52:36 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:52:46 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:54:06 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:54:12 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+16:54:17 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:54:28 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:58:22 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:58:35 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:00:09 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:6:2: error: redeclaration of enumerator 'STATE_0'
+  STATE_0,
+  ^
+In file included from src/X1_Node.c:3:0:
+../../include/data_types.h:32:5: note: previous definition of 'STATE_0' was here
+     STATE_0,
+     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+17:00:16 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c:6:2: error: redeclaration of enumerator 'STATE_0'
+  STATE_0 = 0
+  ^
+In file included from src/X1_Node.c:3:0:
+../../include/data_types.h:32:5: note: previous definition of 'STATE_0' was here
+     STATE_0,
+     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+17:03:56 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:06:12 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'send_current_state':
+src/X1_Node.c:12:11: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+  msg.data = cur_sta;
+           ^
+src/X1_Node.c:9:17: warning: variable 'msg' set but not used [-Wunused-but-set-variable]
+  message_data_t msg;
+                 ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:06:44 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'send_current_state':
+src/X1_Node.c:9:17: warning: variable 'msg' set but not used [-Wunused-but-set-variable]
+  message_data_t msg;
+                 ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:06:53 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
