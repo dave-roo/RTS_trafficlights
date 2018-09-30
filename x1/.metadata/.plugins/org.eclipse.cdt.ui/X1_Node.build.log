@@ -1,6 +1,6 @@
-17:06:53 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
+10:48:00 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
 
-17:06:53 Build Finished (took 135ms)
+10:48:01 Build Finished (took 456ms)
 
