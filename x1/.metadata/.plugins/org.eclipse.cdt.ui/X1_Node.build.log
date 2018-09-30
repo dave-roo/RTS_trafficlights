@@ -1,7 +1,0 @@
-15:42:58 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-
-15:43:00 Build Finished (took 1s.844ms)
-
