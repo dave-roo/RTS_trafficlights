@@ -1,2 +1,3 @@
 # Don't upload binary files
-*/*/build
+build/
+.metadata/
