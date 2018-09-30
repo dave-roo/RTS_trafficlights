@@ -11,8 +11,16 @@ typedef enum {
 	X1_STATE_5,
 	X1_STATE_6,
 	X1_STATE_7
-	
 } x1_states ;
+
+typedef enum{
+	X1_SIGNAL_NONE = 0,
+	X1_SIGNAL_Ein,
+	X1_SIGNAL_Win,
+	X1_SIGNAL_Eout,
+	X1_SIGNAL_Wout,
+	X1_SIGNAL_BoomGateDown
+} x1_signals ;
 
 
 # endif
