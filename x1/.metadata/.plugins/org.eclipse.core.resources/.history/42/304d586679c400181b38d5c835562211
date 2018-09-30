@@ -18,9 +18,6 @@ LD = $(CC)
 
 #User defined include/preprocessor flags and libraries
 
-# Include for common header files for the project - Ben 
-INCLUDES += -I ../../include/
-
 #INCLUDES += -I/path/to/my/lib/include
 #INCLUDES += -I../mylib/public
 

@@ -1,0 +1,17 @@
+16:22:22 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:24:07 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+16:25:02 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:25:08 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+16:26:08 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
