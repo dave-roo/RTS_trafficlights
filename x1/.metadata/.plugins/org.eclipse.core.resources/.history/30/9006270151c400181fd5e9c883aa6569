@@ -18,7 +18,7 @@ void send_current_state(x1_states* cur_sta){
 int main(void) {
 	printf("Begin X1 State Machine Node\n");
 	// sta to store current state
-	x1_states sta = X1_STATE_1;
+	x1_states sta = X1_STATE_0;
 
 	// Update current state
 	send_current_state(&sta);

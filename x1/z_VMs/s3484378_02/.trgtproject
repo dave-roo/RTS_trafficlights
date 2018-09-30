@@ -11,7 +11,7 @@
                 <SYSNAME value="QNX"/>
                 <CPU value="x86_64"/>
                 <HASVERSION value="1"/>
-                <HOSTNAME value="s3484378_02"/>
+                <HOSTNAME value="s3484378-02"/>
                 <OS value="nto"/>
                 <QCONN_VERSION value="1.4.207944"/>
                 <RELEASE value="7.0.0"/>
@@ -24,7 +24,7 @@
             <qconnport value="8000"/>
             <qconnguid value="2cc03083-c7c4-4097-853d-07b85e853369"/>
             <targettmpdir value="/tmp"/>
-            <qconnhostname value="s3484378_02"/>
+            <qconnhostname value="s3484378-02"/>
         </item>
     </data>
 </trgtproject>
