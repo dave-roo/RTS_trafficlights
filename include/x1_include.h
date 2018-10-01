@@ -1,5 +1,6 @@
 #ifndef _X1_INCLUDE_H_
 #define _X1_INCLUDE_H_
+#include <semaphore.h>
 
 // States for railway crossing
 typedef enum {
@@ -21,6 +22,14 @@ typedef enum{
 	X1_SIGNAL_Wout,
 	X1_SIGNAL_BoomGateDown
 } x1_signals ;
+
+// Struct to pass global data
+typedef struct{
+	x1_states current_state;
+	uint8_t sensor_received;
+	uint8_t signal;
+	sem_t sem;
+} sm_data_t;
 
 
 # endif

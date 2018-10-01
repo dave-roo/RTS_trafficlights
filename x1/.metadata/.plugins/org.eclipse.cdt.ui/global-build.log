@@ -1,17 +1,95 @@
-16:22:22 **** Build of configuration x86_64-debug for project X1_Node ****
+17:10:53 **** Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-16:24:07 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+17:11:01 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:16:50 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'main':
+src/X1_Node.c:25:49: warning: unused variable 'state_machine_output_thread' [-Wunused-variable]
+  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
+                                                 ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:16:58 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:17:15 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+17:17:25 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'main':
+src/X1_Node.c:25:49: warning: unused variable 'state_machine_output_thread' [-Wunused-variable]
+  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
+                                                 ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:17:30 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:18:33 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:18:45 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+17:18:54 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'main':
+src/X1_Node.c:25:49: warning: unused variable 'state_machine_output_thread' [-Wunused-variable]
+  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
+                                                 ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:19:23 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'main':
+src/X1_Node.c:25:27: warning: unused variable 'state_machine_thread' [-Wunused-variable]
+  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
+                           ^
+src/X1_Node.c:25:12: warning: unused variable 'sensor_thread' [-Wunused-variable]
+  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
+            ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:19:29 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:19:37 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:19:46 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:19:52 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:20:37 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-16:25:02 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+17:20:57 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
+17:21:00 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 make: Nothing to be done for 'all'.
-16:25:08 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+17:21:52 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 make: Nothing to be done for 'all'.
-16:26:08 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
-make -j4 clean 
-rm -fr build/x86_64-debug
+17:23:08 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:23:22 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+20:13:47 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+20:13:50 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
