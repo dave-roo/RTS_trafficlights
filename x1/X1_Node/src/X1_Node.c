@@ -95,6 +95,7 @@ void* x1_state_machine(void* arg){
 	// Cast the global struct
 	sm_data_t* msg = (sm_data_t*) arg;
 	while(1){
+		// Protect the data when the switch case is executed
 		sem_wait(&msg->sem);
 		switch(msg->current_state){
 			case X1_STATE_0:
