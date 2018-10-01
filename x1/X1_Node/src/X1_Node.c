@@ -19,16 +19,16 @@ int main(void) {
 	global_data.current_state = X1_STATE_0;
 	global_data.sensor_received = 0; // Ensure this is zero
 	global_data.signal = 0;
+	// Initialise the global semaphore
 	sem_init(&global_data.sem, 0, 1);
 
-	// Start Sensor thread
+	// Create the threads
 	pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
-
 	pthread_create(&sensor_thread, NULL, sensor_send_thread, &global_data);
 	pthread_create(&state_machine_thread, NULL, x1_state_machine, &global_data);
 	pthread_create(&state_machine_output_thread, NULL, x1_state_machine_outputs, &global_data);
 
-	// Need to handle returns here
+	// Join on all threads (should never return a value however should handle anyway)
 	pthread_join(sensor_thread, NULL);
 	pthread_join(state_machine_thread, NULL);
 	pthread_join(state_machine_output_thread, NULL);
@@ -37,11 +37,20 @@ int main(void) {
 	return EXIT_SUCCESS;
 }
 
+
+/* State machine output thread used to handle the outputs of the state machine
+ * -> This wil be converted to hardware when implemented on the beaglebone to output
+ * 	  to the LCD
+ */
 void* x1_state_machine_outputs(void* arg){
+	// Cast the global struct
 	sm_data_t* msg = (sm_data_t*) arg;
-	sem_wait(&msg->sem);
+
+	// Last state variable so that the print statements don't spam the console (should
+	// probably remove this on hardware..?)
+	sem_wait(&msg->sem); // Protect Data
 	x1_states last_state = msg->current_state;
-	sem_post(&msg->sem);
+	sem_post(&msg->sem); // Release
 
 	while(1){
 		sem_wait(&msg->sem);
@@ -72,14 +81,18 @@ void* x1_state_machine_outputs(void* arg){
 					printf("X1_STATE_7\n");
 					break;
 			}
+		// Update the last state variable
 		last_state = msg->current_state;
 		}
 		sem_post(&msg->sem);
 	}
 }
 
-// Thread to handle the sensor inputs to determine the next state
+/* State machine input thread
+ * -> This will handle the input variables and determine the next state conditions
+ */
 void* x1_state_machine(void* arg){
+	// Cast the global struct
 	sm_data_t* msg = (sm_data_t*) arg;
 	while(1){
 		sem_wait(&msg->sem);
