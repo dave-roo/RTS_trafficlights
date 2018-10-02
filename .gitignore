@@ -1,2 +1,5 @@
 # Don't upload binary files
 build/
+
+# This file stores make path info, should be recreated every time there is a computer change
+*.sc
