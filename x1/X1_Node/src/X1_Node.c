@@ -6,203 +6,140 @@
 #include <global_include.h>
 #include <x1_include.h>
 
+// Local Includes
+#include "x1_state_machine.h"
+
 // Func prototypes
 void* sensor_send_thread(void*);
-void* x1_state_machine(void*);
-void* x1_state_machine_outputs(void*);
+void* x1_message_server_thread(void*);
+void x1_global_init(sm_data_t*);
 
 int main(void) {
 	printf("Begin X1 State Machine Node\n");
 
 	// Initialise global variable
 	sm_data_t global_data;
-	global_data.current_state = X1_STATE_0;
-	global_data.sensor_received = 0; // Ensure this is zero
-	global_data.signal = 0;
-	// Initialise the global semaphore
-	sem_init(&global_data.sem, 0, 1);
+	x1_global_init(&global_data);
 
 	// Create the threads
-	pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
+	pthread_t sensor_thread, state_machine_thread, state_machine_output_thread, msg_srv_thread;
 	pthread_create(&sensor_thread, NULL, sensor_send_thread, &global_data);
 	pthread_create(&state_machine_thread, NULL, x1_state_machine, &global_data);
 	pthread_create(&state_machine_output_thread, NULL, x1_state_machine_outputs, &global_data);
+	pthread_create(&msg_srv_thread, NULL, x1_message_server_thread, &global_data);
 
 	// Join on all threads (should never return a value however should handle anyway)
 	pthread_join(sensor_thread, NULL);
 	pthread_join(state_machine_thread, NULL);
 	pthread_join(state_machine_output_thread, NULL);
+	pthread_join(msg_srv_thread, NULL);
 
 	printf("State Machine Node Ended\n");
 	return EXIT_SUCCESS;
 }
 
+void* x1_message_server_thread(void* arg){
 
-/* State machine output thread used to handle the outputs of the state machine
- * -> This wil be converted to hardware when implemented on the beaglebone to output
- * 	  to the LCD
- */
-void* x1_state_machine_outputs(void* arg){
-	// Cast the global struct
-	sm_data_t* msg = (sm_data_t*) arg;
+	sm_data_t* state_data = (sm_data_t*) arg;
 
-	// Last state variable so that the print statements don't spam the console (should
-	// probably remove this on hardware..?)
-	sem_wait(&msg->sem); // Protect Data
-	x1_states last_state = msg->current_state;
-	sem_post(&msg->sem); // Release
+	name_attach_t *attach;
+	if ((attach = name_attach(NULL, ATTACH_POINT, 0)) == NULL){
+		printf("\nFailed to name_attach on ATTACH_POINT: %s \n", ATTACH_POINT);
+		printf("\n Possibly another server with the same name is already running !\n");
+		return 0;
+	}
+	printf("Server Listening for Clients on ATTACH_POINT: %s \n", ATTACH_POINT);
 
-	while(1){
-		sem_wait(&msg->sem);
-		if(last_state != msg->current_state){
-			switch(msg->current_state){
-				case X1_STATE_0:
-					printf("X1_STATE_0\n");
+	// Setup the sending and receiving message structs
+	message_data_t msg;
+	message_data_t msg_reply;
+	msg_reply.hdr.type = 0x01;
+	msg_reply.hdr.subtype = 0x00;
+
+
+	int rcvid=0;
+	while (1){
+		// Receive any message
+		rcvid = MsgReceive(attach->chid, &msg, sizeof(msg), NULL);
+
+		// Message receive failed
+		if (rcvid == -1){
+			printf("\nFailed to MsgReceive\n");
+			break;
+		}
+
+		// Determine the pulse code
+		if(rcvid == 0){
+			switch(msg.hdr.code){
+				case _PULSE_CODE_DISCONNECT:
+					printf("_PULSE_CODE_DISCONNECT\n");
 					break;
-				case X1_STATE_1:
-					printf("X1_STATE_1\n");
+				case _PULSE_CODE_UNBLOCK:
+					printf("_PULSE_CODE_UNBLOCK");
 					break;
-				case X1_STATE_2:
-					printf("X1_STATE_2\n");
+				case _PULSE_CODE_COIDDEATH:
+					printf("_PULSE_CODE_COIDDEATH");
 					break;
-				case X1_STATE_3:
-					printf("X1_STATE_3\n");
+				case _PULSE_CODE_THREADDEATH:
+					printf("_PULSE_CODE_THREADDEATH");
 					break;
-				case X1_STATE_4:
-					printf("X1_STATE_4\n");
-					break;
-				case X1_STATE_5:
-					printf("X1_STATE_5\n");
-					break;
-				case X1_STATE_6:
-					printf("X1_STATE_6\n");
-					break;
-				case X1_STATE_7:
-					printf("X1_STATE_7\n");
+				default:
+					printf("Something else received\n");
 					break;
 			}
-		// Update the last state variable
-		last_state = msg->current_state;
+		continue;
 		}
-		sem_post(&msg->sem);
-	}
-}
-
-/* State machine input thread
- * -> This will handle the input variables and determine the next state conditions
- */
-void* x1_state_machine(void* arg){
-	// Cast the global struct
-	sm_data_t* msg = (sm_data_t*) arg;
-	while(1){
-		// Protect the data when the switch case is executed
-		sem_wait(&msg->sem);
-		switch(msg->current_state){
-			case X1_STATE_0:
-
-				// Logic for next state
-				if(msg->sensor_received){
-					if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
-						msg->current_state = X1_STATE_3;
-					}else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
-						msg->current_state = X1_STATE_1;
-					}else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
-						msg->current_state = X1_STATE_2;
+		if(rcvid > 0){
+			printf("Message Received %d\n", msg.sending_node);
+			msg_reply.sending_node = NODE_X1;
+			msg_reply.receiving_node = msg.sending_node;
+			msg_reply.msg_type = msg.msg_type;
+			switch(msg.msg_type){
+				case MSG_TRAIN_SIGNAL:
+					printf("Signal Message Request\n");
+					// Train is present in any state except 0
+					sem_wait(&state_data->sem);
+					if(&state_data->current_state){
+					msg_reply.data = 1;
+					}else{
+					msg_reply.data = 0;
 					}
-				}
-				break;
-
-			case X1_STATE_1:
-
-				// Logic for next state
-				if(msg->sensor_received){
-					if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
-						msg->current_state = X1_STATE_3;
-					}else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
-						msg->current_state = X1_STATE_4; // Boom gate is down
-					}
-				}
-				break;
-			case X1_STATE_2:
-
-				// Logic for next state
-				if(msg->sensor_received){
-					if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein - second train detected
-						msg->current_state = X1_STATE_3;
-					}else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
-						msg->current_state = X1_STATE_5; // Boom gate is down
-					}
-				}
-				break;
-			case X1_STATE_3:
-
-				// Logic for next state
-				if(msg->sensor_received){
-					if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){ // Ein - second train detected
-						msg->current_state = X1_STATE_6;
-					}
-				}
-				break;
-			case X1_STATE_4:
-
-				// Logic for next state
-				if(msg->sensor_received){
-					if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
-						msg->current_state = X1_STATE_6;
-					}else if(msg->signal & 1 << X1_SIGNAL_Eout){// Eout - Train clear of crossing
-						msg->current_state = X1_STATE_7;
-					}
-				}
-				break;
-			case X1_STATE_5:
-
-				// Logic for next state
-				if(msg->sensor_received){
-					if(msg->signal & 1 << X1_SIGNAL_Ein){ // Win - second train detected
-						msg->current_state = X1_STATE_6;
-					}else if(msg->signal & 1 << X1_SIGNAL_Wout){// Eout - Train clear of crossing
-						msg->current_state = X1_STATE_7;
-					}
-				}
-				break;
-			case X1_STATE_6:
-
-				// Logic for next state
-				if(msg->sensor_received){
-					if((msg->signal & 1 << X1_SIGNAL_Wout) && (msg->signal & 1 << X1_SIGNAL_Eout)){ // Win - second train detected
-						msg->current_state = X1_STATE_7;
-					}
-
-					// Only needed for sensor thread, but will still work anyway
-					else if(msg->signal & 1 << X1_SIGNAL_Wout){
-						msg->current_state = X1_STATE_4;
-					}else if(msg->signal & 1 << X1_SIGNAL_Eout){
-						msg->current_state = X1_STATE_5;
-					}
-				}
-				break;
-			case X1_STATE_7:
-				// Logic for next state
-				if(msg->sensor_received){
-					if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
-						msg->current_state = X1_STATE_6;
-					}else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
-						msg->current_state = X1_STATE_4;
-					}else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
-						msg->current_state = X1_STATE_5;
-					}else if(~msg->signal & 1 << X1_SIGNAL_BoomGateDown){
-						msg->current_state = X1_STATE_0;
-					}
-				}
-				break;
-			default:
-				printf("State machine error\n");
-				msg->current_state = X1_STATE_0;
-				break;
+					sem_post(&state_data->sem);
+					break;
+				case MSG_CURRENT_STATE:
+					printf("Current State Request\n");
+					sem_wait(&state_data->sem);
+					msg_reply.data = state_data->current_state;
+					sem_post(&state_data->sem);
+					break;
+				case MSG_CONTROL_STATE_LOCK:
+					printf("Locking State\n");
+					sem_wait(&state_data->sem);
+					state_data->priority.set = 1;
+					state_data->priority.x1_reset = 1;
+					state_data->sensor_received = 1;
+					sem_post(&state_data->sem);
+					break;
+				case MSG_CONTROL_STATE_RELEASE:
+					printf("Releasing State\n");
+					sem_wait(&state_data->sem);
+					state_data->priority.set = 0;
+					state_data->sensor_received = 1; // Notify the state machine that something happened (should be a cond var)
+					sem_post(&state_data->sem);
+					break;
+				default:
+					printf("Unknown Message Type\n");
+					break;
+			}
+			MsgReply(rcvid, EOK, &msg_reply, sizeof(msg_reply));
 		}
-		msg->sensor_received = 0;
-		sem_post(&msg->sem);
+		else{
+			printf("\nERROR: Server received something, but could not handle it correctly\n");
+		}
 	}
+	// Remove the attach point name from the file system (i.e. /dev/name/local/<myname>)
+	name_detach(attach, 0);
+	return EXIT_SUCCESS;
 }
 
 /*
@@ -215,7 +152,7 @@ void* sensor_send_thread(void* data){
 	// Main Loop
 	while(1){
 		char x = getchar();
-		getchar(); // get the newline
+		while(getchar() != '\n'); // Get remaining characters and discard
 
 		// Clear the sensor data except the latching boomgate sensor (only needed for sensor thread)
 		sem_wait(&sens_data->sem);
@@ -288,5 +225,20 @@ void* sensor_send_thread(void* data){
 				printf("Unrecognised character, please try again\n");
 				break;
 		}
+		sem_wait(&sens_data->sem);
+		printf("Sensor Values:%#x\n", sens_data->signal);
+		sem_post(&sens_data->sem);
 	}
+}
+
+/* Function to initialise the x1 global struct
+ */
+void x1_global_init(sm_data_t* data){
+	data->current_state = X1_STATE_0;
+	data->priority.last_state = X1_STATE_0;
+	data->priority.set = 0;
+	// Initialise the global semaphore
+	sem_init(&data->sem, 0, 1);
+	data->sensor_received = 0;
+	data->signal = X1_SIGNAL_NONE;
 }

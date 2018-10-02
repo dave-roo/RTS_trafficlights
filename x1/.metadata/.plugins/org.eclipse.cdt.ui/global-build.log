@@ -1,114 +1,1144 @@
-17:10:53 **** Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-17:11:01 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:16:50 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+20:12:07 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-src/X1_Node.c: In function 'main':
-src/X1_Node.c:25:49: warning: unused variable 'state_machine_output_thread' [-Wunused-variable]
-  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
-                                                 ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-17:16:58 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:30:09 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
-make: Nothing to be done for 'all'.
-17:17:15 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
-make -j4 clean 
-rm -fr build/x86_64-debug
-17:17:25 **** Build of configuration x86_64-debug for project X1_Node ****
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:231:16: error: 'struct sm_priority_t' has no member named 'priority'
+  data->priority.priority = 0;
+                ^
+In file included from src/X1_Node.c:3:0:
+src/X1_Node.c:235:25: error: expected expression before '{' token
+  data->sensor_condvar = PTHREAD_COND_INITIALIZER;
+                         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** Waiting for unfinished jobs....
+20:30:54 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-src/X1_Node.c: In function 'main':
-src/X1_Node.c:25:49: warning: unused variable 'state_machine_output_thread' [-Wunused-variable]
-  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
-                                                 ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-17:17:30 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:18:33 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:18:45 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
-make -j4 clean 
-rm -fr build/x86_64-debug
-17:18:54 **** Build of configuration x86_64-debug for project X1_Node ****
+In file included from src/X1_Node.c:3:0:
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:235:25: error: expected expression before '{' token
+  data->sensor_condvar = PTHREAD_COND_INITIALIZER;
+                         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+20:31:13 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-src/X1_Node.c: In function 'main':
-src/X1_Node.c:25:49: warning: unused variable 'state_machine_output_thread' [-Wunused-variable]
-  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
-                                                 ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-17:19:23 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:235:25: error: expected expression before '{' token
+  data->sensor_condvar = {PTHREAD_COND_INITIALIZER};
+                         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+20:31:32 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-src/X1_Node.c: In function 'main':
-src/X1_Node.c:25:27: warning: unused variable 'state_machine_thread' [-Wunused-variable]
-  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
-                           ^
-src/X1_Node.c:25:12: warning: unused variable 'sensor_thread' [-Wunused-variable]
-  pthread_t sensor_thread, state_machine_thread, state_machine_output_thread;
+In file included from src/X1_Node.c:3:0:
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:235:25: error: expected expression before '{' token
+  data->sensor_condvar = PTHREAD_COND_INITIALIZER;
+                         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+20:31:48 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+In file included from src/X1_Node.c:7:0:
+../../include/x1_include.h:39:32: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+  pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER;
+                                ^
+src/X1_Node.c: In function 'x1_message_server_thread':
+src/X1_Node.c:101:31: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+           sem_wait(&state_data->sem);
+                               ^
+src/X1_Node.c:107:31: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+           sem_post(&state_data->sem);
+                               ^
+src/X1_Node.c:111:31: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+           sem_wait(&state_data->sem);
+                               ^
+src/X1_Node.c:113:31: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+           sem_post(&state_data->sem);
+                               ^
+src/X1_Node.c: In function 'sensor_send_thread':
+src/X1_Node.c:153:22: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+   sem_wait(&sens_data->sem);
+                      ^
+src/X1_Node.c:154:12: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+   sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
             ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-17:19:29 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:19:37 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:19:46 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:19:52 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:20:37 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+src/X1_Node.c:155:22: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+   sem_post(&sens_data->sem);
+                      ^
+src/X1_Node.c:161:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_wait(&sens_data->sem);
+                        ^
+src/X1_Node.c:163:14: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+     sens_data->signal |= 1 << X1_SIGNAL_Ein;
+              ^
+src/X1_Node.c:164:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_post(&sens_data->sem);
+                        ^
+src/X1_Node.c:172:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_wait(&sens_data->sem);
+                        ^
+src/X1_Node.c:174:14: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+     sens_data->signal |= 1 << X1_SIGNAL_Eout;
+              ^
+src/X1_Node.c:175:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_post(&sens_data->sem);
+                        ^
+src/X1_Node.c:182:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_wait(&sens_data->sem);
+                        ^
+src/X1_Node.c:184:14: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+     sens_data->signal |= 1 << X1_SIGNAL_Win;
+              ^
+src/X1_Node.c:185:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_post(&sens_data->sem);
+                        ^
+src/X1_Node.c:192:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_wait(&sens_data->sem);
+                        ^
+src/X1_Node.c:194:14: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+     sens_data->signal |= 1 << X1_SIGNAL_Wout;
+              ^
+src/X1_Node.c:195:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_post(&sens_data->sem);
+                        ^
+src/X1_Node.c:202:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_wait(&sens_data->sem);
+                        ^
+src/X1_Node.c:204:14: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+     sens_data->signal |= 1 << X1_SIGNAL_BoomGateDown;
+              ^
+src/X1_Node.c:205:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_post(&sens_data->sem);
+                        ^
+src/X1_Node.c:212:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_wait(&sens_data->sem);
+                        ^
+src/X1_Node.c:214:14: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+     sens_data->signal &= ~(1 << X1_SIGNAL_BoomGateDown);
+              ^
+src/X1_Node.c:215:24: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+     sem_post(&sens_data->sem);
+                        ^
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:230:6: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'priority'
+  data->priority.last_state = X1_STATE_0;
+      ^
+src/X1_Node.c:231:6: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'priority'
+  data->priority.set = 0;
+      ^
+src/X1_Node.c:233:16: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+  sem_init(&data->sem, 0, 1);
+                ^
+src/X1_Node.c:235:6: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+  data->signal = X1_SIGNAL_NONE;
+      ^
+In file included from src/x1_state_machine.h:6:0,
+                 from src/x1_state_machine.c:1:
+../../include/x1_include.h:39:32: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+  pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER;
+                                ^
+src/x1_state_machine.c: In function 'x1_state_machine_outputs':
+src/x1_state_machine.c:13:15: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+  sem_wait(&msg->sem); // Protect Data
+               ^
+src/x1_state_machine.c:15:15: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+  sem_post(&msg->sem); // Release
+               ^
+src/x1_state_machine.c:18:16: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+   sem_wait(&msg->sem);
+                ^
+src/x1_state_machine.c:49:16: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+   sem_post(&msg->sem);
+                ^
+src/x1_state_machine.c: In function 'x1_state_machine':
+src/x1_state_machine.c:62:16: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+   sem_wait(&msg->sem);
+                ^
+src/x1_state_machine.c:68:13: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+             ^
+src/x1_state_machine.c:68:51: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+                                                   ^
+src/x1_state_machine.c:70:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
+                  ^
+src/x1_state_machine.c:72:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
+                  ^
+src/x1_state_machine.c:81:12: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
+            ^
+src/x1_state_machine.c:83:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+                  ^
+src/x1_state_machine.c:92:12: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein - second train detected
+            ^
+src/x1_state_machine.c:94:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+                  ^
+src/x1_state_machine.c:103:12: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){ // Ein - second train detected
+            ^
+src/x1_state_machine.c:112:12: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
+            ^
+src/x1_state_machine.c:114:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_Eout){// Eout - Train clear of crossing
+                  ^
+src/x1_state_machine.c:124:12: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if(msg->signal & 1 << X1_SIGNAL_Ein){ // Win - second train detected
+            ^
+src/x1_state_machine.c:126:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_Wout){// Eout - Train clear of crossing
+                  ^
+src/x1_state_machine.c:136:13: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if((msg->signal & 1 << X1_SIGNAL_Wout) && (msg->signal & 1 << X1_SIGNAL_Eout)){ // Win - second train detected
+             ^
+src/x1_state_machine.c:136:52: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if((msg->signal & 1 << X1_SIGNAL_Wout) && (msg->signal & 1 << X1_SIGNAL_Eout)){ // Win - second train detected
+                                                    ^
+src/x1_state_machine.c:141:17: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      else if(msg->signal & 1 << X1_SIGNAL_Wout){
+                 ^
+src/x1_state_machine.c:143:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_Eout){
+                  ^
+src/x1_state_machine.c:152:13: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+             ^
+src/x1_state_machine.c:152:51: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+                                                   ^
+src/x1_state_machine.c:154:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
+                  ^
+src/x1_state_machine.c:156:18: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
+                  ^
+src/x1_state_machine.c:158:19: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'signal'
+      }else if(~msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+                   ^
+src/x1_state_machine.c:170:16: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'sem'
+   sem_post(&msg->sem);
+                ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+make: *** Waiting for unfinished jobs....
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+20:32:28 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-17:20:57 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:33:01 **** Build of configuration x86_64-debug for project tmp_del ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_del.d,-MT,build/x86_64-debug/src/tmp_del.o -o build/x86_64-debug/src/tmp_del.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_del.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_del   build/x86_64-debug/src/tmp_del.o  
+20:33:04 **** Incremental Build of configuration x86_64-debug for project tmp_del ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_del.d,-MT,build/x86_64-debug/src/tmp_del.o -o build/x86_64-debug/src/tmp_del.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_del.c
+src/tmp_del.c: In function 'producer':
+src/tmp_del.c:47:9: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+         sleep(1);
+         ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_del   build/x86_64-debug/src/tmp_del.o  
+20:33:15 **** Incremental Build of configuration x86_64-debug for project tmp_del ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+20:33:24 **** Incremental Build of configuration x86_64-debug for project tmp_del ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+20:33:59 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-17:21:00 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:34:28 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
-make: Nothing to be done for 'all'.
-17:21:52 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/X1_Node.c:3:0:
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:237:25: error: expected expression before '{' token
+  data->sensor_condvar = PTHREAD_COND_INITIALIZER;
+                         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+20:34:54 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
-make: Nothing to be done for 'all'.
-17:23:08 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/X1_Node.c:3:0:
+src/X1_Node.c: In function 'main':
+src/X1_Node.c:20:12: error: expected expression before '{' token
+  condvar = PTHREAD_COND_INITIALIZER;
+            ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+20:36:16 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
-make: Nothing to be done for 'all'.
-17:23:22 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-20:13:47 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-20:13:50 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: Nothing to be done for 'all'.
-17:56:33 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: *** No rule to make target '../../include/data_types.h', needed by 'build/x86_64-debug/src/X1_Node.o'.  Stop.
-17:58:59 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: *** No rule to make target '../../include/data_types.h', needed by 'build/x86_64-debug/src/X1_Node.o'.  Stop.
-17:59:50 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
-make -j4 all 
-make: *** No rule to make target '../../include/data_types.h', needed by 'build/x86_64-debug/src/X1_Node.o'.  Stop.
-18:00:23 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o:(.data+0x0): multiple definition of `sensor_condvar'
+build/x86_64-debug/src/x1_state_machine.o:(.data+0x0): first defined here
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:63: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
+20:36:21 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
 make -j4 clean 
 rm -fr build/x86_64-debug
-18:00:26 **** Build of configuration x86_64-debug for project X1_Node ****
+20:36:21 **** Clean-only build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+20:36:23 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o:(.data+0x0): multiple definition of `sensor_condvar'
+build/x86_64-debug/src/x1_state_machine.o:(.data+0x0): first defined here
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:63: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
+20:36:39 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o:(.data+0x0): multiple definition of `sensor_condvar'
+build/x86_64-debug/src/x1_state_machine.o:(.data+0x0): first defined here
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:63: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
+20:36:53 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+20:36:53 **** Clean-only build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+20:36:55 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o:(.data+0x0): multiple definition of `sensor_condvar'
+build/x86_64-debug/src/x1_state_machine.o:(.data+0x0): first defined here
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:63: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
+20:37:05 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:37:48 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o:(.data+0x0): multiple definition of `condvar'
+build/x86_64-debug/src/x1_state_machine.o:(.data+0x0): first defined here
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+make: *** [build/x86_64-debug/X1_Node] Error 1
+Makefile:63: recipe for target 'build/x86_64-debug/X1_Node' failed
+20:38:21 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:38:40 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:38:48 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/X1_Node.o  
-18:05:13 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o:(.data+0x0): multiple definition of `sensor_condvar'
+build/x86_64-debug/src/x1_state_machine.o:(.data+0x0): first defined here
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+make: *** [build/x86_64-debug/X1_Node] Error 1
+Makefile:63: recipe for target 'build/x86_64-debug/X1_Node' failed
+20:40:14 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.h:6:0,
+                 from src/x1_state_machine.c:1:
+../../include/x1_include.h:8:23: warning: 'sensor_condvar' defined but not used [-Wunused-variable]
+ static pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER; // Conditional variable for global struct
+                       ^
+In file included from src/X1_Node.c:7:0:
+../../include/x1_include.h:8:23: warning: 'sensor_condvar' defined but not used [-Wunused-variable]
+ static pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER; // Conditional variable for global struct
+                       ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:40:52 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.h:6:0,
+                 from src/x1_state_machine.c:1:
+../../include/x1_include.h:45:32: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+  pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER;
+                                ^
+In file included from src/X1_Node.c:7:0:
+../../include/x1_include.h:45:32: error: expected ':', ',', ';', '}' or '__attribute__' before '=' token
+  pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER;
+                                ^
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:230:6: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'priority'
+  data->priority.last_state = X1_STATE_0;
+      ^
+src/X1_Node.c:231:6: error: 'sm_data_t {aka struct <anonymous>}' has no member named 'priority'
+  data->priority.set = 0;
+      ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** Waiting for unfinished jobs....
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+20:42:40 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.h:6:0,
+                 from src/x1_state_machine.c:1:
+../../include/x1_include.h:8:23: warning: 'sensor_condvar' defined but not used [-Wunused-variable]
+ static pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER; // Conditional variable for global struct
+                       ^
+In file included from src/X1_Node.c:7:0:
+../../include/x1_include.h:8:23: warning: 'sensor_condvar' defined but not used [-Wunused-variable]
+ static pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER; // Conditional variable for global struct
+                       ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:50:03 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+In file included from src/x1_state_machine.h:6:0,
+                 from src/x1_state_machine.c:1:
+../../include/x1_include.h:8:23: warning: 'sensor_condvar' defined but not used [-Wunused-variable]
+ static pthread_cond_t sensor_condvar = PTHREAD_COND_INITIALIZER; // Conditional variable for global struct
+                       ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:50:26 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+20:50:29 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+20:50:38 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+20:50:40 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+21:24:17 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/x1_state_machine.c: In function 'x1_state_machine':
+src/x1_state_machine.c:88:20: error: invalid type argument of '->' (have 'struct sm_priority_t')
+       msg->priority->x1_reset = 1;
+                    ^
+src/x1_state_machine.c:89:20: error: invalid type argument of '->' (have 'struct sm_priority_t')
+       msg->priority->last_state = msg->current_state
+                    ^
+src/x1_state_machine.c:90:7: error: expected ';' before 'msg'
+       msg->current_state = X1_STATE_7;
+       ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** Waiting for unfinished jobs....
+21:24:30 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+src/x1_state_machine.c: In function 'x1_state_machine':
+src/x1_state_machine.c:90:7: error: expected ';' before 'msg'
+       msg->current_state = X1_STATE_7;
+       ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:58: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+21:24:46 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+22:57:56 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:04:53 **** Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'main':
+src/tmp_msg_client.c:13:2: warning: implicit declaration of function 'pthread_wait' [-Wimplicit-function-declaration]
+  pthread_wait(char_thread, NULL);
+  ^
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:62:2: error: unknown type name 'sm_data_t'
+  sm_data_t* sens_data = (sm_data_t*) data;
+  ^
+src/tmp_msg_client.c:62:26: error: 'sm_data_t' undeclared (first use in this function)
+  sm_data_t* sens_data = (sm_data_t*) data;
+                          ^
+src/tmp_msg_client.c:62:26: note: each undeclared identifier is reported only once for each function it appears in
+src/tmp_msg_client.c:62:36: error: expected expression before ')' token
+  sm_data_t* sens_data = (sm_data_t*) data;
+                                    ^
+src/tmp_msg_client.c:73:62: error: 'sname' undeclared (first use in this function)
+     printf("  ---> Trying to connect to server named: %s\n", sname);
+                                                              ^
+src/tmp_msg_client.c:88:3: warning: implicit declaration of function 'sem_wait' [-Wimplicit-function-declaration]
+   sem_wait(&sens_data->sem);
+   ^
+src/tmp_msg_client.c:88:22: error: request for member 'sem' in something not a structure or union
+   sem_wait(&sens_data->sem);
+                      ^
+src/tmp_msg_client.c:89:12: error: request for member 'signal' in something not a structure or union
+   sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
+            ^
+src/tmp_msg_client.c:89:30: error: 'X1_SIGNAL_BoomGateDown' undeclared (first use in this function)
+   sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
+                              ^
+src/tmp_msg_client.c:90:3: warning: implicit declaration of function 'sem_post' [-Wimplicit-function-declaration]
+   sem_post(&sens_data->sem);
+   ^
+src/tmp_msg_client.c:90:22: error: request for member 'sem' in something not a structure or union
+   sem_post(&sens_data->sem);
+                      ^
+src/tmp_msg_client.c:111:2: error: expected declaration or statement at end of input
+  }
+  ^
+src/tmp_msg_client.c:72:9: warning: variable 'return_value' set but not used [-Wunused-but-set-variable]
+     int return_value = -1;
+         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+23:05:22 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:62:2: error: unknown type name 'sm_data_t'
+  sm_data_t* sens_data = (sm_data_t*) data;
+  ^
+src/tmp_msg_client.c:62:26: error: 'sm_data_t' undeclared (first use in this function)
+  sm_data_t* sens_data = (sm_data_t*) data;
+                          ^
+src/tmp_msg_client.c:62:26: note: each undeclared identifier is reported only once for each function it appears in
+src/tmp_msg_client.c:62:36: error: expected expression before ')' token
+  sm_data_t* sens_data = (sm_data_t*) data;
+                                    ^
+src/tmp_msg_client.c:73:62: error: 'sname' undeclared (first use in this function)
+     printf("  ---> Trying to connect to server named: %s\n", sname);
+                                                              ^
+src/tmp_msg_client.c:88:3: warning: implicit declaration of function 'sem_wait' [-Wimplicit-function-declaration]
+   sem_wait(&sens_data->sem);
+   ^
+src/tmp_msg_client.c:88:22: error: request for member 'sem' in something not a structure or union
+   sem_wait(&sens_data->sem);
+                      ^
+src/tmp_msg_client.c:89:12: error: request for member 'signal' in something not a structure or union
+   sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
+            ^
+src/tmp_msg_client.c:89:30: error: 'X1_SIGNAL_BoomGateDown' undeclared (first use in this function)
+   sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
+                              ^
+src/tmp_msg_client.c:90:3: warning: implicit declaration of function 'sem_post' [-Wimplicit-function-declaration]
+   sem_post(&sens_data->sem);
+   ^
+src/tmp_msg_client.c:90:22: error: request for member 'sem' in something not a structure or union
+   sem_post(&sens_data->sem);
+                      ^
+src/tmp_msg_client.c:111:2: error: expected declaration or statement at end of input
+  }
+  ^
+src/tmp_msg_client.c:72:9: warning: variable 'return_value' set but not used [-Wunused-but-set-variable]
+     int return_value = -1;
+         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+23:05:40 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:72:62: error: 'sname' undeclared (first use in this function)
+     printf("  ---> Trying to connect to server named: %s\n", sname);
+                                                              ^
+src/tmp_msg_client.c:72:62: note: each undeclared identifier is reported only once for each function it appears in
+src/tmp_msg_client.c:87:3: warning: implicit declaration of function 'sem_wait' [-Wimplicit-function-declaration]
+   sem_wait(&sens_data->sem);
+   ^
+src/tmp_msg_client.c:87:13: error: 'sens_data' undeclared (first use in this function)
+   sem_wait(&sens_data->sem);
+             ^
+src/tmp_msg_client.c:88:30: error: 'X1_SIGNAL_BoomGateDown' undeclared (first use in this function)
+   sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
+                              ^
+src/tmp_msg_client.c:89:3: warning: implicit declaration of function 'sem_post' [-Wimplicit-function-declaration]
+   sem_post(&sens_data->sem);
+   ^
+src/tmp_msg_client.c:110:2: error: expected declaration or statement at end of input
+  }
+  ^
+src/tmp_msg_client.c:71:9: warning: variable 'return_value' set but not used [-Wunused-but-set-variable]
+     int return_value = -1;
+         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+23:07:14 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:75:34: error: 'sname' undeclared (first use in this function)
+     if ((server_coid = name_open(sname, 0)) == -1)
+                                  ^
+src/tmp_msg_client.c:75:34: note: each undeclared identifier is reported only once for each function it appears in
+src/tmp_msg_client.c:104:2: error: expected declaration or statement at end of input
+  }
+  ^
+src/tmp_msg_client.c:71:9: warning: variable 'return_value' set but not used [-Wunused-but-set-variable]
+     int return_value = -1;
+         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+23:07:46 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:104:2: error: expected declaration or statement at end of input
+  }
+  ^
+src/tmp_msg_client.c:71:9: warning: variable 'return_value' set but not used [-Wunused-but-set-variable]
+     int return_value = -1;
+         ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+23:08:00 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:71:9: warning: variable 'return_value' set but not used [-Wunused-but-set-variable]
+     int return_value = -1;
+         ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:08:11 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:90:6: error: 'return_value' undeclared (first use in this function)
+      return_value = -1; // reply data error
+      ^
+src/tmp_msg_client.c:90:6: note: each undeclared identifier is reported only once for each function it appears in
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+23:08:18 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:96:6: error: 'return_value' undeclared (first use in this function)
+      return_value = reply.data;
+      ^
+src/tmp_msg_client.c:96:6: note: each undeclared identifier is reported only once for each function it appears in
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+23:08:30 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:09:10 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:09:47 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:12:25 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:12:33 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:14:09 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:19:15 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+src/x1_state_machine.c: In function 'x1_state_machine':
+src/x1_state_machine.c:67:6: warning: implicit declaration of function 'print' [-Wimplicit-function-declaration]
+      print("Pri:%d Res:%d\n", msg->priority.set, msg->priority.x1_reset);
+      ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/x1_state_machine.o: In function `x1_state_machine':
+C:\Users\Ben\git_rts\x1\X1_Node/src/x1_state_machine.c:67: undefined reference to `print'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+make: *** [build/x86_64-debug/X1_Node] Error 1
+Makefile:63: recipe for target 'build/x86_64-debug/X1_Node' failed
+23:19:26 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:21:29 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:22:37 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:24:14 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:28:28 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:33:19 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:44:54 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:64:26: warning: 'msg_reply' is used uninitialized in this function [-Wuninitialized]
+  msg_reply->sending_node = NODE_I1;
+                          ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:45:37 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:47:03 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:67:23: warning: 'msg_reply' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   msg_reply->msg_type = MSG_ERROR;
+                       ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:47:23 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:63:30: error: empty scalar initializer
+  message_data_t* msg_reply = {};
+                              ^
+src/tmp_msg_client.c:63:30: note: (near initialization for 'msg_reply')
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+23:47:27 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:67:23: warning: 'msg_reply' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   msg_reply->msg_type = MSG_ERROR;
+                       ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:49:51 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'sensor_send_thread':
+src/tmp_msg_client.c:84:17: warning: unused variable 'reply' [-Wunused-variable]
+  message_data_t reply;
+                 ^
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:67:23: warning: 'msg_reply' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   msg_reply->msg_type = MSG_ERROR;
+                       ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:52:24 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:63:37: warning: excess elements in scalar initializer
+  message_data_t* msg_reply = {NULL, 0, 0, MSG_ERROR, 0};
+                                     ^
+src/tmp_msg_client.c:63:37: note: (near initialization for 'msg_reply')
+src/tmp_msg_client.c:63:40: warning: excess elements in scalar initializer
+  message_data_t* msg_reply = {NULL, 0, 0, MSG_ERROR, 0};
+                                        ^
+src/tmp_msg_client.c:63:40: note: (near initialization for 'msg_reply')
+src/tmp_msg_client.c:63:43: warning: excess elements in scalar initializer
+  message_data_t* msg_reply = {NULL, 0, 0, MSG_ERROR, 0};
+                                           ^
+src/tmp_msg_client.c:63:43: note: (near initialization for 'msg_reply')
+src/tmp_msg_client.c:63:54: warning: excess elements in scalar initializer
+  message_data_t* msg_reply = {NULL, 0, 0, MSG_ERROR, 0};
+                                                      ^
+src/tmp_msg_client.c:63:54: note: (near initialization for 'msg_reply')
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:52:59 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:63:31: error: expected expression before ',' token
+  message_data_t* msg_reply = {, 0, 0, MSG_ERROR, 0};
+                               ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+23:53:03 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:63:37: warning: excess elements in scalar initializer
+  message_data_t* msg_reply = {NULL, 0, 0, MSG_ERROR, 0};
+                                     ^
+src/tmp_msg_client.c:63:37: note: (near initialization for 'msg_reply')
+src/tmp_msg_client.c:63:40: warning: excess elements in scalar initializer
+  message_data_t* msg_reply = {NULL, 0, 0, MSG_ERROR, 0};
+                                        ^
+src/tmp_msg_client.c:63:40: note: (near initialization for 'msg_reply')
+src/tmp_msg_client.c:63:43: warning: excess elements in scalar initializer
+  message_data_t* msg_reply = {NULL, 0, 0, MSG_ERROR, 0};
+                                           ^
+src/tmp_msg_client.c:63:43: note: (near initialization for 'msg_reply')
+src/tmp_msg_client.c:63:54: warning: excess elements in scalar initializer
+  message_data_t* msg_reply = {NULL, 0, 0, MSG_ERROR, 0};
+                                                      ^
+src/tmp_msg_client.c:63:54: note: (near initialization for 'msg_reply')
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:54:29 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:64:18: warning: 'msg_reply' is used uninitialized in this function [-Wuninitialized]
+  msg_reply->data = 0;
+                  ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:55:23 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:69:10: warning: function returns address of local variable [-Wreturn-local-addr]
+   return &msg_reply;
+          ^
+src/tmp_msg_client.c:71:64: error: invalid type argument of unary '*' (have 'message_data_t {aka struct <anonymous>}')
+  if (MsgSend(server_coid, msg, sizeof(*msg), msg_reply, sizeof(*msg_reply)) == -1){
+                                                                ^
+src/tmp_msg_client.c:71:46: error: incompatible type for argument 4 of 'MsgSend'
+  if (MsgSend(server_coid, msg, sizeof(*msg), msg_reply, sizeof(*msg_reply)) == -1){
+                                              ^
+In file included from C:/QNX/qnx700/target/qnx7/usr/include/sys/iomsg.h:47:0,
+                 from C:/QNX/qnx700/target/qnx7/usr/include/sys/resmgr.h:38,
+                 from C:/QNX/qnx700/target/qnx7/usr/include/sys/iofunc.h:61,
+                 from ../../include/global_include.h:8,
+                 from src/tmp_msg_client.c:4:
+C:/QNX/qnx700/target/qnx7/usr/include/sys/neutrino.h:738:13: note: expected 'void *' but argument is of type 'message_data_t {aka struct <anonymous>}'
+ extern long MsgSend(int __coid, const void *__smsg, _Sizet __sbytes, void *__rmsg, _Sizet __rbytes);
+             ^
+src/tmp_msg_client.c:75:10: warning: function returns address of local variable [-Wreturn-local-addr]
+   return &msg_reply; // error
+          ^
+src/tmp_msg_client.c:78:10: warning: function returns address of local variable [-Wreturn-local-addr]
+   return &msg_reply; // success
+          ^
+src/tmp_msg_client.c:80:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/tmp_msg_client.o' failed
+make: *** [build/x86_64-debug/src/tmp_msg_client.o] Error 1
+23:55:38 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+src/tmp_msg_client.c: In function 'send_message':
+src/tmp_msg_client.c:69:10: warning: function returns address of local variable [-Wreturn-local-addr]
+   return &msg_reply;
+          ^
+src/tmp_msg_client.c:75:10: warning: function returns address of local variable [-Wreturn-local-addr]
+   return &msg_reply; // error
+          ^
+src/tmp_msg_client.c:78:10: warning: function returns address of local variable [-Wreturn-local-addr]
+   return &msg_reply; // success
+          ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:55:56 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+23:56:20 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+23:56:55 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+00:01:02 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+00:01:54 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+00:02:51 **** Incremental Build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/tmp_msg_client.d,-MT,build/x86_64-debug/src/tmp_msg_client.o -o build/x86_64-debug/src/tmp_msg_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp_msg_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/tmp_msg_client   build/x86_64-debug/src/tmp_msg_client.o  
+00:03:07 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:05:10 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+00:05:19 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+00:05:19 **** Clean-only build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+00:05:43 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+00:12:26 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+00:16:46 **** Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:16:52 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c:4:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:55: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+00:17:15 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:20:42 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:21:06 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:21:39 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:21:48 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:29:16 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:48:3: error: stray '\' in program
+   while(x = getchar() != \n && c != EOF);
+   ^
+src/message_client.c:48:27: error: 'n' undeclared (first use in this function)
+   while(x = getchar() != \n && c != EOF);
+                           ^
+src/message_client.c:48:27: note: each undeclared identifier is reported only once for each function it appears in
+src/message_client.c:48:32: error: 'c' undeclared (first use in this function)
+   while(x = getchar() != \n && c != EOF);
+                                ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+00:29:28 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:48:34: error: 'c' undeclared (first use in this function)
+   while(x = getchar() != '\n' && c != EOF);
+                                  ^
+src/message_client.c:48:34: note: each undeclared identifier is reported only once for each function it appears in
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+00:29:37 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:48:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   while(x = getchar() != '\n' && x != EOF);
+   ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:29:53 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:48:12: warning: operation on 'x' may be undefined [-Wsequence-point]
+   while((x = getchar()) != ('\n' && x != EOF));
+            ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:30:20 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:30:40 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:30:51 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:32:24 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:32:49 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:32:51 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:33:09 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:33:13 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:33:14 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:33:55 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:34:03 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:34:12 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:34:42 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:48:3: error: too few arguments to function 'fflush'
+   fflush();
+   ^
+In file included from src/message_client.c:1:0:
+C:/QNX/qnx700/target/qnx7/usr/include/stdio.h:157:12: note: declared here
+ extern int fflush(FILE *__fp);
+            ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+00:34:56 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:48:10: warning: passing argument 1 of 'fflush' makes pointer from integer without a cast [-Wint-conversion]
+   fflush(getchar());
+          ^
+In file included from src/message_client.c:1:0:
+C:/QNX/qnx700/target/qnx7/usr/include/stdio.h:157:12: note: expected 'FILE * {aka struct _Filet *}' but argument is of type 'int'
+ extern int fflush(FILE *__fp);
+            ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:35:30 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:48:10: error: 'stdio' undeclared (first use in this function)
+   fflush(stdio);
+          ^
+src/message_client.c:48:10: note: each undeclared identifier is reported only once for each function it appears in
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+00:36:58 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:37:00 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:37:51 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:48:3: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   while(x = getchar());
+   ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:38:02 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:38:38 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:38:40 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:39:52 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:40:37 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+00:40:54 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:40:57 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:45:04 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+00:45:05 **** Clean-only build of configuration x86_64-debug for project message_client ****
 make -j4 clean 
 rm -fr build/x86_64-debug
