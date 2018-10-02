@@ -3,7 +3,7 @@
 #include <pthread.h>
 
 // Global includes
-#include <global_include.h>
+#include <data_types.h>
 #include <x1_include.h>
 
 // Func prototypes
