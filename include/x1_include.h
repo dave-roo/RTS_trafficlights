@@ -4,8 +4,6 @@
 #include <pthread.h>
 #include <semaphore.h>
 
-#define ATTACH_POINT "x1_group_14"
-
 // States for railway crossing
 typedef enum{
 	X1_STATE_0 =0,
