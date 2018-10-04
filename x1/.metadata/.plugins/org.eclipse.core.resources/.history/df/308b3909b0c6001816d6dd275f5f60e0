@@ -20,6 +20,7 @@ LD = $(CC)
 
 # Include for common header files for the project - Ben 
 INCLUDES += -I ../../include/
+LIBS += -L../../include/
 
 #INCLUDES += -I/path/to/my/lib/include
 #INCLUDES += -I../mylib/public

@@ -1,6 +1,12 @@
-00:45:04 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
-make -j4 clean 
-rm -fr build/x86_64-debug
+12:21:38 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o: In function `main':
+C:\Users\Ben\git_rts\x1\X1_Node/src/X1_Node.c:19: undefined reference to `func'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:64: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
 
-00:45:05 Build Finished (took 155ms)
+12:21:38 Build Finished (took 253ms)
 

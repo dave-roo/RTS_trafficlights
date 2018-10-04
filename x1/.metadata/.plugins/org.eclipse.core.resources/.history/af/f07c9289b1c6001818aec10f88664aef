@@ -3,13 +3,11 @@
 #include <pthread.h>
 
 // Global includes
-#include "global_include.h"
+#include <global_include.h>
 #include <x1_include.h>
 
 // Local Includes
 #include "x1_state_machine.h"
-
-#define LOCAL_ATTACH_POINT "x1_group_14"
 
 // Func prototypes
 void* sensor_send_thread(void*);
@@ -18,7 +16,7 @@ void x1_global_init(sm_data_t*);
 
 int main(void) {
 	printf("Begin X1 State Machine Node\n");
-	func();
+//	func();
 
 	// Initialise global variable
 	sm_data_t global_data;
@@ -46,12 +44,12 @@ void* x1_message_server_thread(void* arg){
 	sm_data_t* state_data = (sm_data_t*) arg;
 
 	name_attach_t *attach;
-	if ((attach = name_attach(NULL, LOCAL_ATTACH_POINT, 0)) == NULL){
-		printf("\nFailed to name_attach on LOCAL_ATTACH_POINT: %s \n", LOCAL_ATTACH_POINT);
+	if ((attach = name_attach(NULL, ATTACH_POINT, 0)) == NULL){
+		printf("\nFailed to name_attach on ATTACH_POINT: %s \n", ATTACH_POINT);
 		printf("\n Possibly another server with the same name is already running !\n");
 		return 0;
 	}
-	printf("Server Listening for Clients on LOCAL_ATTACH_POINT: %s \n", LOCAL_ATTACH_POINT);
+	printf("Server Listening for Clients on ATTACH_POINT: %s \n", ATTACH_POINT);
 
 	// Setup the sending and receiving message structs
 	message_data_t msg;

@@ -1142,3 +1142,640 @@ rm -fr build/x86_64-debug
 00:45:05 **** Clean-only build of configuration x86_64-debug for project message_client ****
 make -j4 clean 
 rm -fr build/x86_64-debug
+01:15:38 **** Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+01:15:58 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+01:18:54 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+01:19:41 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o: In function `main':
+C:\Users\Ben\git_rts\x1\X1_Node/src/X1_Node.c:19: undefined reference to `func'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:63: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
+11:45:27 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  -L ../../include/
+build/x86_64-debug/src/X1_Node.o: In function `main':
+C:\Users\Ben\git_rts\x1\X1_Node/src/X1_Node.c:19: undefined reference to `func'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+make: *** [build/x86_64-debug/X1_Node] Error 1
+Makefile:65: recipe for target 'build/x86_64-debug/X1_Node' failed
+11:46:29 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+11:46:29 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+11:46:31 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.c:1:0:
+src/x1_state_machine.h:5:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** Waiting for unfinished jobs....
+src/X1_Node.c:6:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+11:46:50 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+In file included from src/x1_state_machine.c:1:0:
+src/x1_state_machine.h:6:24: fatal error: x1_include.h: No such file or directory
+compilation terminated.
+src/X1_Node.c:6:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** Waiting for unfinished jobs....
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+11:46:56 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/x1_state_machine.c: In function 'x1_state_machine_outputs':
+src/x1_state_machine.c:9:2: error: unknown type name 'sm_data_t'
+  sm_data_t* msg = (sm_data_t*) arg;
+  ^
+src/x1_state_machine.c:9:20: error: 'sm_data_t' undeclared (first use in this function)
+  sm_data_t* msg = (sm_data_t*) arg;
+                    ^
+src/x1_state_machine.c:9:20: note: each undeclared identifier is reported only once for each function it appears in
+src/x1_state_machine.c:9:30: error: expected expression before ')' token
+  sm_data_t* msg = (sm_data_t*) arg;
+                              ^
+src/x1_state_machine.c:13:2: warning: implicit declaration of function 'sem_wait' [-Wimplicit-function-declaration]
+  sem_wait(&msg->sem); // Protect Data
+  ^
+src/x1_state_machine.c:13:15: error: request for member 'sem' in something not a structure or union
+  sem_wait(&msg->sem); // Protect Data
+               ^
+src/x1_state_machine.c:14:2: error: unknown type name 'x1_states'
+  x1_states last_state = msg->current_state;
+  ^
+src/x1_state_machine.c:14:28: error: request for member 'current_state' in something not a structure or union
+  x1_states last_state = msg->current_state;
+                            ^
+src/x1_state_machine.c:15:2: warning: implicit declaration of function 'sem_post' [-Wimplicit-function-declaration]
+  sem_post(&msg->sem); // Release
+  ^
+src/x1_state_machine.c:15:15: error: request for member 'sem' in something not a structure or union
+  sem_post(&msg->sem); // Release
+               ^
+src/x1_state_machine.c:18:16: error: request for member 'sem' in something not a structure or union
+   sem_wait(&msg->sem);
+                ^
+src/x1_state_machine.c:19:23: error: request for member 'current_state' in something not a structure or union
+   if(last_state != msg->current_state){
+                       ^
+src/x1_state_machine.c:20:14: error: request for member 'current_state' in something not a structure or union
+    switch(msg->current_state){
+              ^
+src/x1_state_machine.c:21:10: error: 'X1_STATE_0' undeclared (first use in this function)
+     case X1_STATE_0:
+          ^
+src/x1_state_machine.c:24:10: error: 'X1_STATE_1' undeclared (first use in this function)
+     case X1_STATE_1:
+          ^
+src/x1_state_machine.c:27:10: error: 'X1_STATE_2' undeclared (first use in this function)
+     case X1_STATE_2:
+          ^
+src/x1_state_machine.c:30:10: error: 'X1_STATE_3' undeclared (first use in this function)
+     case X1_STATE_3:
+          ^
+src/x1_state_machine.c:33:10: error: 'X1_STATE_4' undeclared (first use in this function)
+     case X1_STATE_4:
+          ^
+src/x1_state_machine.c:36:10: error: 'X1_STATE_5' undeclared (first use in this function)
+     case X1_STATE_5:
+          ^
+src/x1_state_machine.c:39:10: error: 'X1_STATE_6' undeclared (first use in this function)
+     case X1_STATE_6:
+          ^
+src/x1_state_machine.c:42:10: error: 'X1_STATE_7' undeclared (first use in this function)
+     case X1_STATE_7:
+          ^
+src/x1_state_machine.c:47:19: error: request for member 'current_state' in something not a structure or union
+   last_state = msg->current_state;
+                   ^
+src/x1_state_machine.c:49:16: error: request for member 'sem' in something not a structure or union
+   sem_post(&msg->sem);
+                ^
+src/x1_state_machine.c: In function 'x1_state_machine':
+src/x1_state_machine.c:59:2: error: unknown type name 'sm_data_t'
+  sm_data_t* msg = (sm_data_t*) arg;
+  ^
+src/x1_state_machine.c:59:20: error: 'sm_data_t' undeclared (first use in this function)
+  sm_data_t* msg = (sm_data_t*) arg;
+                    ^
+src/x1_state_machine.c:59:30: error: expected expression before ')' token
+  sm_data_t* msg = (sm_data_t*) arg;
+                              ^
+src/x1_state_machine.c:62:16: error: request for member 'sem' in something not a structure or union
+   sem_wait(&msg->sem);
+                ^
+src/x1_state_machine.c:63:9: error: request for member 'sensor_received' in something not a structure or union
+   if(msg->sensor_received){
+         ^
+src/x1_state_machine.c:64:14: error: request for member 'current_state' in something not a structure or union
+    switch(msg->current_state){
+              ^
+src/x1_state_machine.c:65:10: error: 'X1_STATE_0' undeclared (first use in this function)
+     case X1_STATE_0:
+          ^
+src/x1_state_machine.c:68:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.set){
+            ^
+src/x1_state_machine.c:70:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.last_state = X1_STATE_0;
+          ^
+src/x1_state_machine.c:71:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.x1_reset = 1;
+          ^
+src/x1_state_machine.c:73:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.x1_reset){
+            ^
+src/x1_state_machine.c:74:14: error: request for member 'priority' in something not a structure or union
+       if(!msg->priority.set){
+              ^
+src/x1_state_machine.c:76:11: error: request for member 'current_state' in something not a structure or union
+        msg->current_state = msg->priority.last_state;
+           ^
+src/x1_state_machine.c:76:32: error: request for member 'priority' in something not a structure or union
+        msg->current_state = msg->priority.last_state;
+                                ^
+src/x1_state_machine.c:77:11: error: request for member 'priority' in something not a structure or union
+        msg->priority.x1_reset = 0;
+           ^
+src/x1_state_machine.c:86:13: error: request for member 'signal' in something not a structure or union
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+             ^
+src/x1_state_machine.c:86:29: error: 'X1_SIGNAL_Ein' undeclared (first use in this function)
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+                             ^
+src/x1_state_machine.c:86:51: error: request for member 'signal' in something not a structure or union
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+                                                   ^
+src/x1_state_machine.c:86:67: error: 'X1_SIGNAL_Win' undeclared (first use in this function)
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+                                                                   ^
+src/x1_state_machine.c:87:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_3;
+          ^
+src/x1_state_machine.c:87:28: error: 'X1_STATE_3' undeclared (first use in this function)
+       msg->current_state = X1_STATE_3;
+                            ^
+src/x1_state_machine.c:88:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
+                  ^
+src/x1_state_machine.c:89:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_1;
+          ^
+src/x1_state_machine.c:89:28: error: 'X1_STATE_1' undeclared (first use in this function)
+       msg->current_state = X1_STATE_1;
+                            ^
+src/x1_state_machine.c:90:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
+                  ^
+src/x1_state_machine.c:91:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_2;
+          ^
+src/x1_state_machine.c:91:28: error: 'X1_STATE_2' undeclared (first use in this function)
+       msg->current_state = X1_STATE_2;
+                            ^
+src/x1_state_machine.c:99:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.set){
+            ^
+src/x1_state_machine.c:100:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.x1_reset = 1;
+          ^
+src/x1_state_machine.c:101:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.last_state = msg->current_state;
+          ^
+src/x1_state_machine.c:101:37: error: request for member 'current_state' in something not a structure or union
+       msg->priority.last_state = msg->current_state;
+                                     ^
+src/x1_state_machine.c:102:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:102:28: error: 'X1_STATE_7' undeclared (first use in this function)
+       msg->current_state = X1_STATE_7;
+                            ^
+src/x1_state_machine.c:106:12: error: request for member 'signal' in something not a structure or union
+      if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
+            ^
+src/x1_state_machine.c:107:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_3;
+          ^
+src/x1_state_machine.c:108:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+                  ^
+src/x1_state_machine.c:108:34: error: 'X1_SIGNAL_BoomGateDown' undeclared (first use in this function)
+      }else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+                                  ^
+src/x1_state_machine.c:109:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_4; // Boom gate is down
+          ^
+src/x1_state_machine.c:109:28: error: 'X1_STATE_4' undeclared (first use in this function)
+       msg->current_state = X1_STATE_4; // Boom gate is down
+                            ^
+src/x1_state_machine.c:118:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.set){
+            ^
+src/x1_state_machine.c:119:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.x1_reset = 1;
+          ^
+src/x1_state_machine.c:120:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.last_state = msg->current_state;
+          ^
+src/x1_state_machine.c:120:37: error: request for member 'current_state' in something not a structure or union
+       msg->priority.last_state = msg->current_state;
+                                     ^
+src/x1_state_machine.c:121:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:125:12: error: request for member 'signal' in something not a structure or union
+      if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein - second train detected
+            ^
+src/x1_state_machine.c:126:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_3;
+          ^
+src/x1_state_machine.c:127:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+                  ^
+src/x1_state_machine.c:128:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_5; // Boom gate is down
+          ^
+src/x1_state_machine.c:128:28: error: 'X1_STATE_5' undeclared (first use in this function)
+       msg->current_state = X1_STATE_5; // Boom gate is down
+                            ^
+src/x1_state_machine.c:136:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.set){
+            ^
+src/x1_state_machine.c:137:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.x1_reset = 1;
+          ^
+src/x1_state_machine.c:138:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.last_state = msg->current_state;
+          ^
+src/x1_state_machine.c:138:37: error: request for member 'current_state' in something not a structure or union
+       msg->priority.last_state = msg->current_state;
+                                     ^
+src/x1_state_machine.c:139:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:143:12: error: request for member 'signal' in something not a structure or union
+      if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){ // Ein - second train detected
+            ^
+src/x1_state_machine.c:144:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_6;
+          ^
+src/x1_state_machine.c:144:28: error: 'X1_STATE_6' undeclared (first use in this function)
+       msg->current_state = X1_STATE_6;
+                            ^
+src/x1_state_machine.c:152:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.set){
+            ^
+src/x1_state_machine.c:153:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.x1_reset = 1;
+          ^
+src/x1_state_machine.c:154:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.last_state = X1_STATE_1; // Need to return to state1 as boom gate is up
+          ^
+src/x1_state_machine.c:155:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:159:12: error: request for member 'signal' in something not a structure or union
+      if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
+            ^
+src/x1_state_machine.c:160:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_6;
+          ^
+src/x1_state_machine.c:161:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_Eout){// Eout - Train clear of crossing
+                  ^
+src/x1_state_machine.c:161:34: error: 'X1_SIGNAL_Eout' undeclared (first use in this function)
+      }else if(msg->signal & 1 << X1_SIGNAL_Eout){// Eout - Train clear of crossing
+                                  ^
+src/x1_state_machine.c:162:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:170:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.set){
+            ^
+src/x1_state_machine.c:171:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.x1_reset = 1;
+          ^
+src/x1_state_machine.c:172:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.last_state = X1_STATE_2; // Need to return to state2 as boom gate is up
+          ^
+src/x1_state_machine.c:173:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:177:12: error: request for member 'signal' in something not a structure or union
+      if(msg->signal & 1 << X1_SIGNAL_Ein){ // Win - second train detected
+            ^
+src/x1_state_machine.c:178:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_6;
+          ^
+src/x1_state_machine.c:179:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_Wout){// Eout - Train clear of crossing
+                  ^
+src/x1_state_machine.c:179:34: error: 'X1_SIGNAL_Wout' undeclared (first use in this function)
+      }else if(msg->signal & 1 << X1_SIGNAL_Wout){// Eout - Train clear of crossing
+                                  ^
+src/x1_state_machine.c:180:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:188:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.set){
+            ^
+src/x1_state_machine.c:189:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.x1_reset = 1;
+          ^
+src/x1_state_machine.c:190:10: error: request for member 'priority' in something not a structure or union
+       msg->priority.last_state = X1_STATE_3; // Need to return to state3 as boom gate is up
+          ^
+src/x1_state_machine.c:191:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:195:13: error: request for member 'signal' in something not a structure or union
+      if((msg->signal & 1 << X1_SIGNAL_Wout) && (msg->signal & 1 << X1_SIGNAL_Eout)){ // Win - second train detected
+             ^
+src/x1_state_machine.c:195:52: error: request for member 'signal' in something not a structure or union
+      if((msg->signal & 1 << X1_SIGNAL_Wout) && (msg->signal & 1 << X1_SIGNAL_Eout)){ // Win - second train detected
+                                                    ^
+src/x1_state_machine.c:196:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_7;
+          ^
+src/x1_state_machine.c:200:17: error: request for member 'signal' in something not a structure or union
+      else if(msg->signal & 1 << X1_SIGNAL_Wout){
+                 ^
+src/x1_state_machine.c:201:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_4;
+          ^
+src/x1_state_machine.c:202:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_Eout){
+                  ^
+src/x1_state_machine.c:203:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_5;
+          ^
+src/x1_state_machine.c:209:12: error: request for member 'priority' in something not a structure or union
+      if(msg->priority.set){
+            ^
+src/x1_state_machine.c:210:14: error: request for member 'signal' in something not a structure or union
+       if(~msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+              ^
+src/x1_state_machine.c:211:11: error: request for member 'current_state' in something not a structure or union
+        msg->current_state = X1_STATE_0;
+           ^
+src/x1_state_machine.c:219:13: error: request for member 'signal' in something not a structure or union
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+             ^
+src/x1_state_machine.c:219:51: error: request for member 'signal' in something not a structure or union
+      if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+                                                   ^
+src/x1_state_machine.c:220:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_6;
+          ^
+src/x1_state_machine.c:221:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
+                  ^
+src/x1_state_machine.c:222:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_4;
+          ^
+src/x1_state_machine.c:223:18: error: request for member 'signal' in something not a structure or union
+      }else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
+                  ^
+src/x1_state_machine.c:224:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_5;
+          ^
+src/x1_state_machine.c:225:19: error: request for member 'signal' in something not a structure or union
+      }else if(~msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+                   ^
+src/x1_state_machine.c:226:10: error: request for member 'current_state' in something not a structure or union
+       msg->current_state = X1_STATE_0;
+          ^
+src/x1_state_machine.c:232:9: error: request for member 'current_state' in something not a structure or union
+      msg->current_state = X1_STATE_0;
+         ^
+src/x1_state_machine.c:235:7: error: request for member 'sensor_received' in something not a structure or union
+    msg->sensor_received = 0;
+       ^
+src/x1_state_machine.c:237:16: error: request for member 'sem' in something not a structure or union
+   sem_post(&msg->sem);
+                ^
+src/X1_Node.c:6:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** Waiting for unfinished jobs....
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+11:47:41 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.c:1:0:
+src/x1_state_machine.h:5:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** Waiting for unfinished jobs....
+src/X1_Node.c:6:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+11:47:47 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+11:48:00 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:50:28 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:51:01 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  -L../../include/
+11:51:11 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  -L../../include/
+build/x86_64-debug/src/X1_Node.o: In function `main':
+C:\Users\Ben\git_rts\x1\X1_Node/src/X1_Node.c:19: undefined reference to `func'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:65: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
+11:59:04 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  -L../../include/
+11:59:24 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:59:34 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  -L../../include/
+build/x86_64-debug/src/X1_Node.o: In function `main':
+C:\Users\Ben\git_rts\x1\X1_Node/src/X1_Node.c:19: undefined reference to `func'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+make: *** [build/x86_64-debug/X1_Node] Error 1
+Makefile:65: recipe for target 'build/x86_64-debug/X1_Node' failed
+12:00:22 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:00:22 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:00:31 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:00:31 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:02:42 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.c:1:0:
+src/x1_state_machine.h:5:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+make: *** Waiting for unfinished jobs....
+src/X1_Node.c:6:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+12:07:58 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+12:08:19 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:08:20 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:08:29 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:08:29 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:08:31 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+In file included from src/x1_state_machine.c:1:0:
+src/x1_state_machine.h:5:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+src/X1_Node.c:6:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+make: *** Waiting for unfinished jobs....
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+12:08:45 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:08:45 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+12:10:35 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.c:1:0:
+src/x1_state_machine.h:5:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** Waiting for unfinished jobs....
+src/X1_Node.c:6:36: fatal error: include/global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+12:10:40 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.c:1:0:
+src/x1_state_machine.h:5:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+make: *** Waiting for unfinished jobs....
+src/X1_Node.c:6:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+12:10:47 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+In file included from src/x1_state_machine.c:1:0:
+src/x1_state_machine.h:5:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** Waiting for unfinished jobs....
+src/X1_Node.c:6:28: fatal error: global_include.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+12:14:42 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+12:21:38 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/X1_Node.o: In function `main':
+C:\Users\Ben\git_rts\x1\X1_Node/src/X1_Node.c:19: undefined reference to `func'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:64: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
