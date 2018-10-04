@@ -1,0 +1,11 @@
+18:13:55 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:35:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+
+18:13:55 Build Finished (took 284ms)
+

@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <global_include.h>
+#include <x1_include.h>
+
+#define LOCAL_ATTACH_POINT "c1_group_14"
+
+void* c1_message_server_thread(void*);
+
+int main(void) {
+	pthread_t c1_message_thread;
+	pthread_create(&c1_message_thread, NULL, c1_message_server_thread, NULL);
+
+	pthread_join(c1_message_thread, NULL);
+
+}
+
+void* c1_message_server_thread(void* arg){
+	name_attach_t *attach;
+	if ((attach = name_attach(NULL, LOCAL_ATTACH_POINT, 0)) == NULL){
+		printf("\nFailed to name_attach on: %s \n", LOCAL_ATTACH_POINT);
+		printf("\n Possibly another server with the same name is already running !\n");
+		return 0;
+	}
+	printf("Server Listening for Clients on: %s \n", LOCAL_ATTACH_POINT);
+	return 0;
+}

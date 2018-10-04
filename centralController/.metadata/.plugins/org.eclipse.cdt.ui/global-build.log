@@ -1,0 +1,270 @@
+17:13:21 **** Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:30:56 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:38:06 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+In file included from src/central_controller_node.c:4:0:
+../../include/global_include.h:14:0: warning: "X1_QNET_ATTACH_POINT" redefined
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" 
+ ^
+../../include/global_include.h:13:0: note: this is the location of the previous definition
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // Need to update to match node hostname
+ ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:41:21 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:44:30 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+In file included from src/central_controller_node.c:4:0:
+../../include/global_include.h:14:0: warning: "X1_QNET_ATTACH_POINT" redefined
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" 
+ ^
+../../include/global_include.h:13:0: note: this is the location of the previous definition
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // Need to update to match node hostname
+ ^
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:15:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:44:37 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+In file included from src/central_controller_node.c:4:0:
+../../include/global_include.h:14:0: warning: "X1_QNET_ATTACH_POINT" redefined
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" 
+ ^
+../../include/global_include.h:13:0: note: this is the location of the previous definition
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // Need to update to match node hostname
+ ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:46:39 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:48:14 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:50:48 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:21:34: error: 'C1_LOCAL_ATTACH_POINT' undeclared (first use in this function)
+  if ((attach = name_attach(NULL, C1_LOCAL_ATTACH_POINT, 0)) == NULL){
+                                  ^
+src/central_controller_node.c:21:34: note: each undeclared identifier is reported only once for each function it appears in
+src/central_controller_node.c:20:17: warning: variable 'attach' set but not used [-Wunused-but-set-variable]
+  name_attach_t *attach;
+                 ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+17:50:57 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:53:01 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:75:16: error: 'state_data' undeclared (first use in this function)
+      sem_wait(&state_data->sem);
+                ^
+src/central_controller_node.c:75:16: note: each undeclared identifier is reported only once for each function it appears in
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+17:53:42 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:55:07 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:57:05 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:57:12 **** Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+18:02:18 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:28:2: error: unknown type name 'controller_data_t'
+  controller_data_t* controller_data = (controller_data_t*) arg;
+  ^
+src/central_controller_node.c:28:40: error: 'controller_data_t' undeclared (first use in this function)
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                        ^
+src/central_controller_node.c:28:40: note: each undeclared identifier is reported only once for each function it appears in
+src/central_controller_node.c:28:58: error: expected expression before ')' token
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                                          ^
+src/central_controller_node.c:28:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+18:03:27 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:29:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+18:05:13 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:107:9: error: 'EXIT_FAIL' undeclared (first use in this function)
+  return EXIT_FAIL;
+         ^
+src/central_controller_node.c:107:9: note: each undeclared identifier is reported only once for each function it appears in
+src/central_controller_node.c:29:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+src/central_controller_node.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+18:05:40 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:107:9: warning: return makes pointer from integer without a cast [-Wint-conversion]
+  return EXIT_FAILURE;
+         ^
+src/central_controller_node.c:29:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+18:05:58 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:107:9: error: lvalue required as unary '&' operand
+  return &EXIT_FAILURE;
+         ^
+src/central_controller_node.c:29:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+src/central_controller_node.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+18:06:13 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:29:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+18:11:26 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+In file included from src/central_controller_node.c:6:0:
+../../include/controller_include.h:4:17: fatal error: sem.h: No such file or directory
+compilation terminated.
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+18:11:43 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:30:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+18:12:29 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:15:20: warning: unused variable 'global_data' [-Wunused-variable]
+  controller_data_t global_data;
+                    ^
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:34:2: warning: implicit declaration of function 'x1_global_init' [-Wimplicit-function-declaration]
+  x1_global_init(&controller_data);
+  ^
+src/central_controller_node.c: At top level:
+src/central_controller_node.c:127:6: warning: conflicting types for 'x1_global_init'
+ void x1_global_init(controller_data_t* data){
+      ^
+src/central_controller_node.c:34:2: note: previous implicit declaration of 'x1_global_init' was here
+  x1_global_init(&controller_data);
+  ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+18:12:51 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:16:2: warning: implicit declaration of function 'x1_global_init' [-Wimplicit-function-declaration]
+  x1_global_init(&controller_data);
+  ^
+src/central_controller_node.c:16:18: error: 'controller_data' undeclared (first use in this function)
+  x1_global_init(&controller_data);
+                  ^
+src/central_controller_node.c:16:18: note: each undeclared identifier is reported only once for each function it appears in
+src/central_controller_node.c:15:20: warning: unused variable 'global_data' [-Wunused-variable]
+  controller_data_t global_data;
+                    ^
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:34:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+src/central_controller_node.c: At top level:
+src/central_controller_node.c:127:6: warning: conflicting types for 'x1_global_init'
+ void x1_global_init(controller_data_t* data){
+      ^
+src/central_controller_node.c:16:2: note: previous implicit declaration of 'x1_global_init' was here
+  x1_global_init(&controller_data);
+  ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+18:12:57 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:16:2: warning: implicit declaration of function 'x1_global_init' [-Wimplicit-function-declaration]
+  x1_global_init(&global_data);
+  ^
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:34:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+src/central_controller_node.c: At top level:
+src/central_controller_node.c:127:6: warning: conflicting types for 'x1_global_init'
+ void x1_global_init(controller_data_t* data){
+      ^
+src/central_controller_node.c:16:2: note: previous implicit declaration of 'x1_global_init' was here
+  x1_global_init(&global_data);
+  ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+18:13:55 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:35:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  

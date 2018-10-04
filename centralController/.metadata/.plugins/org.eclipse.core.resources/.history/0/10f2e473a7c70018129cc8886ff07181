@@ -1,0 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <global_include.h>
+#include <x1_include.h>
+
+int main(void) {
+}

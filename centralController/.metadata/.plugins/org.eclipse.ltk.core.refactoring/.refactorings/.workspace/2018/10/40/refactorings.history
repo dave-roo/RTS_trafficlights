@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;192.168.0.18&apos; to &apos;s3484378_01&apos;" description="Rename resource &apos;192.168.0.18&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/192.168.0.18" name="s3484378_01" stamp="1538639682412" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;192.168.0.19&apos; to &apos;s3484378_02&apos;" description="Rename resource &apos;192.168.0.19&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/192.168.0.19" name="s3484378_02" stamp="1538639702604" updateReferences="true"/>
+</session>
