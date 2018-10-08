@@ -74,6 +74,8 @@ void SetCursor(int fd, uint8_t LCDi2cAdd, uint8_t row, uint8_t column);
 void Initialise_LCD (int fd, _Uint32t LCDi2cAdd);
 
 int synchronized = 1;
+int screen = 0;
+int button = 0;
 
 typedef struct
 {
@@ -88,33 +90,79 @@ void *LCDthread_A_ex (void *data)
 	LCD_connect *td = (LCD_connect*) data;
 	uint8_t	LCDdata1[21] = {};
 	uint8_t	LCDdata2[21] = {};
+	int i = 0;
 
-	int i;
-	for(i=0;i<100;i++)
-	{
-		if(synchronized) pthread_mutex_lock(&td->mutex);     //lock the function to make sure the variables are protected
-			// write some Text to the LCD screen
-			sprintf(LCDdata1,"XG I1GGRRGGRR PGGRR");
-			sprintf(LCDdata2,"I2GGRRGG PGGRR C0");
+	if(synchronized) pthread_mutex_lock(&td->mutex);     //lock the function to make sure the variables are protected
 
-			SetCursor(td->fd, td->Address,0,0); // set cursor on LCD to first position first line
-			I2cWrite_(td->fd, td->Address, DATA_SEND, &LCDdata1[0], sizeof(LCDdata1));		// write new data to I2C
-
-			SetCursor(td->fd, td->Address,1,0); // set cursor on LCD to first position first line
-			I2cWrite_(td->fd, td->Address, DATA_SEND, &LCDdata2[0], sizeof(LCDdata2));		// write new data to I2C
-		if(synchronized) pthread_mutex_unlock(&td->mutex);	//unlock the functions to release the variables for use by other functions
-		usleep(1000000); // 1.0 seconds
+	if(screen == 1) {
+		sprintf(LCDdata1,"Screen");
+		sprintf(LCDdata2,"1");
 	}
+	else if(screen == 2) {
+		sprintf(LCDdata1,"Screen");
+		sprintf(LCDdata2,"2");
+	}
+	else{
+		sprintf(LCDdata1,"--------------------");
+		sprintf(LCDdata2,"--------------------");
+	}
+
+	SetCursor(td->fd, td->Address,0,0); // set cursor on LCD to first position first line
+	I2cWrite_(td->fd, td->Address, DATA_SEND, &LCDdata1[0], sizeof(LCDdata1));		// write new data to I2C
+
+	SetCursor(td->fd, td->Address,1,0); // set cursor on LCD to first position first line
+	I2cWrite_(td->fd, td->Address, DATA_SEND, &LCDdata2[0], sizeof(LCDdata2));		// write new data to I2C
+
+	if(synchronized) pthread_mutex_unlock(&td->mutex);
+	usleep(1000000); // 1.0 seconds
 
 	return 0;
 }
 
+void *update_screen()
+{
+	int file;
+	int error;
+	volatile uint8_t LCDi2cAdd = 0x3C;
+	_Uint32t speed = 10000;
+	LCD_connect td;
 
+	uint8_t	LCDdata[21] = {};
 
+	pthread_mutex_init(&td.mutex,NULL);
+
+	if ((file = open("/dev/i2c1",O_RDWR)) < 0)	  // OPEN I2C1
+		printf("Error while opening Device File.!!\n");
+	else
+		printf("I2C1 Opened Successfully\n");
+
+	usleep(1);
+
+	pthread_t  th1;
+	pthread_mutex_lock(&td.mutex);
+		td.fd     = file;
+		td.Address= LCDi2cAdd;
+	td.mode   = DATA_SEND;
+    pthread_mutex_unlock(&td.mutex);
+	pthread_create (&th1, NULL, LCDthread_A_ex, &td);
+
+	pthread_join (th1, NULL);
+
+	pthread_mutex_destroy(&td.mutex);
+
+}
 
 int main(int argc, char *argv[])
 {
 
+	initializeLCD();
+	getKey();
+
+	printf("\n complete");
+	return EXIT_SUCCESS;
+}
+
+void initializeLCD(){
 	int file;
 	int error;
 	volatile uint8_t LCDi2cAdd = 0x3C;
@@ -141,32 +189,10 @@ int main(int argc, char *argv[])
 	else
 		printf("Bus speed set = %d\n", speed);
 
-	Initialise_LCD(file, LCDi2cAdd);
+	pthread_create(NULL, NULL, update_screen, NULL);
 
 	usleep(1);
-
-
-	// launch threads
-	pthread_t  th1, th2, th3, th4;
-	pthread_mutex_lock(&td.mutex);		//lock the function to make sure the variables are protected
-		td.fd     = file;
-		td.Address= LCDi2cAdd;
-	td.mode   = DATA_SEND;
-    pthread_mutex_unlock(&td.mutex);	//unlock the functions to release the variables for use by other functions
-
-	pthread_create (&th1, NULL, LCDthread_A_ex, &td);
-
-	pthread_join (th4, NULL); // wait for fastest thread to finish
-
-	// Destroy the mutex
-	pthread_mutex_destroy(&td.mutex);
-
-	getKey();
-
-	printf("\n complete");
-	return EXIT_SUCCESS;
 }
-
 
 // Writes to I2C
 int  I2cWrite_(int fd, uint8_t Address, uint8_t mode, uint8_t *pBuffer, uint32_t NbData)
@@ -272,31 +298,6 @@ void strobe_SCL(uintptr_t gpio_port_add) {
    delaySCL();
 }
 
-
-// Thread used to Flash the 4 LEDs on the BeagleBone for 100ms
-void *Flash_LED0_ex(void *notused)
-{
-	pthread_detach(pthread_self());  // no need for this thread to join
-	uintptr_t gpio1_port = mmap_device_io(AM335X_GPIO_SIZE, AM335X_GPIO1_BASE);
-
-	uintptr_t val;
-	// Write GPIO data output register
-	val  = in32(gpio1_port + GPIO_DATAOUT);
-	val |= (LED0|LED1|LED2|LED3);
-	out32(gpio1_port + GPIO_DATAOUT, val);
-
-	usleep(100000);  // 100 ms wait
-	//sched_yield();  // if used without the usleep, this line will flash the LEDS for ~4ms
-
-	val  = in32(gpio1_port + GPIO_DATAOUT);
-	val &= ~(LED0|LED1|LED2|LED3);
-	out32(gpio1_port + GPIO_DATAOUT, val);
-
-	munmap_device_io(gpio1_port, AM335X_GPIO_SIZE);
-
-}
-
-
 void delaySCL()  {// Small delay used to get timing correct for BBB
   volatile int i, a;
   for(i=0;i<0x1F;i++) // 0x1F results in a delay that sets F_SCL to ~480 kHz
@@ -312,9 +313,7 @@ uint32_t KeypadReadIObit(uintptr_t gpio_base, uint32_t BitsToRead)  {
    volatile uint32_t val = 0;
    val  = in32(gpio_base + GPIO_DATAIN);// value that is currently on the GPIO port
 
-   val &= BitsToRead; // mask bit
-   //val = val >> (BitsToRead % 2);
-   //return val;
+   val &= BitsToRead;
    if(val==BitsToRead)
 	   return 1;
    else
@@ -327,68 +326,72 @@ void DecodeKeyValue(uint32_t word)
 	{
 		case 0x01:
 			printf("Key  1 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
+			button = 1;
 			break;
 		case 0x02:
 			printf("Key  2 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
+			button = 2;
 			break;
 		case 0x04:
 			printf("Key  3 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
+			button = 3;
 			break;
 		case 0x08:
 			printf("Key  4 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x10:
 			printf("Key  5 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x20:
 			printf("Key  6 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x40:
 			printf("Key  7 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x80:
 			printf("Key  8 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x100:
 			printf("Key  9 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x200:
 			printf("Key 10 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x400:
 			printf("Key 11 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x800:
 			printf("Key 12 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x1000:
 			printf("Key 13 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x2000:
 			printf("Key 14 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			screen = 1;
+			pthread_create(NULL, NULL, update_screen, NULL);
 			break;
 		case 0x4000:
 			printf("Key 15 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
+			screen = 2;
+			pthread_create(NULL, NULL, update_screen, NULL); // flash LED
+			button = 15;
 			break;
 		case 0x8000:
 			printf("Key 16 pressed\n");
-			pthread_create(NULL, NULL, Flash_LED0_ex, NULL); // flash LED
-			usleep(1); // do this so we only fire once
 			break;
 		case 0x00:  // key release event (do nothing)
 			break;
@@ -449,12 +452,9 @@ void getKey(){
 	  ISR_area_data.count_thread = 0;
 	  ISR_area_data.gpio1_base = gpio1_base;
 
-
 	  memset(&ISR_area_data.pevent, 0, sizeof(ISR_area_data.pevent));
 	  SIGEV_INTR_INIT (&ISR_area_data.pevent);
 	  ISR_area_data.pevent.sigev_notify = SIGEV_INTR;  // Setup for external interrupt
-
-
 
 		// we also need to have the PROCMGR_AID_INTERRUPT and PROCMGR_AID_IO abilities enabled. For more information, see procmgr_ability().
 	  ThreadCtl( _NTO_TCTL_IO_PRIV , 1);// Request I/O privileges  for QNX7;
