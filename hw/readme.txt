@@ -3,17 +3,17 @@ Design an output for each NODE.
 
 X1
 LCD:
-123456789X123456789X1
+
 123456789X123456789X1
 
 123456789X123456789X1
 123456789X123456789X1
 
 Keypad:
-1  - Training Arriving
-2  - Training Departing
-3
-4
+1  - Training Arriving E
+2  - Training Departing W
+3  - Training Arriving W
+4  - Training Departing E
 5
 6
 7
@@ -36,7 +36,7 @@ LCD:
 123456789X123456789X1
 
 Keypad:
-1 
+1 - Go to state 1
 2
 3
 4
