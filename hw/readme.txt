@@ -1,15 +1,17 @@
 To Do:
 Design an output for each NODE.
-Plan out keypad presses for each NODE.
 
 X1
 LCD:
 123456789X123456789X1
 123456789X123456789X1
 
+123456789X123456789X1
+123456789X123456789X1
+
 Keypad:
-1
-2
+1  - Training Arriving
+2  - Training Departing
 3
 4
 5
@@ -30,8 +32,11 @@ LCD:
 123456789X123456789X1
 123456789X123456789X1
 
+123456789X123456789X1
+123456789X123456789X1
+
 Keypad:
-1
+1 
 2
 3
 4
@@ -48,25 +53,28 @@ Keypad:
 15
 16
 
-I1 & I2 
+I1 & I2
 LCD:
 123456789X123456789X1
 123456789X123456789X1
 
+123456789X123456789X1
+123456789X123456789X1
+
 Keypad:
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
+1  - NE Sensor
+2  - SW Sensor
+3  - ES Sensor
+4  - NW Sensor
+5  - N Sensor
+6  - E Sensor
+7  - S Sensor
+8  - W Sensor
+9  - W & E Pedestrian Sensor
+10 - N & S Pedestrian Sensor
+11 - 
+12 -
+13 -
+14 -
+15 -
+16 -
