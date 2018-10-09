@@ -238,29 +238,20 @@ void Print_State(enum states *CurState){
 //===================================================================================================
 
 int main(int argc, char *argv[]) {
+	pthread_t  th1;
 
-	printf("This is A Client running\n");
+	state_data td2 = {State_0};
 
-	int ret = 0;
-
-	ret = getTrainStatus(X1_QNET_ATTACH_POINT);
-
-	printf("Main (client) Terminated....\n");
-	return ret;
-	/*pthread_t  th1;
-
-		  	state_data td2 = {State_0};
-
-		  	pthread_mutex_init(&td2.mutex,NULL);
-			pthread_create (&th1, NULL, thread_states, &td2);
-		  	pthread_exit(EXIT_SUCCESS);
+	pthread_mutex_init(&td2.mutex,NULL);
+	pthread_create (&th1, NULL, thread_states, &td2);
+	pthread_exit(EXIT_SUCCESS);
 
 	while(1){
 
 	}
 
 	return EXIT_SUCCESS;
-*/
+
 
 }
 

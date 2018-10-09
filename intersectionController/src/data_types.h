@@ -22,6 +22,7 @@ typedef enum{
 } node_id;
 
 typedef struct{
+	struct _pulse hdr;
     node_id sending_node;
     node_id receiving_node;
     message_type msg_type;
