@@ -14,8 +14,8 @@ Keypad:
 2  - Training Departing W
 3  - Training Arriving W
 4  - Training Departing E
-5
-6
+5  - Boom Gate Up
+6  - Boom Gate Down
 7
 8
 9
