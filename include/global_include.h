@@ -16,17 +16,19 @@
 // Message types for data between nodes
 typedef enum{
     MSG_TRAIN_SIGNAL = 0,
-	MSG_CURRENT_STATE,
-	MSG_CONTROL_STATE_LOCK,
-	MSG_CONTROL_STATE_RELEASE,
-	MSG_ERROR
+	MSG_CURRENT_STATE_REQUEST, 	// Node requesting state from other node
+	MSG_CURRENT_STATE_UPDATE,	// Node updating controller when state change
+	MSG_CONTROL_STATE_LOCK,		// Controller Requesting state lock
+	MSG_CONTROL_STATE_RELEASE,	// Controller releasing priority lock
+	MSG_ERROR					// msg error
     // Any others that need to be added here
 } message_type;
 
 // Connection errors that can be returned from function
 typedef enum{
 	MSG_CONNECTION_ERROR,
-	MSG_SENDING_ERROR
+	MSG_SENDING_ERROR,
+	MSG_BAD_REQUEST
 	// Any Other error types here
 } message_error;
 
@@ -46,7 +48,5 @@ typedef struct{
     message_type msg_type; 
     uint8_t data;
 } message_data_t;
-
-void func(void);
 
 #endif
