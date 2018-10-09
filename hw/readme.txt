@@ -3,11 +3,7 @@ Design an output for each NODE.
 
 X1
 LCD:
-123456789X123456789X1
-123456789X123456789X1
-
-123456789X123456789X1
-123456789X123456789X1
+T1:E T2:0 BG:U
 
 Keypad:
 1  - Training Arriving E
@@ -23,7 +19,7 @@ Keypad:
 11
 12
 13
-14
+14  - Change Screen
 15
 16
 
@@ -36,9 +32,9 @@ LCD:
 123456789X123456789X1
 
 Keypad:
-1 - Go to state 1
-2
-3
+1 - Turn R3 Lights to Green
+2 - Turn R2 Lights to Green
+3 - Turn R1 Lights to Green
 4
 5
 6
@@ -49,7 +45,7 @@ Keypad:
 11
 12
 13
-14
+14  - Change Screen
 15
 16
 
@@ -75,6 +71,6 @@ Keypad:
 11 - 
 12 -
 13 -
-14 -
+14  - Change Screen
 15 -
 16 -
