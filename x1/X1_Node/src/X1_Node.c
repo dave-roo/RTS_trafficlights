@@ -78,13 +78,13 @@ void* x1_message_server_thread(void* arg){
 					printf("_PULSE_CODE_DISCONNECT\n");
 					break;
 				case _PULSE_CODE_UNBLOCK:
-					printf("_PULSE_CODE_UNBLOCK");
+					printf("_PULSE_CODE_UNBLOCK\n");
 					break;
 				case _PULSE_CODE_COIDDEATH:
-					printf("_PULSE_CODE_COIDDEATH");
+					printf("_PULSE_CODE_COIDDEATH\n");
 					break;
 				case _PULSE_CODE_THREADDEATH:
-					printf("_PULSE_CODE_THREADDEATH");
+					printf("_PULSE_CODE_THREADDEATH\n");
 					break;
 				default:
 					printf("Something else received\n");
@@ -118,6 +118,7 @@ void* x1_message_server_thread(void* arg){
 				case MSG_CONTROL_STATE_LOCK:
 					printf("Locking State\n");
 					sem_wait(&state_data->sem);
+					state_data->priority.reponse_required = 1;
 					state_data->priority.set = 1;
 					state_data->priority.x1_reset = 1;
 					state_data->sensor_received = 1;
@@ -240,6 +241,8 @@ void x1_global_init(sm_data_t* data){
 	data->current_state = X1_STATE_0;
 	data->priority.last_state = X1_STATE_0;
 	data->priority.set = 0;
+	data->priority.x1_reset = 0;
+	data->priority.reponse_required = 0;
 	// Initialise the global semaphore
 	sem_init(&data->sem, 0, 1);
 	data->sensor_received = 0;

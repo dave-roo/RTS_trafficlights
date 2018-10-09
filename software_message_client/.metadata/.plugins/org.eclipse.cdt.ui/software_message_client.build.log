@@ -1,0 +1,6 @@
+02:24:35 **** Incremental Build of configuration x86_64-debug for project software_message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+02:24:35 Build Finished (took 100ms)
+

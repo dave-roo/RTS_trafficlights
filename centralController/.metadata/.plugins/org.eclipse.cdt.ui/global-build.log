@@ -524,3 +524,704 @@ make: Nothing to be done for 'all'.
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+00:08:21 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+00:08:47 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/../../include//global_include.o  
+C:/QNX/qnx700/target/qnx7/x86_64/lib/crt1.o: In function `_start':
+(.text+0xc1): undefined reference to `main'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:62: recipe for target 'build/x86_64-debug/central_controller_node' failed
+make: *** [build/x86_64-debug/central_controller_node] Error 1
+00:09:23 **** Clean-only build of configuration x86_64-debug for project central_controller_node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+00:09:23 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+00:09:24 **** Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+00:11:51 **** Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+src/message_client.c:22:16: error: conflicting types for 'send_message'
+ message_data_t send_message(message_data_t* msg){
+                ^
+In file included from src/message_client.c:4:0:
+../../include/global_include.h:53:16: note: previous declaration of 'send_message' was here
+ message_data_t send_message(message_data_t*, char*);
+                ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+make: *** Waiting for unfinished jobs....
+00:12:28 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:39:13: error: too few arguments to function 'send_message'
+     reply = send_message(&msg);
+             ^
+In file included from src/message_client.c:4:0:
+../../include/global_include.h:53:16: note: declared here
+ message_data_t send_message(message_data_t*, char*);
+                ^
+src/message_client.c:59:13: error: too few arguments to function 'send_message'
+     reply = send_message(&msg);
+             ^
+In file included from src/message_client.c:4:0:
+../../include/global_include.h:53:16: note: declared here
+ message_data_t send_message(message_data_t*, char*);
+                ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+00:12:58 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o build/x86_64-debug/../../include//global_include.o  
+00:13:02 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:36:00 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+00:36:12 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:37:54 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:122:8: warning: implicit declaration of function 'prinf' [-Wimplicit-function-declaration]
+        prinf("NODE_I1 Current State %d\n", msg.data);
+        ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+build/x86_64-debug/src/central_controller_node.o: In function `c1_message_server_thread':
+C:\Users\Ben\git_rts\centralController\central_controller_node/src/central_controller_node.c:122: undefined reference to `prinf'
+C:\Users\Ben\git_rts\centralController\central_controller_node/src/central_controller_node.c:125: undefined reference to `prinf'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:62: recipe for target 'build/x86_64-debug/central_controller_node' failed
+make: *** [build/x86_64-debug/central_controller_node] Error 1
+00:38:08 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+00:38:10 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:43:17 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+00:45:14 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:46:29 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+00:46:47 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:47:33 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+00:49:10 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:58:51 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+00:59:21 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include//global_include.o  
+01:02:51 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+In file included from src/central_controller_node.c:6:0:
+../../include/controller_include.h:9:5: error: unknown type name 'i1_states'
+     i1_states i1_current_state;
+     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+01:04:55 **** Clean-only build of configuration x86_64-debug for project central_controller_node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+01:04:57 **** Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+In file included from ../../include/global_include.h:14:0,
+                 from src/central_controller_node.c:4:
+../../include/controller_include.h:9:5: error: unknown type name 'i1_states'
+     i1_states i1_current_state;
+     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+In file included from ../../include//global_include.h:14:0,
+                 from ../../include//global_include.c:1:
+../../include//controller_include.h:9:5: error: unknown type name 'i1_states'
+     i1_states i1_current_state;
+     ^
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+make: *** Waiting for unfinished jobs....
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/../../include//global_include.o' failed
+make: *** [build/x86_64-debug/../../include//global_include.o] Error 1
+01:05:24 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+In file included from ../../include/global_include.h:14:0,
+                 from ../../include/global_include.c:1:
+../../include/controller_include.h:9:5: error: unknown type name 'i1_states'
+     i1_states i1_current_state;
+     ^
+In file included from ../../include/global_include.h:14:0,
+                 from src/central_controller_node.c:4:
+../../include/controller_include.h:9:5: error: unknown type name 'i1_states'
+     i1_states i1_current_state;
+     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/../../include/global_include.o' failed
+make: *** [build/x86_64-debug/../../include/global_include.o] Error 1
+make: *** Waiting for unfinished jobs....
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+01:06:14 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+In file included from ../../include/global_include.h:14:0,
+                 from ../../include/global_include.c:1:
+../../include/controller_include.h:8:5: error: unknown type name 'x1_states'
+     x1_states x1_current_state;
+     ^
+../../include/controller_include.h:9:5: error: unknown type name 'i1_states'
+     i1_states i1_current_state;
+     ^
+In file included from ../../include/global_include.h:14:0,
+                 from src/central_controller_node.c:4:
+../../include/controller_include.h:8:5: error: unknown type name 'x1_states'
+     x1_states x1_current_state;
+     ^
+../../include/controller_include.h:9:5: error: unknown type name 'i1_states'
+     i1_states i1_current_state;
+     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/../../include/global_include.o' failed
+make: *** [build/x86_64-debug/../../include/global_include.o] Error 1
+make: *** Waiting for unfinished jobs....
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+01:06:57 **** Clean-only build of configuration x86_64-debug for project central_controller_node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+01:07:01 **** Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:07:16 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c:12:21: error: unknown type name 'controller_data_t'
+ void c1_global_init(controller_data_t*);
+                     ^
+src/central_controller_node.c: In function 'print_x1_state':
+src/central_controller_node.c:15:2: error: unknown type name 'controller_data_t'
+  controller_data_t* controller_data = (controller_data_t*) arg;
+  ^
+src/central_controller_node.c:15:40: error: 'controller_data_t' undeclared (first use in this function)
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                        ^
+src/central_controller_node.c:15:40: note: each undeclared identifier is reported only once for each function it appears in
+src/central_controller_node.c:15:58: error: expected expression before ')' token
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                                          ^
+src/central_controller_node.c:16:2: error: unknown type name 'x1_states'
+  x1_states x1_current = X1_STATE_0;
+  ^
+src/central_controller_node.c:16:25: error: 'X1_STATE_0' undeclared (first use in this function)
+  x1_states x1_current = X1_STATE_0;
+                         ^
+src/central_controller_node.c:18:3: warning: implicit declaration of function 'sem_wait' [-Wimplicit-function-declaration]
+   sem_wait(&controller_data->sem);
+   ^
+src/central_controller_node.c:18:28: error: request for member 'sem' in something not a structure or union
+   sem_wait(&controller_data->sem);
+                            ^
+src/central_controller_node.c:19:35: error: request for member 'x1_current_state' in something not a structure or union
+   if(x1_current != controller_data->x1_current_state){
+                                   ^
+src/central_controller_node.c:20:60: error: request for member 'x1_current_state' in something not a structure or union
+    printf("X1 Updated, current state %d\n", controller_data->x1_current_state);
+                                                            ^
+src/central_controller_node.c:21:32: error: request for member 'x1_current_state' in something not a structure or union
+    x1_current = controller_data->x1_current_state;
+                                ^
+src/central_controller_node.c:23:3: warning: implicit declaration of function 'sem_post' [-Wimplicit-function-declaration]
+   sem_post(&controller_data->sem);
+   ^
+src/central_controller_node.c:23:28: error: request for member 'sem' in something not a structure or union
+   sem_post(&controller_data->sem);
+                            ^
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:29:2: error: unknown type name 'controller_data_t'
+  controller_data_t global_data;
+  ^
+src/central_controller_node.c:30:2: warning: implicit declaration of function 'c1_global_init' [-Wimplicit-function-declaration]
+  c1_global_init(&global_data);
+  ^
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:50:2: error: unknown type name 'controller_data_t'
+  controller_data_t* controller_data = (controller_data_t*) arg;
+  ^
+src/central_controller_node.c:50:40: error: 'controller_data_t' undeclared (first use in this function)
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                        ^
+src/central_controller_node.c:50:58: error: expected expression before ')' token
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                                          ^
+src/central_controller_node.c:129:33: error: request for member 'sem' in something not a structure or union
+        sem_wait(&controller_data->sem);
+                                 ^
+src/central_controller_node.c:130:23: error: request for member 'x1_current_state' in something not a structure or union
+        controller_data->x1_current_state = msg.data;
+                       ^
+src/central_controller_node.c:131:33: error: request for member 'sem' in something not a structure or union
+        sem_post(&controller_data->sem);
+                                 ^
+src/central_controller_node.c: At top level:
+src/central_controller_node.c:158:21: error: unknown type name 'controller_data_t'
+ void c1_global_init(controller_data_t* data){
+                     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+make: *** Waiting for unfinished jobs....
+01:07:31 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c:13:21: error: unknown type name 'controller_data_t'
+ void c1_global_init(controller_data_t*);
+                     ^
+src/central_controller_node.c: In function 'print_x1_state':
+src/central_controller_node.c:16:2: error: unknown type name 'controller_data_t'
+  controller_data_t* controller_data = (controller_data_t*) arg;
+  ^
+src/central_controller_node.c:16:40: error: 'controller_data_t' undeclared (first use in this function)
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                        ^
+src/central_controller_node.c:16:40: note: each undeclared identifier is reported only once for each function it appears in
+src/central_controller_node.c:16:58: error: expected expression before ')' token
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                                          ^
+src/central_controller_node.c:19:28: error: request for member 'sem' in something not a structure or union
+   sem_wait(&controller_data->sem);
+                            ^
+src/central_controller_node.c:20:35: error: request for member 'x1_current_state' in something not a structure or union
+   if(x1_current != controller_data->x1_current_state){
+                                   ^
+src/central_controller_node.c:21:60: error: request for member 'x1_current_state' in something not a structure or union
+    printf("X1 Updated, current state %d\n", controller_data->x1_current_state);
+                                                            ^
+src/central_controller_node.c:22:32: error: request for member 'x1_current_state' in something not a structure or union
+    x1_current = controller_data->x1_current_state;
+                                ^
+src/central_controller_node.c:24:28: error: request for member 'sem' in something not a structure or union
+   sem_post(&controller_data->sem);
+                            ^
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:30:2: error: unknown type name 'controller_data_t'
+  controller_data_t global_data;
+  ^
+src/central_controller_node.c:31:2: warning: implicit declaration of function 'c1_global_init' [-Wimplicit-function-declaration]
+  c1_global_init(&global_data);
+  ^
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:51:2: error: unknown type name 'controller_data_t'
+  controller_data_t* controller_data = (controller_data_t*) arg;
+  ^
+src/central_controller_node.c:51:40: error: 'controller_data_t' undeclared (first use in this function)
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                        ^
+src/central_controller_node.c:51:58: error: expected expression before ')' token
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                                          ^
+src/central_controller_node.c:130:33: error: request for member 'sem' in something not a structure or union
+        sem_wait(&controller_data->sem);
+                                 ^
+src/central_controller_node.c:131:23: error: request for member 'x1_current_state' in something not a structure or union
+        controller_data->x1_current_state = msg.data;
+                       ^
+src/central_controller_node.c:132:33: error: request for member 'sem' in something not a structure or union
+        sem_post(&controller_data->sem);
+                                 ^
+src/central_controller_node.c: At top level:
+src/central_controller_node.c:159:21: error: unknown type name 'controller_data_t'
+ void c1_global_init(controller_data_t* data){
+                     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+01:07:37 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:07:52 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:15:32 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_output_thread':
+src/central_controller_node.c:159:15: error: invalid operands to binary != (have 'controller_data_t {aka struct <anonymous>}' and 'controller_data_t * {aka struct <anonymous> *}')
+   if(old_data != controller_data){
+               ^
+src/central_controller_node.c:161:13: error: incompatible types when assigning to type 'controller_data_t {aka struct <anonymous>}' from type 'controller_data_t * {aka struct <anonymous> *}'
+    old_data = controller_data;
+             ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+01:15:50 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_output_thread':
+src/central_controller_node.c:159:15: error: invalid operands to binary != (have 'controller_data_t {aka struct <anonymous>}' and 'controller_data_t {aka struct <anonymous>}')
+   if(old_data != *controller_data){
+               ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+01:18:48 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_output_thread':
+src/central_controller_node.c:159:6: error: expected expression before ')' token
+   if()
+      ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+01:19:32 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:43:38 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:46:35 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:159:17: warning: unused variable 'msg_reply' [-Wunused-variable]
+  message_data_t msg_reply;
+                 ^
+src/central_controller_node.c:158:17: warning: variable 'msg' set but not used [-Wunused-but-set-variable]
+  message_data_t msg;
+                 ^
+src/central_controller_node.c:157:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:49:51 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:159:17: warning: variable 'msg_reply' set but not used [-Wunused-but-set-variable]
+  message_data_t msg_reply;
+                 ^
+src/central_controller_node.c:158:17: warning: variable 'msg' set but not used [-Wunused-but-set-variable]
+  message_data_t msg;
+                 ^
+src/central_controller_node.c:157:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:50:25 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:159:17: warning: variable 'msg_reply' set but not used [-Wunused-but-set-variable]
+  message_data_t msg_reply;
+                 ^
+src/central_controller_node.c:158:17: warning: variable 'msg' set but not used [-Wunused-but-set-variable]
+  message_data_t msg;
+                 ^
+src/central_controller_node.c:157:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:51:55 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:159:17: warning: variable 'msg_reply' set but not used [-Wunused-but-set-variable]
+  message_data_t msg_reply;
+                 ^
+src/central_controller_node.c:158:17: warning: variable 'msg' set but not used [-Wunused-but-set-variable]
+  message_data_t msg;
+                 ^
+src/central_controller_node.c:157:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+01:51:58 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:02:22 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:177:49: warning: excess elements in scalar initializer
+     char* sending_name = {X1_QNET_ATTACH_POINT, "I1_GLOBAL", "I2_GLOBAL"}; // TODO need to update these global names in the global include
+                                                 ^
+src/central_controller_node.c:177:49: note: (near initialization for 'sending_name')
+src/central_controller_node.c:177:62: warning: excess elements in scalar initializer
+     char* sending_name = {X1_QNET_ATTACH_POINT, "I1_GLOBAL", "I2_GLOBAL"}; // TODO need to update these global names in the global include
+                                                              ^
+src/central_controller_node.c:177:62: note: (near initialization for 'sending_name')
+src/central_controller_node.c:179:37: warning: passing argument 2 of 'send_message' makes pointer from integer without a cast [-Wint-conversion]
+      msg_reply = send_message(&msg, sending_name[i]);
+                                     ^
+In file included from src/central_controller_node.c:4:0:
+../../include/global_include.h:55:16: note: expected 'char *' but argument is of type 'char'
+ message_data_t send_message(message_data_t*, char*);
+                ^
+src/central_controller_node.c:180:9: error: 'reply' undeclared (first use in this function)
+      if(reply.msg_type == MSG_ERROR){
+         ^
+src/central_controller_node.c:180:9: note: each undeclared identifier is reported only once for each function it appears in
+src/central_controller_node.c:159:17: warning: variable 'msg_reply' set but not used [-Wunused-but-set-variable]
+  message_data_t msg_reply;
+                 ^
+src/central_controller_node.c:157:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+make: *** Waiting for unfinished jobs....
+02:02:34 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:180:9: error: 'reply' undeclared (first use in this function)
+      if(reply.msg_type == MSG_ERROR){
+         ^
+src/central_controller_node.c:180:9: note: each undeclared identifier is reported only once for each function it appears in
+src/central_controller_node.c:159:17: warning: variable 'msg_reply' set but not used [-Wunused-but-set-variable]
+  message_data_t msg_reply;
+                 ^
+src/central_controller_node.c:157:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+02:02:48 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:157:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:06:53 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:214:11: error: redefinition of 'sending_name'
+     char* sending_name[3] = {X1_QNET_ATTACH_POINT, "I1_GLOBAL", "I2_GLOBAL"}; // TODO need to update these global names in the global include
+           ^
+src/central_controller_node.c:181:11: note: previous definition of 'sending_name' was here
+     char* sending_name[3] = {X1_QNET_ATTACH_POINT, "I1_GLOBAL", "I2_GLOBAL"}; // TODO need to update these global names in the global include
+           ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+02:07:18 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:07:52 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:07:54 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:17:59 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:18:49 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:19:56 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:21:55 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:24:26 **** Clean-only build of configuration x86_64-debug for project central_controller_node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+02:24:37 **** Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:26:00 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_output_thread':
+src/central_controller_node.c:262:10: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
+   printf(out_data->priority.signal_sent);
+          ^
+In file included from src/central_controller_node.c:1:0:
+C:/QNX/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'uint8_t {aka unsigned char}'
+ extern int printf(const char *__format, ...);
+            ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:26:07 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:27:51 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_output_thread':
+src/central_controller_node.c:262:10: warning: passing argument 1 of 'printf' makes pointer from integer without a cast [-Wint-conversion]
+   printf(out_data->priority.signal_sent);
+          ^
+In file included from src/central_controller_node.c:1:0:
+C:/QNX/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'uint8_t {aka unsigned char}'
+ extern int printf(const char *__format, ...);
+            ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:27:53 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:29:05 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:29:06 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:29:27 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:29:29 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:29:59 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:30:00 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:30:38 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+02:57:48 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:02:30 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:02:32 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:08:03 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:10:20 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:10:23 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:12:44 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:13:30 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:20:52 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:25:45 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:25:49 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:26:58 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:27:37 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:29:34 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:31:16 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:31:20 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:37:01 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:38:13 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+03:38:15 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:40:51 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  

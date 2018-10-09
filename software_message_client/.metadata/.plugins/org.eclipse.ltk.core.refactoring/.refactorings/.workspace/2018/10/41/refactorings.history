@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;192.168.0.18&apos; to &apos;s3484378-01&apos;" description="Rename resource &apos;192.168.0.18&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/192.168.0.18" name="s3484378-01" stamp="1539091331254" updateReferences="true"/>
+</session>

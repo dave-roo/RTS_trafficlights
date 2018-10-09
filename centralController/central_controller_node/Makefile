@@ -17,7 +17,7 @@ CXX = qcc -lang-c++ -Vgcc_nto$(PLATFORM)
 LD = $(CC)
 
 #User defined include/preprocessor flags and libraries
-INCLUDES += -I ../../include/
+INCLUDES += -I ../../include
 
 #INCLUDES += -I/path/to/my/lib/include
 #INCLUDES += -I../mylib/public
@@ -47,6 +47,7 @@ rwildcard = $(wildcard $(addprefix $1/*.,$2)) $(foreach d,$(wildcard $1/*),$(cal
 
 #Source list
 SRCS = $(call rwildcard, src, c)
+SRCS += $(call rwildcard, ../../include, c)
 
 #Object files list
 OBJS = $(addprefix $(OUTPUT_DIR)/,$(addsuffix .o, $(basename $(SRCS))))

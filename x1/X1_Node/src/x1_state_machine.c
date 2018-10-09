@@ -1,29 +1,5 @@
 #include "x1_state_machine.h"
 
-/* Function to send message - should write this into a global include source file
- * Paramaters:
- * 	-> message_data_t pointer to the msg to be sent
- * Returns:
- *  -> message_data_t return message
- */
-message_data_t send_message(message_data_t* msg){
-	message_data_t msg_reply;
-	int server_coid;
-	if ((server_coid = name_open(C1_QNET_ATTACH_POINT, 0)) == -1){
-		msg_reply.msg_type = MSG_ERROR;
-		msg_reply.data = MSG_CONNECTION_ERROR;
-		return msg_reply;
-	}
-	if (MsgSend(server_coid, msg, sizeof(*msg), &msg_reply, sizeof(msg_reply)) == -1){
-		printf("Message sending error\n");
-		msg_reply.msg_type = MSG_ERROR;
-		msg_reply.data = MSG_SENDING_ERROR;
-		return msg_reply; // error
-	}else{
-		return msg_reply; // success
-	}
-}
-
 /* State machine output thread used to handle the outputs of the state machine
  * -> This wil be converted to hardware when implemented on the beaglebone to output
  * 	  to the LCD
@@ -48,15 +24,24 @@ void* x1_state_machine_outputs(void* arg){
 	while(1){
 		sem_wait(&sm_data->sem);
 		if(last_state != sm_data->current_state){
-//			// Update controller with the new state information
+
+			// Update controller with the new state information
 			msg.data = sm_data->current_state;
-			msg_reply = send_message(&msg);
+			msg_reply = send_message(&msg, C1_QNET_ATTACH_POINT);
 			if(msg_reply.msg_type == MSG_ERROR){
-				if(msg_reply.data == MSG_CONNECTION_ERROR){
-					printf("X1 no connection to controller!\n");
-				}//else{} handle other error types here
+				switch(msg_reply.data){
+					case MSG_CONNECTION_ERROR:
+						printf("Connection Error When Updating State!\n");
+						break;
+					case MSG_SENDING_ERROR:
+						printf("State update message did not send\n");
+						break;
+					case MSG_BAD_REQUEST:
+						printf("Server rejected this message type\n"); // Shouldn't get this
+						break;
+				}
 			}else{
-				printf("Success! Response from node %d, data: %d\n", msg_reply.sending_node, msg_reply.data);
+				// State updated successfully to controller
 			}
 			switch(sm_data->current_state){
 				case X1_STATE_0:
@@ -98,183 +83,211 @@ void* x1_state_machine_outputs(void* arg){
 void* x1_state_machine(void* arg){
 	// Cast the global struct
 	sm_data_t* msg = (sm_data_t*) arg;
+
+	// Setup message back to controller for priority
+	message_data_t msg_send;
+	msg_send.sending_node = NODE_X1;
+	msg_send.receiving_node = NODE_CONTROLLER;
+	message_data_t msg_reply;
+
 	while(1){
 		// Protect the data when the switch case is executed
 		sem_wait(&msg->sem);
-		if(msg->sensor_received){
-			switch(msg->current_state){
-				case X1_STATE_0:
-					// Logic for next state
-					// Check for priority message first
-					if(msg->priority.set){
-						// This flag is used to determine if the release flag has just been received
-						msg->priority.last_state = X1_STATE_0;
-						msg->priority.x1_reset = 1;
-					}
-					if(msg->priority.x1_reset){
-						if(!msg->priority.set){
-							// If reset but not set we know the release signal was just received
-							msg->current_state = msg->priority.last_state;
-							msg->priority.x1_reset = 0;
-							break;
-						}else{
-							// Remain in this state until released
-							break;
+		switch(msg->current_state){
+			case X1_STATE_0:
+				// Logic for next state
+				// Check for priority message first
+				if(msg->priority.set){
+					// This flag is used to determine if the release flag has just been received
+					msg->priority.last_state = X1_STATE_0;
+					msg->priority.x1_reset = 1;
+				}
+				if(msg->priority.x1_reset){
+					if(!msg->priority.set){
+						// If reset but not set we know the release signal was just received
+						msg->current_state = msg->priority.last_state;
+						msg->priority.x1_reset = 0;
+						break;
+					}else{
+						if(msg->priority.reponse_required){
+							msg->priority.reponse_required = 0;
+
+							// Notify the controller that X1 is ready for priority traffic
+							msg_send.msg_type = MSG_CONTROL_STATE_LOCKED;
+							msg_send.data = 1;
+							msg_reply = send_message(&msg_send, C1_QNET_ATTACH_POINT);
+							if(msg_reply.msg_type == MSG_ERROR){
+								switch(msg_reply.data){
+									case MSG_CONNECTION_ERROR:
+										printf("Connection Error When Updating State!\n");
+										break;
+									case MSG_SENDING_ERROR:
+										printf("State update message did not send\n");
+										break;
+									case MSG_BAD_REQUEST:
+										printf("Server rejected this message type\n"); // Shouldn't get this
+										break;
+								}
+							}else{
+								// State updated successfully to controller
+							}
 						}
-					}
-
-
-					if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
-						msg->current_state = X1_STATE_3;
-					}else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
-						msg->current_state = X1_STATE_1;
-					}else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
-						msg->current_state = X1_STATE_2;
-					}
-					break;
-
-				case X1_STATE_1:
-					// Logic for next state
-
-					// Check for priority message first
-					if(msg->priority.set){
-						msg->priority.x1_reset = 1;
-						msg->priority.last_state = msg->current_state;
-						msg->current_state = X1_STATE_7;
+						// Remain in this state until released
 						break;
 					}
+				}
 
-					if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
-						msg->current_state = X1_STATE_3;
-					}else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
-						msg->current_state = X1_STATE_4; // Boom gate is down
-					}
 
+				if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+					msg->current_state = X1_STATE_3;
+				}else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
+					msg->current_state = X1_STATE_1;
+				}else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
+					msg->current_state = X1_STATE_2;
+				}
+				break;
+
+			case X1_STATE_1:
+				// Logic for next state
+
+				// Check for priority message first
+				if(msg->priority.set){
+					msg->priority.x1_reset = 1;
+					msg->priority.last_state = msg->current_state;
+					msg->current_state = X1_STATE_7;
 					break;
+				}
 
-				case X1_STATE_2:
-					// Logic for next state
+				if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
+					msg->current_state = X1_STATE_3;
+				}else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+					msg->current_state = X1_STATE_4; // Boom gate is down
+				}
 
-					// Check for priority message first
-					if(msg->priority.set){
-						msg->priority.x1_reset = 1;
-						msg->priority.last_state = msg->current_state;
-						msg->current_state = X1_STATE_7;
-						break;
-					}
+				break;
 
-					if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein - second train detected
-						msg->current_state = X1_STATE_3;
-					}else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
-						msg->current_state = X1_STATE_5; // Boom gate is down
-					}
+			case X1_STATE_2:
+				// Logic for next state
+
+				// Check for priority message first
+				if(msg->priority.set){
+					msg->priority.x1_reset = 1;
+					msg->priority.last_state = msg->current_state;
+					msg->current_state = X1_STATE_7;
 					break;
+				}
 
-				case X1_STATE_3:
-					// Logic for next state
+				if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein - second train detected
+					msg->current_state = X1_STATE_3;
+				}else if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+					msg->current_state = X1_STATE_5; // Boom gate is down
+				}
+				break;
 
-					// Check for priority message first
-					if(msg->priority.set){
-						msg->priority.x1_reset = 1;
-						msg->priority.last_state = msg->current_state;
-						msg->current_state = X1_STATE_7;
-						break;
-					}
+			case X1_STATE_3:
+				// Logic for next state
 
-					if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){ // Ein - second train detected
-						msg->current_state = X1_STATE_6;
-					}
+				// Check for priority message first
+				if(msg->priority.set){
+					msg->priority.x1_reset = 1;
+					msg->priority.last_state = msg->current_state;
+					msg->current_state = X1_STATE_7;
 					break;
+				}
 
-				case X1_STATE_4:
-					// Logic for next state
+				if(msg->signal & 1 << X1_SIGNAL_BoomGateDown){ // Ein - second train detected
+					msg->current_state = X1_STATE_6;
+				}
+				break;
 
-					// Check for priority message first
-					if(msg->priority.set){
-						msg->priority.x1_reset = 1;
-						msg->priority.last_state = X1_STATE_1; // Need to return to state1 as boom gate is up
-						msg->current_state = X1_STATE_7;
-						break;
-					}
+			case X1_STATE_4:
+				// Logic for next state
 
-					if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
-						msg->current_state = X1_STATE_6;
-					}else if(msg->signal & 1 << X1_SIGNAL_Eout){// Eout - Train clear of crossing
-						msg->current_state = X1_STATE_7;
-					}
+				// Check for priority message first
+				if(msg->priority.set){
+					msg->priority.x1_reset = 1;
+					msg->priority.last_state = X1_STATE_1; // Need to return to state1 as boom gate is up
+					msg->current_state = X1_STATE_7;
 					break;
+				}
 
-				case X1_STATE_5:
-					// Logic for next state
+				if(msg->signal & 1 << X1_SIGNAL_Win){ // Win - second train detected
+					msg->current_state = X1_STATE_6;
+				}else if(msg->signal & 1 << X1_SIGNAL_Eout){// Eout - Train clear of crossing
+					msg->current_state = X1_STATE_7;
+				}
+				break;
 
-					// Check for priority message first
-					if(msg->priority.set){
-						msg->priority.x1_reset = 1;
-						msg->priority.last_state = X1_STATE_2; // Need to return to state2 as boom gate is up
-						msg->current_state = X1_STATE_7;
-						break;
-					}
+			case X1_STATE_5:
+				// Logic for next state
 
-					if(msg->signal & 1 << X1_SIGNAL_Ein){ // Win - second train detected
-						msg->current_state = X1_STATE_6;
-					}else if(msg->signal & 1 << X1_SIGNAL_Wout){// Eout - Train clear of crossing
-						msg->current_state = X1_STATE_7;
-					}
+				// Check for priority message first
+				if(msg->priority.set){
+					msg->priority.x1_reset = 1;
+					msg->priority.last_state = X1_STATE_2; // Need to return to state2 as boom gate is up
+					msg->current_state = X1_STATE_7;
 					break;
+				}
 
-				case X1_STATE_6:
-					// Logic for next state
+				if(msg->signal & 1 << X1_SIGNAL_Ein){ // Win - second train detected
+					msg->current_state = X1_STATE_6;
+				}else if(msg->signal & 1 << X1_SIGNAL_Wout){// Eout - Train clear of crossing
+					msg->current_state = X1_STATE_7;
+				}
+				break;
 
-					// Check for priority message first
-					if(msg->priority.set){
-						msg->priority.x1_reset = 1;
-						msg->priority.last_state = X1_STATE_3; // Need to return to state3 as boom gate is up
-						msg->current_state = X1_STATE_7;
-						break;
-					}
+			case X1_STATE_6:
+				// Logic for next state
 
-					if((msg->signal & 1 << X1_SIGNAL_Wout) && (msg->signal & 1 << X1_SIGNAL_Eout)){ // Win - second train detected
-						msg->current_state = X1_STATE_7;
-					}
-
-					// Only needed for sensor thread, but will still work anyway
-					else if(msg->signal & 1 << X1_SIGNAL_Wout){
-						msg->current_state = X1_STATE_4;
-					}else if(msg->signal & 1 << X1_SIGNAL_Eout){
-						msg->current_state = X1_STATE_5;
-					}
+				// Check for priority message first
+				if(msg->priority.set){
+					msg->priority.x1_reset = 1;
+					msg->priority.last_state = X1_STATE_3; // Need to return to state3 as boom gate is up
+					msg->current_state = X1_STATE_7;
 					break;
+				}
 
-				case X1_STATE_7:
+				if((msg->signal & 1 << X1_SIGNAL_Wout) && (msg->signal & 1 << X1_SIGNAL_Eout)){ // Win - second train detected
+					msg->current_state = X1_STATE_7;
+				}
 
-					if(msg->priority.set){
-						if(~msg->signal & 1 << X1_SIGNAL_BoomGateDown){
-							msg->current_state = X1_STATE_0;
-							break;
-						}
-						// stay in this state until gate goes up
-						break;
-					}
+				// Only needed for sensor thread, but will still work anyway
+				else if(msg->signal & 1 << X1_SIGNAL_Wout){
+					msg->current_state = X1_STATE_4;
+				}else if(msg->signal & 1 << X1_SIGNAL_Eout){
+					msg->current_state = X1_STATE_5;
+				}
+				break;
 
-					// Logic for next state
-					if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
-						msg->current_state = X1_STATE_6;
-					}else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
-						msg->current_state = X1_STATE_4;
-					}else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
-						msg->current_state = X1_STATE_5;
-					}else if(~msg->signal & 1 << X1_SIGNAL_BoomGateDown){
+			case X1_STATE_7:
+
+				if(msg->priority.set){
+					if(~msg->signal & 1 << X1_SIGNAL_BoomGateDown){
 						msg->current_state = X1_STATE_0;
+						break;
 					}
+					// stay in this state until gate goes up
 					break;
+				}
 
-				default:
-					printf("State machine error\n");
+				// Logic for next state
+				if((msg->signal & 1 << X1_SIGNAL_Ein) && (msg->signal & 1 << X1_SIGNAL_Win)){ // E&W signal
+					msg->current_state = X1_STATE_6;
+				}else if(msg->signal & 1 << X1_SIGNAL_Ein){ // Ein Signal
+					msg->current_state = X1_STATE_4;
+				}else if(msg->signal & 1 << X1_SIGNAL_Win){ // Win Signal
+					msg->current_state = X1_STATE_5;
+				}else if(~msg->signal & 1 << X1_SIGNAL_BoomGateDown){
 					msg->current_state = X1_STATE_0;
-					break;
-			}
-			msg->sensor_received = 0;
+				}
+				break;
+
+			default:
+				printf("State machine error\n");
+				msg->current_state = X1_STATE_0;
+				break;
 		}
+		msg->sensor_received = 0;
 		sem_post(&msg->sem);
 	}
 }

@@ -1403,3 +1403,394 @@ java.net.SocketException: Socket closed
 	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
 	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
 	at java.lang.Thread.run(Thread.java:748)
+!SESSION 2018-10-10 01:12:26.411 -----------------------------------------------
+eclipse.buildId=7.0.3
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-10 01:12:33.459
+!MESSAGE Enablement expression is missing for config provider for com.qnx.tools.ide.qde.core.recursiveMkProject
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-10 01:12:33.487
+!MESSAGE Enablement expression is missing for config provider for com.qnx.tools.ide.qde.debug.core.descriptorType.default
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-10 01:12:33.499
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-10 01:12:33.511
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-10-10 01:12:33.533
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY com.qnx.tools.ide.capabilities.ui 4 0 2018-10-10 01:12:37.099
+!MESSAGE activityProfiles.activityRequirementBinding: Invalid activityId com.qnx.tools.ide.capabilities.ui.activity.qnxSystemDeveloper
+
+!ENTRY com.qnx.tools.ide.capabilities.ui 4 0 2018-10-10 01:12:37.335
+!MESSAGE activityProfiles.activityRequirementBinding: Invalid requiredActivityId com.qnx.tools.ide.capabilities.ui.activity.qnxDeveloper
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:45:34.553
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:45:34.560
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:45:34.565
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:45:34.569
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:45:34.574
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:45:34.578
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:45:34.582
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:45:34.586
+!MESSAGE Unsupported statement type: CASTDefaultStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:47:59.886
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:47:59.891
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:47:59.895
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:47:59.899
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:47:59.903
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:47:59.908
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:47:59.912
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:47:59.915
+!MESSAGE Unsupported statement type: CASTDefaultStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:48:05.443
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:48:05.448
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:48:05.452
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:48:05.456
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:48:05.459
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:48:05.463
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:48:05.467
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2018-10-10 02:48:05.471
+!MESSAGE Unsupported statement type: CASTDefaultStatement.
+
+!ENTRY com.qnx.tools.ide.qde.debug.core 4 0 2018-10-10 02:58:11.285
+!MESSAGE Launch cleaning error
+!SUBENTRY 1 com.qnx.tools.ide.qde.debug.core 4 0 2018-10-10 02:58:11.285
+!MESSAGE Attempt to delete remote file failed:
+!STACK 0
+com.qnx.tools.ide.utils.target.RemoteIOException: Remove No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetServiceFile.rm(TargetServiceFile.java:329)
+	at com.qnx.tools.ide.utils.target.TargetServiceFile.rm(TargetServiceFile.java:317)
+	at com.qnx.tools.ide.qde.debug.internal.core.dsf.QDELaunch.cleanRemoteFiles(QDELaunch.java:712)
+	at com.qnx.tools.ide.qde.debug.internal.core.dsf.QDELaunch.cleanup(QDELaunch.java:171)
+	at com.qnx.tools.ide.qde.debug.internal.core.dsf.QDELaunch.handleDebugEvents(QDELaunch.java:426)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1185)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:441)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.qnx.tools.ide.qde.debug.core 4 0 2018-10-10 03:13:19.574
+!MESSAGE Launch cleaning error
+!SUBENTRY 1 com.qnx.tools.ide.qde.debug.core 4 0 2018-10-10 03:13:19.574
+!MESSAGE Attempt to delete remote file failed:
+!STACK 0
+com.qnx.tools.ide.utils.target.RemoteIOException: Remove No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetServiceFile.rm(TargetServiceFile.java:329)
+	at com.qnx.tools.ide.utils.target.TargetServiceFile.rm(TargetServiceFile.java:317)
+	at com.qnx.tools.ide.qde.debug.internal.core.dsf.QDELaunch.cleanRemoteFiles(QDELaunch.java:712)
+	at com.qnx.tools.ide.qde.debug.internal.core.dsf.QDELaunch.cleanup(QDELaunch.java:171)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.cleanup(QDEDSFFinalLaunchSequence.java:247)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.stepLaunch(QDEDSFFinalLaunchSequence.java:316)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:155)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:459)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$2(Sequence.java:373)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:420)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:385)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY com.qnx.tools.ide.qde.debug.ui 4 -1 2018-10-10 03:13:19.602
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.debug.core.DebugException: Error in final launch sequence
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.executeAndWait(QDELaunchConfigurationDelegate.java:296)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.launchDebugSession(QDELaunchConfigurationDelegate.java:273)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.launch(QDELaunchConfigurationDelegate.java:128)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.core.runtime.CoreException: Cannot prepare and download the binary
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.executeAndWait(QDELaunchConfigurationDelegate.java:290)
+	... 7 more
+Caused by: org.eclipse.core.runtime.CoreException: Error starting remote application /tmp/X1_Node: No such file or directory
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1060)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.startApplicationOnTarget(QDELaunchUtils.java:885)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.stepLaunch(QDEDSFFinalLaunchSequence.java:312)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:155)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:459)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$2(Sequence.java:373)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:420)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:385)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.qnx.tools.ide.utils.target.QConnFileNotFoundException: No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetBinary.parseResponse(TargetBinary.java:142)
+	at com.qnx.tools.ide.utils.target.TargetServiceLaunch.launch(TargetServiceLaunch.java:145)
+	at com.qnx.tools.ide.utils.target.TargetProcess.startProcess(TargetProcess.java:44)
+	at com.qnx.tools.ide.utils.target.TargetProcess.<init>(TargetProcess.java:20)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1058)
+	... 19 more
+!SUBENTRY 1 com.qnx.tools.ide.qde.debug.ui 4 5012 2018-10-10 03:13:19.603
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Cannot prepare and download the binary
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.executeAndWait(QDELaunchConfigurationDelegate.java:290)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.launchDebugSession(QDELaunchConfigurationDelegate.java:273)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.launch(QDELaunchConfigurationDelegate.java:128)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.core.runtime.CoreException: Error starting remote application /tmp/X1_Node: No such file or directory
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1060)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.startApplicationOnTarget(QDELaunchUtils.java:885)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.stepLaunch(QDEDSFFinalLaunchSequence.java:312)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:155)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:459)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$2(Sequence.java:373)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:420)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:385)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.qnx.tools.ide.utils.target.QConnFileNotFoundException: No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetBinary.parseResponse(TargetBinary.java:142)
+	at com.qnx.tools.ide.utils.target.TargetServiceLaunch.launch(TargetServiceLaunch.java:145)
+	at com.qnx.tools.ide.utils.target.TargetProcess.startProcess(TargetProcess.java:44)
+	at com.qnx.tools.ide.utils.target.TargetProcess.<init>(TargetProcess.java:20)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1058)
+	... 19 more
+!SUBENTRY 2 com.qnx.tools.ide.qde.debug.core 4 -1 2018-10-10 03:13:19.603
+!MESSAGE Cannot prepare and download the binary
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error starting remote application /tmp/X1_Node: No such file or directory
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1060)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.startApplicationOnTarget(QDELaunchUtils.java:885)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.stepLaunch(QDEDSFFinalLaunchSequence.java:312)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:155)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:459)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$2(Sequence.java:373)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:420)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:385)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.qnx.tools.ide.utils.target.QConnFileNotFoundException: No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetBinary.parseResponse(TargetBinary.java:142)
+	at com.qnx.tools.ide.utils.target.TargetServiceLaunch.launch(TargetServiceLaunch.java:145)
+	at com.qnx.tools.ide.utils.target.TargetProcess.startProcess(TargetProcess.java:44)
+	at com.qnx.tools.ide.utils.target.TargetProcess.<init>(TargetProcess.java:20)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1058)
+	... 19 more
+!SUBENTRY 3 com.qnx.tools.ide.qde.debug.core 4 0 2018-10-10 03:13:19.603
+!MESSAGE Error starting remote application /tmp/X1_Node: No such file or directory
+!STACK 0
+com.qnx.tools.ide.utils.target.QConnFileNotFoundException: No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetBinary.parseResponse(TargetBinary.java:142)
+	at com.qnx.tools.ide.utils.target.TargetServiceLaunch.launch(TargetServiceLaunch.java:145)
+	at com.qnx.tools.ide.utils.target.TargetProcess.startProcess(TargetProcess.java:44)
+	at com.qnx.tools.ide.utils.target.TargetProcess.<init>(TargetProcess.java:20)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1058)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.startApplicationOnTarget(QDELaunchUtils.java:885)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.stepLaunch(QDEDSFFinalLaunchSequence.java:312)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:155)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:459)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$2(Sequence.java:373)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:420)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:385)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+!SUBENTRY 1 com.qnx.tools.ide.qde.debug.ui 4 5012 2018-10-10 03:13:19.603
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Cannot prepare and download the binary
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:111)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.executeAndWait(QDELaunchConfigurationDelegate.java:290)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.launchDebugSession(QDELaunchConfigurationDelegate.java:273)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDELaunchConfigurationDelegate.launch(QDELaunchConfigurationDelegate.java:128)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.core.runtime.CoreException: Error starting remote application /tmp/X1_Node: No such file or directory
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1060)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.startApplicationOnTarget(QDELaunchUtils.java:885)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.stepLaunch(QDEDSFFinalLaunchSequence.java:312)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:155)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:459)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$2(Sequence.java:373)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:420)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:385)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.qnx.tools.ide.utils.target.QConnFileNotFoundException: No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetBinary.parseResponse(TargetBinary.java:142)
+	at com.qnx.tools.ide.utils.target.TargetServiceLaunch.launch(TargetServiceLaunch.java:145)
+	at com.qnx.tools.ide.utils.target.TargetProcess.startProcess(TargetProcess.java:44)
+	at com.qnx.tools.ide.utils.target.TargetProcess.<init>(TargetProcess.java:20)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1058)
+	... 19 more
+!SUBENTRY 2 com.qnx.tools.ide.qde.debug.core 4 -1 2018-10-10 03:13:19.603
+!MESSAGE Cannot prepare and download the binary
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error starting remote application /tmp/X1_Node: No such file or directory
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1060)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.startApplicationOnTarget(QDELaunchUtils.java:885)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.stepLaunch(QDEDSFFinalLaunchSequence.java:312)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:155)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:459)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$2(Sequence.java:373)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:420)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:385)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.qnx.tools.ide.utils.target.QConnFileNotFoundException: No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetBinary.parseResponse(TargetBinary.java:142)
+	at com.qnx.tools.ide.utils.target.TargetServiceLaunch.launch(TargetServiceLaunch.java:145)
+	at com.qnx.tools.ide.utils.target.TargetProcess.startProcess(TargetProcess.java:44)
+	at com.qnx.tools.ide.utils.target.TargetProcess.<init>(TargetProcess.java:20)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1058)
+	... 19 more
+!SUBENTRY 3 com.qnx.tools.ide.qde.debug.core 4 0 2018-10-10 03:13:19.604
+!MESSAGE Error starting remote application /tmp/X1_Node: No such file or directory
+!STACK 0
+com.qnx.tools.ide.utils.target.QConnFileNotFoundException: No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetBinary.parseResponse(TargetBinary.java:142)
+	at com.qnx.tools.ide.utils.target.TargetServiceLaunch.launch(TargetServiceLaunch.java:145)
+	at com.qnx.tools.ide.utils.target.TargetProcess.startProcess(TargetProcess.java:44)
+	at com.qnx.tools.ide.utils.target.TargetProcess.<init>(TargetProcess.java:20)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.remoteLaunch(QDELaunchUtils.java:1058)
+	at com.qnx.tools.ide.qde.debug.core.QDELaunchUtils.startApplicationOnTarget(QDELaunchUtils.java:885)
+	at com.qnx.tools.ide.qde.internal.ui.launch.dsf.QDEDSFFinalLaunchSequence.stepLaunch(QDEDSFFinalLaunchSequence.java:312)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:155)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:459)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.access$2(Sequence.java:373)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:420)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:385)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:312)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

@@ -1977,3 +1977,203 @@ make: Nothing to be done for 'all'.
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+02:14:54 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/x1_state_machine.c:9:16: error: conflicting types for 'send_message'
+ message_data_t send_message(message_data_t* msg){
+                ^
+In file included from src/x1_state_machine.h:5:0,
+                 from src/x1_state_machine.c:1:
+../../include/global_include.h:55:16: note: previous declaration of 'send_message' was here
+ message_data_t send_message(message_data_t*, char*);
+                ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:59: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+make: *** Waiting for unfinished jobs....
+02:16:22 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/x1_state_machine.o: In function `x1_state_machine_outputs':
+C:\Users\Ben\git_rts\x1\X1_Node/src/x1_state_machine.c:29: undefined reference to `send_message'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+Makefile:64: recipe for target 'build/x86_64-debug/X1_Node' failed
+make: *** [build/x86_64-debug/X1_Node] Error 1
+02:16:47 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+02:16:50 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o  
+build/x86_64-debug/src/x1_state_machine.o: In function `x1_state_machine_outputs':
+C:\Users\Ben\git_rts\x1\X1_Node/src/x1_state_machine.c:29: undefined reference to `send_message'
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+make: *** [build/x86_64-debug/X1_Node] Error 1
+Makefile:64: recipe for target 'build/x86_64-debug/X1_Node' failed
+02:17:18 **** Clean-only build of configuration x86_64-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+02:17:20 **** Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+02:17:25 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:32:28 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:40:07 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'x1_message_server_thread':
+src/X1_Node.c:121:6: error: 'data' undeclared (first use in this function)
+      data->priority.reponse_required
+      ^
+src/X1_Node.c:121:6: note: each undeclared identifier is reported only once for each function it appears in
+src/X1_Node.c:122:6: error: expected ';' before 'state_data'
+      state_data->priority.set = 1;
+      ^
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:245:16: error: 'struct sm_priority_t' has no member named 'reponse_required'
+  data->priority.reponse_required = 0;
+                ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+make: *** Waiting for unfinished jobs....
+02:40:14 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'x1_message_server_thread':
+src/X1_Node.c:121:6: error: 'data' undeclared (first use in this function)
+      data->priority.reponse_required = 1;
+      ^
+src/X1_Node.c:121:6: note: each undeclared identifier is reported only once for each function it appears in
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:245:16: error: 'struct sm_priority_t' has no member named 'reponse_required'
+  data->priority.reponse_required = 0;
+                ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+02:40:23 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+src/X1_Node.c: In function 'x1_message_server_thread':
+src/X1_Node.c:121:26: error: 'struct sm_priority_t' has no member named 'reponse_required'
+      state_data->priority.reponse_required = 1;
+                          ^
+src/X1_Node.c: In function 'x1_global_init':
+src/X1_Node.c:245:16: error: 'struct sm_priority_t' has no member named 'reponse_required'
+  data->priority.reponse_required = 0;
+                ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/X1_Node.o' failed
+make: *** [build/x86_64-debug/src/X1_Node.o] Error 1
+02:40:43 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+02:50:02 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+src/x1_state_machine.c: In function 'x1_state_machine_outputs':
+src/x1_state_machine.c:31:12: error: 'reply' undeclared (first use in this function)
+     switch(reply.data){
+            ^
+src/x1_state_machine.c:31:12: note: each undeclared identifier is reported only once for each function it appears in
+src/x1_state_machine.c: In function 'x1_state_machine':
+src/x1_state_machine.c:120:17: error: 'reply' undeclared (first use in this function)
+          switch(reply.data){
+                 ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+02:50:07 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+src/x1_state_machine.c: In function 'x1_state_machine_outputs':
+src/x1_state_machine.c:31:12: error: 'reply' undeclared (first use in this function)
+     switch(reply.data){
+            ^
+src/x1_state_machine.c:31:12: note: each undeclared identifier is reported only once for each function it appears in
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/x1_state_machine.o] Error 1
+Makefile:60: recipe for target 'build/x86_64-debug/src/x1_state_machine.o' failed
+02:50:33 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+02:50:38 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:58:14 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+02:58:44 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/X1_Node.d,-MT,build/x86_64-debug/src/X1_Node.o -o build/x86_64-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+02:58:47 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:02:39 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:10:52 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+03:10:54 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:13:19 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:13:28 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:17:59 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+03:20:56 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:20:58 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:22:44 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+03:23:12 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+03:23:14 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:25:55 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/x1_state_machine.d,-MT,build/x86_64-debug/src/x1_state_machine.o -o build/x86_64-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/X1_Node   build/x86_64-debug/src/x1_state_machine.o build/x86_64-debug/src/X1_Node.o build/x86_64-debug/../../include/global_include.o  
+03:25:56 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:27:53 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+03:29:51 **** Incremental Build of configuration x86_64-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
