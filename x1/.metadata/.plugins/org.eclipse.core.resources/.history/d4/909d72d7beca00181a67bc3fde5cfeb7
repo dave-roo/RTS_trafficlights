@@ -15,7 +15,7 @@
 void* sensor_send_thread(void*);
 void* x1_message_server_thread(void*);
 void x1_global_init(sm_data_t*);
-
+message_data_t send_message(message_data_t*);
 
 int main(void) {
 	printf("Begin X1 State Machine Node\n");
@@ -231,6 +231,30 @@ void* sensor_send_thread(void* data){
 		sem_wait(&sens_data->sem);
 		printf("Sensor Values:%#x\n", sens_data->signal);
 		sem_post(&sens_data->sem);
+	}
+}
+
+/* Function to send message - should write this into a global include source file
+ * Paramaters:
+ * 	-> message_data_t pointer to the msg to be sent
+ * Returns:
+ *  -> message_data_t return message
+ */
+message_data_t send_message(message_data_t* msg){
+	message_data_t msg_reply;
+	int server_coid;
+	if ((server_coid = name_open(X1_QNET_ATTACH_POINT, 0)) == -1){
+		msg_reply.msg_type = MSG_ERROR;
+		msg_reply.data = MSG_CONNECTION_ERROR;
+		return msg_reply;
+	}
+	if (MsgSend(server_coid, msg, sizeof(*msg), &msg_reply, sizeof(msg_reply)) == -1){
+		printf("Message sending error\n");
+		msg_reply.msg_type = MSG_ERROR;
+		msg_reply.data = MSG_SENDING_ERROR;
+		return msg_reply; // error
+	}else{
+		return msg_reply; // success
 	}
 }
 

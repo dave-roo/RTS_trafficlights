@@ -16,7 +16,6 @@ void* sensor_send_thread(void*);
 void* x1_message_server_thread(void*);
 void x1_global_init(sm_data_t*);
 
-
 int main(void) {
 	printf("Begin X1 State Machine Node\n");
 

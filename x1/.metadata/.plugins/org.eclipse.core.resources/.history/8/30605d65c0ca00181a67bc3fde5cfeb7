@@ -9,7 +9,7 @@
 message_data_t send_message(message_data_t* msg){
 	message_data_t msg_reply;
 	int server_coid;
-	if ((server_coid = name_open(C1_QNET_ATTACH_POINT, 0)) == -1){
+	if ((server_coid = name_open(X1_QNET_ATTACH_POINT, 0)) == -1){
 		msg_reply.msg_type = MSG_ERROR;
 		msg_reply.data = MSG_CONNECTION_ERROR;
 		return msg_reply;
@@ -48,15 +48,15 @@ void* x1_state_machine_outputs(void* arg){
 	while(1){
 		sem_wait(&sm_data->sem);
 		if(last_state != sm_data->current_state){
-//			// Update controller with the new state information
+			// Update controller with the new state information
 			msg.data = sm_data->current_state;
 			msg_reply = send_message(&msg);
 			if(msg_reply.msg_type == MSG_ERROR){
 				if(msg_reply.data == MSG_CONNECTION_ERROR){
 					printf("X1 no connection to controller!\n");
-				}//else{} handle other error types here
+				}
 			}else{
-				printf("Success! Response from node %d, data: %d\n", msg_reply.sending_node, msg_reply.data);
+				printf("Success! Received from node %d, data: %d\n", msg_reply.sending_node, msg_reply.data);
 			}
 			switch(sm_data->current_state){
 				case X1_STATE_0:

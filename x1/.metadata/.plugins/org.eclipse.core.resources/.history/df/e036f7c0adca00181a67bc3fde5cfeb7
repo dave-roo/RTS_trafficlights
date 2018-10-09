@@ -16,7 +16,6 @@ void* sensor_send_thread(void*);
 void* x1_message_server_thread(void*);
 void x1_global_init(sm_data_t*);
 
-
 int main(void) {
 	printf("Begin X1 State Machine Node\n");
 
@@ -109,7 +108,7 @@ void* x1_message_server_thread(void* arg){
 					}
 					sem_post(&state_data->sem);
 					break;
-				case MSG_CURRENT_STATE_REQUEST:
+				case MSG_CURRENT_STATE:
 					printf("Current State Request\n");
 					sem_wait(&state_data->sem);
 					msg_reply.data = state_data->current_state;

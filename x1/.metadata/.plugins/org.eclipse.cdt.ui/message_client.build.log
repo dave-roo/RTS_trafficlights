@@ -1,6 +1,6 @@
-12:08:45 **** Clean-only build of configuration x86_64-debug for project message_client ****
+14:53:38 **** Clean-only build of configuration x86_64-debug for project message_client ****
 make -j4 clean 
 rm -fr build/x86_64-debug
 
-12:08:45 Build Finished (took 89ms)
+14:53:38 Build Finished (took 83ms)
 

@@ -54,7 +54,7 @@ void* x1_state_machine_outputs(void* arg){
 			if(msg_reply.msg_type == MSG_ERROR){
 				if(msg_reply.data == MSG_CONNECTION_ERROR){
 					printf("X1 no connection to controller!\n");
-				}//else{} handle other error types here
+				}
 			}else{
 				printf("Success! Response from node %d, data: %d\n", msg_reply.sending_node, msg_reply.data);
 			}

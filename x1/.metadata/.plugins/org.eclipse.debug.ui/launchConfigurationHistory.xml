@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchHistory>
 <launchGroup id="com.qnx.tools.ide.qde.launchGroup.qmem">
-<mruHistory/>
+<mruHistory>
+<launch memento=""/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="com.qnx.tools.ide.qde.launchGroup.qdefects">
-<mruHistory/>
+<mruHistory>
+<launch memento=""/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.profile">
-<mruHistory/>
+<mruHistory>
+<launch memento=""/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.ui.externaltools.launchGroup">
@@ -21,7 +27,9 @@
 <favorites/>
 </launchGroup>
 <launchGroup id="com.qnx.tools.ide.qde.launchGroup.coverage">
-<mruHistory/>
+<mruHistory>
+<launch memento=""/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="com.qnx.tools.ide.target.ui.launchGroup.log">
@@ -29,15 +37,21 @@
 <favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.debug">
-<mruHistory/>
+<mruHistory>
+<launch memento=""/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="com.qnx.tools.ide.bbt.debug.ui.attachLaunchGroup">
-<mruHistory/>
+<mruHistory>
+<launch memento=""/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.run">
-<mruHistory/>
+<mruHistory>
+<launch memento=""/>
+</mruHistory>
 <favorites/>
 </launchGroup>
 </launchHistory>
