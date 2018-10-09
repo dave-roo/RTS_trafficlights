@@ -25,19 +25,24 @@ Keypad:
 
 CC
 LCD:
-123456789X123456789X1
-123456789X123456789X1
+*Command Center*
+1:I1 2:I2 3:X1
 
-123456789X123456789X1
-123456789X123456789X1
+N:GG E:GG NSP:R
+S:R_ W:R_ WEP:G
+
+N:GG E:GG NSP:R
+S:R_ W:R_ WEP:G
+
+T1:E T2:0 BG:U
 
 Keypad:
 1 - Turn R3 Lights to Green
 2 - Turn R2 Lights to Green
 3 - Turn R1 Lights to Green
-4
-5
-6
+4 - Turn X1 Lights to Red
+5 - Lower X1 Boom Gate
+6 - Turn R3, R2, R1 Red
 7
 8
 9
@@ -51,11 +56,8 @@ Keypad:
 
 I1 & I2
 LCD:
-123456789X123456789X1
-123456789X123456789X1
-
-123456789X123456789X1
-123456789X123456789X1
+N:GG E:GG NSP:R
+S:R_ W:R_ WEP:G
 
 Keypad:
 1  - NE Sensor
