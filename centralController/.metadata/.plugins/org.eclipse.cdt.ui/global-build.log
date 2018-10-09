@@ -268,3 +268,259 @@ src/central_controller_node.c:35:21: warning: unused variable 'controller_data' 
   controller_data_t* controller_data = (controller_data_t*) arg;
                      ^
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+14:55:38 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'c1_message_server_thread':
+src/central_controller_node.c:35:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:07:27 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:43:20: error: 'MSG_CURRENT_STATE' undeclared (first use in this function)
+     msg.msg_type = MSG_CURRENT_STATE;
+                    ^
+src/message_client.c:43:20: note: each undeclared identifier is reported only once for each function it appears in
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+17:07:53 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:73:20: error: 'MSG_CURRENT_STATE' undeclared (first use in this function)
+     msg.msg_type = MSG_CURRENT_STATE;
+                    ^
+src/message_client.c:73:20: note: each undeclared identifier is reported only once for each function it appears in
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+17:08:01 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+17:09:42 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'print_x1_state':
+src/central_controller_node.c:14:60: error: 'arg' undeclared (first use in this function)
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                                                            ^
+src/central_controller_node.c:14:60: note: each undeclared identifier is reported only once for each function it appears in
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+17:10:05 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:10:08 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:14:55 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:15:10 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:15:20 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:18:59 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+17:19:17 **** Clean-only build of configuration x86_64-debug for project central_controller_node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+17:19:17 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+17:19:25 **** Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+17:19:35 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:20:07 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:20:56 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+17:22:57 **** Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+17:23:05 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'sensor_send_thread':
+src/message_client.c:53:8: error: 'message_data_t {aka struct <anonymous>}' has no member named 'msg_data'
+     msg.msg_data = X1_STATE_0;
+        ^
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+17:23:20 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+17:26:31 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+17:26:59 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+10:57:00 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+10:59:20 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+src/message_client.c: In function 'send_message':
+src/message_client.c:23:5: error: request for member 'hdr' in something not a structure or union
+  msg.hdr.type = 0x00;
+     ^
+src/message_client.c:24:5: error: request for member 'hdr' in something not a structure or union
+  msg.hdr.subtype = 0x00;
+     ^
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:56: recipe for target 'build/x86_64-debug/src/message_client.o' failed
+make: *** [build/x86_64-debug/src/message_client.o] Error 1
+10:59:46 **** Clean-only build of configuration x86_64-debug for project message_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+11:00:45 **** Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+11:01:12 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:01:32 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:01:40 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:02:08 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:02:13 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:03:47 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+11:04:43 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:04:50 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:06:50 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:06:58 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:07:14 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:07:39 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+11:09:36 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:09:49 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+11:13:15 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:13:18 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:13:50 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:17:19 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:20:02 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:20:49 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:22:01 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:23:46 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:25:00 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:25:32 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:26:00 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:26:20 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:29:30 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+11:29:43 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:31:01 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+11:32:20 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+11:43:49 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  
+11:44:09 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o  
+11:46:24 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+11:46:29 **** Incremental Build of configuration x86_64-debug for project message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/message_client.d,-MT,build/x86_64-debug/src/message_client.o -o build/x86_64-debug/src/message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/message_client   build/x86_64-debug/src/message_client.o  

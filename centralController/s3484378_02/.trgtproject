@@ -7,6 +7,7 @@
                 <VERSION value="2017/02/14-16:01:20EST"/>
                 <ARCHITECTURE value="x86_64"/>
                 <MACHINE value="x86pc"/>
+                <DOMAIN value="net.intra"/>
                 <SYSNAME value="QNX"/>
                 <CPU value="x86_64"/>
                 <HASVERSION value="1"/>
