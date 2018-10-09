@@ -31,6 +31,7 @@ struct sm_priority_t{
 	x1_states last_state; // This is used for priority traffic
 	uint8_t set;
 	uint8_t x1_reset; // This is used as a conditional variable for the state machine
+	uint8_t reponse_required;
 };
 
 // Struct for global data

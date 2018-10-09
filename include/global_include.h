@@ -20,6 +20,7 @@ typedef enum{
 	MSG_CURRENT_STATE_UPDATE,	// Node updating controller when state change
 	MSG_CONTROL_STATE_LOCK,		// Controller Requesting state lock
 	MSG_CONTROL_STATE_RELEASE,	// Controller releasing priority lock
+	MSG_CONTROL_STATE_LOCKED,	// This message type is for the intersections to send to controller when they are in the requested state
 	MSG_ERROR					// msg error
     // Any others that need to be added here
 } message_type;
@@ -28,7 +29,8 @@ typedef enum{
 typedef enum{
 	MSG_CONNECTION_ERROR,
 	MSG_SENDING_ERROR,
-	MSG_BAD_REQUEST
+	MSG_BAD_REQUEST,
+	MSG_NO_VALID_RESPONSE
 	// Any Other error types here
 } message_error;
 
@@ -48,5 +50,8 @@ typedef struct{
     message_type msg_type; 
     uint8_t data;
 } message_data_t;
+
+// Function Definitions
+message_data_t send_message(message_data_t*, char*);
 
 #endif
