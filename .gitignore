@@ -3,3 +3,6 @@ build/
 
 # This file stores make path info, should be recreated every time there is a computer change
 *.sc
+
+# Ignore my targets
+ben_vm_targets/
