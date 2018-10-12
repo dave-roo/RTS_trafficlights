@@ -18,6 +18,7 @@ typedef struct{
     // i2_states i2_current_state; // TODO Get these from Jacob
     uint8_t updated;
     struct priority_struct priority;
+    uint8_t peak;
     sem_t sem;
 } controller_data_t;
 #endif

@@ -21,6 +21,7 @@ typedef enum{
 	MSG_CONTROL_STATE_LOCK,		// Controller Requesting state lock
 	MSG_CONTROL_STATE_RELEASE,	// Controller releasing priority lock
 	MSG_CONTROL_STATE_LOCKED,	// This message type is for the intersections to send to controller when they are in the requested state
+	MSG_CONTROL_PEAK,			// Sends peak (True) offpeak (false) to traffic light controller to indicate time of day
 	MSG_ERROR					// msg error
     // Any others that need to be added here
 } message_type;

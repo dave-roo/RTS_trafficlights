@@ -196,7 +196,7 @@ void* software_input_thread(void* arg){
 	char x;
 	while(1){
 		printf("Please select option:\n");
-		printf(" l -> Priority Traffic\n r -> Release Traffic Lock\n");
+		printf(" l -> Priority Traffic\n r -> Release Traffic Lock\n Peak/Offpeak\n");
 		x = getchar();
 		while(getchar() != '\n'); // Get remaining characters and discard
 		switch(x){
@@ -333,6 +333,7 @@ void c1_global_init(controller_data_t* data){
 	data->priority.i2_ready = 0;
 	data->priority.x1_ready = 0;
 	data->priority.signal_sent = 0;
+	data->peak = 0;
 
 	// Initialise the global semaphore
 	sem_init(&data->sem, 0, 1);
