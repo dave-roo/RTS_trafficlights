@@ -54,7 +54,8 @@ void* sensor_send_thread(void* data){
 		}
 
 		printf("Please select message type\n");
-		printf(" a -> Update Current State\n l -> Send lock state\n r -> Release Lock state\n c -> Request Current State\n");
+		printf(" a -> Update Current State\n l -> Send lock state\n r -> Release Lock state\n c -> Request Current State\n"
+			   " p -> Request Current Peak Status\n");
 		x = getchar();
 		while(getchar() != '\n'); // Get remaining characters and discard
 		switch(x){
@@ -111,6 +112,7 @@ void* sensor_send_thread(void* data){
 				case 'r':
 					msg.msg_type = MSG_CONTROL_STATE_RELEASE;
 					msg.data = 0;
+					reply = send_message(&msg, receive_node_name);
 					if(reply.msg_type == MSG_ERROR){
 						switch(reply.data){
 							case MSG_CONNECTION_ERROR:
@@ -137,6 +139,33 @@ void* sensor_send_thread(void* data){
 				case 'c':
 					msg.msg_type = MSG_CURRENT_STATE_REQUEST;
 					msg.data = 0;
+					reply = send_message(&msg, receive_node_name);
+					if(reply.msg_type == MSG_ERROR){
+						switch(reply.data){
+							case MSG_CONNECTION_ERROR:
+								printf("Connection Error!\n");
+								break;
+							case MSG_SENDING_ERROR:
+								printf("Message did not send\n");
+								break;
+							case MSG_BAD_REQUEST:
+								printf("Server rejected this message type\n");
+								break;
+							case MSG_NO_VALID_RESPONSE:
+								printf("Server connected but did not respond\n");
+								break;
+							default:
+								printf("Unkkown Error!\n");
+								break;
+						}
+					}else{
+						printf("Success! Received from node %d, data: %d\n", reply.sending_node, reply.data);
+					}
+					break;
+
+				case 'p':
+					msg.msg_type = MSG_CONTROL_PEAK;
+					reply = send_message(&msg, receive_node_name);
 					if(reply.msg_type == MSG_ERROR){
 						switch(reply.data){
 							case MSG_CONNECTION_ERROR:
