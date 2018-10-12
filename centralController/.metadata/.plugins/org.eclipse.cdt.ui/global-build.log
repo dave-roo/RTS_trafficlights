@@ -1225,3 +1225,64 @@ make: Nothing to be done for 'all'.
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+00:31:58 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+00:32:25 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+00:33:18 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+00:38:45 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:327:4: error: 'default' label not within a switch statement
+    default:
+    ^
+src/central_controller_node.c: At top level:
+src/central_controller_node.c:333:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:332:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+00:39:10 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'software_input_thread':
+src/central_controller_node.c:328:4: error: 'default' label not within a switch statement
+    default:
+    ^
+src/central_controller_node.c: At top level:
+src/central_controller_node.c:334:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+cc: C:/QNX/qnx700/host/win64/x86_64/usr/lib/gcc/x86_64-pc-nto-qnx7.0.0/5.4.0/cc1 caught signal 1
+make: *** [build/x86_64-debug/src/central_controller_node.o] Error 1
+Makefile:57: recipe for target 'build/x86_64-debug/src/central_controller_node.o' failed
+00:39:30 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+00:39:32 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:49:33 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+00:50:17 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  

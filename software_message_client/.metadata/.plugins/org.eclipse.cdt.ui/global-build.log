@@ -147,3 +147,18 @@ qcc -Vgcc_ntox86_64 -o build/x86_64-debug/software_message_client   build/x86_64
 02:24:35 **** Incremental Build of configuration x86_64-debug for project software_message_client ****
 make -j4 all 
 make: Nothing to be done for 'all'.
+00:44:42 **** Incremental Build of configuration x86_64-debug for project software_message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/software_message_client.d,-MT,build/x86_64-debug/src/software_message_client.o -o build/x86_64-debug/src/software_message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/software_message_client.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include//global_include.d,-MT,build/x86_64-debug/../../include//global_include.o -o build/x86_64-debug/../../include//global_include.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include//global_include.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/software_message_client   build/x86_64-debug/src/software_message_client.o build/x86_64-debug/../../include//global_include.o  
+00:44:44 **** Incremental Build of configuration x86_64-debug for project software_message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:48:56 **** Incremental Build of configuration x86_64-debug for project software_message_client ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/software_message_client.d,-MT,build/x86_64-debug/src/software_message_client.o -o build/x86_64-debug/src/software_message_client.o -I ../../include/ -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/software_message_client.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/software_message_client   build/x86_64-debug/src/software_message_client.o build/x86_64-debug/../../include//global_include.o  
+00:49:35 **** Incremental Build of configuration x86_64-debug for project software_message_client ****
+make -j4 all 
+make: Nothing to be done for 'all'.

@@ -158,6 +158,13 @@ void* c1_message_server_thread(void* arg){
 					}
 					break;
 
+					// Node request current peak status
+					case MSG_CONTROL_PEAK:
+						sem_wait(&controller_data->sem);
+						msg_reply.data = controller_data->peak;
+						sem_post(&controller_data->sem);
+						break;
+
 				default:
 					// If any other message is requested, reply with error
 					msg_reply.msg_type = MSG_ERROR;
@@ -196,7 +203,7 @@ void* software_input_thread(void* arg){
 	char x;
 	while(1){
 		printf("Please select option:\n");
-		printf(" l -> Priority Traffic\n r -> Release Traffic Lock\n Peak/Offpeak\n");
+		printf(" l -> Priority Traffic\n r -> Release Traffic Lock\n p -> Peak/Off-Peak\n");
 		x = getchar();
 		while(getchar() != '\n'); // Get remaining characters and discard
 		switch(x){
@@ -284,6 +291,46 @@ void* software_input_thread(void* arg){
 					sem_post(&controller_data->sem); // If already here, release semaphore
 				}
 				break;
+
+				case 'p':
+					sem_wait(&controller_data->sem);
+					controller_data->peak = !controller_data->peak;
+					if(controller_data->peak){
+						printf("  ->Peak Mode Active\n\n");
+					}else{
+						printf("  ->Peak Mode Inactive\n\n");
+					}
+					msg.msg_type = MSG_CONTROL_PEAK;
+					msg.data = controller_data->peak;
+					// Send to both traffic light controllers
+					for(int i=NODE_I1; i<=NODE_I2; i++){
+						msg_reply = send_message(&msg, sending_name[i]);
+						if(msg_reply.msg_type == MSG_ERROR){
+							msg.receiving_node = i;
+							switch(msg_reply.data){
+								case MSG_CONNECTION_ERROR:
+									printf("Connection error to %s!\n", sending_name[i]);
+									break;
+								case MSG_SENDING_ERROR:
+									printf("Message did not send to %s\n", sending_name[i]);
+									break;
+								case MSG_BAD_REQUEST:
+									printf("%s rejected this message type\n", sending_name[i]);
+									break;
+								case MSG_NO_VALID_RESPONSE:
+									printf("%s connected but did not respond\n", sending_name[i]);
+									break;
+								default:
+									printf("Unknown Error when sending release to %s!\n", sending_name[i]);
+									break;
+							}
+						}else{
+							printf("Successfully sent release to %s\n", sending_name[i]);
+						}
+					}
+					sem_post(&controller_data->sem);
+					break;
+
 			default:
 				printf("Invalid Option\n\n");
 				continue;
@@ -334,7 +381,6 @@ void c1_global_init(controller_data_t* data){
 	data->priority.x1_ready = 0;
 	data->priority.signal_sent = 0;
 	data->peak = 0;
-
 	// Initialise the global semaphore
 	sem_init(&data->sem, 0, 1);
 }

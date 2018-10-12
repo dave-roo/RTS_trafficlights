@@ -1,7 +1,7 @@
-03:40:51 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+00:50:17 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
 
-03:40:52 Build Finished (took 247ms)
+00:50:18 Build Finished (took 249ms)
 
