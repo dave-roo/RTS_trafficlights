@@ -146,6 +146,28 @@ void* x1_message_server_thread(void* arg){
 	return EXIT_SUCCESS;
 }
 
+/*******************************
+ * TODO DAVE TO IMPLEMENT HARDWARE INSTEAD OF getchar from console
+ * this is modelled on the sensor_send_thread thread
+ *******************************
+ */
+void* hardware_input_thread(void* data){
+	sm_data_t* sens_data = (sm_data_t*) data; // cast global struct to get data
+
+	// INPUT HARDWARE INITIALISATION GOES HERE
+
+	while(1){
+		// BLOCK GET PIN VALUES HERE
+
+		// Copy the switch-case from below thread and change each case button to match the relevant button
+		// These are the input signals for the train sensors and can be mapped to any button you see fit
+		// All code between the sem_wait and sem_post needs to stay the same to ensure the rest of the code
+		// continues to function
+	}
+
+}
+
+
 /*
  * Thread to get char and send to x1 node. (will be replaced by a hardware thread)
  *

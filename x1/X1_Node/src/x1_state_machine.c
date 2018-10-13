@@ -1,9 +1,94 @@
 #include "x1_state_machine.h"
 
+
+/********************************************
+ * TODO DAVE TO IMPLEMENT LCD LOGIC HERE
+ ********************************************
+ * Most of this code can remain as is, just add in where the screen needs to be updated
+ * etc
+ */
+void* x1_hardware_state_machine_outputs(void* arg){
+	// Cast the global struct
+	sm_data_t* sm_data = (sm_data_t*) arg;
+
+	// Setup the messages
+	message_data_t msg;
+	msg.sending_node = NODE_X1;
+	msg.receiving_node = NODE_CONTROLLER;
+	msg.msg_type = MSG_CURRENT_STATE_UPDATE;
+	message_data_t msg_reply;
+
+	// Last state variable so that the print statements don't spam the console (should
+	// probably remove this on hardware..?)
+	sem_wait(&sm_data->sem); // Protect Data
+	x1_states last_state = sm_data->current_state;
+	sem_post(&sm_data->sem); // Release
+
+	while(1){
+		sem_wait(&sm_data->sem);
+
+		// wait for state machine to change state so that the screen isn't constantly updated
+		// you can use this as the blocking call for your hardware integration
+		if(last_state != sm_data->current_state){
+
+			// Update controller with the new state information
+			msg.data = sm_data->current_state;
+			msg_reply = send_message(&msg, C1_QNET_ATTACH_POINT);
+			if(msg_reply.msg_type == MSG_ERROR){
+				switch(msg_reply.data){
+					case MSG_CONNECTION_ERROR:
+						printf("Connection Error When Updating State!\n");
+						break;
+					case MSG_SENDING_ERROR:
+						printf("State update message did not send\n");
+						break;
+					case MSG_BAD_REQUEST:
+						printf("Server rejected this message type\n"); // Shouldn't get this
+						break;
+				}
+			}else{
+				// State updated successfully to controller
+			}
+
+			/***** @DAVE THIS IS WHERE THE LCD IS UPDATED WITH THE CURRENT STATE STATUS FOR X1 *****/
+			switch(sm_data->current_state){
+				case X1_STATE_0:
+					printf("X1_STATE_0\n");
+					break;
+				case X1_STATE_1:
+					printf("X1_STATE_1\n");
+					break;
+				case X1_STATE_2:
+					printf("X1_STATE_2\n");
+					break;
+				case X1_STATE_3:
+					printf("X1_STATE_3\n");
+					break;
+				case X1_STATE_4:
+					printf("X1_STATE_4\n");
+					break;
+				case X1_STATE_5:
+					printf("X1_STATE_5\n");
+					break;
+				case X1_STATE_6:
+					printf("X1_STATE_6\n");
+					break;
+				case X1_STATE_7:
+					printf("X1_STATE_7\n");
+					break;
+			}
+		// Update the last state variable
+		last_state = sm_data->current_state;
+		}
+		sem_post(&sm_data->sem);
+	}
+}
+
+
 /* State machine output thread used to handle the outputs of the state machine
  * -> This wil be converted to hardware when implemented on the beaglebone to output
  * 	  to the LCD
- */
+ */ software
 void* x1_state_machine_outputs(void* arg){
 	// Cast the global struct
 	sm_data_t* sm_data = (sm_data_t*) arg;
