@@ -182,7 +182,42 @@ void* c1_message_server_thread(void* arg){
 	return (int*) EXIT_FAILURE;
 }
 
-/* Software thread that is to be replaced by hardware
+
+/* Thread to check connection status every 5 seconds
+ * This will send a general message, if the node doesn't reply in time,
+ * the global struct will be updated accordingly. This thread uses a timer
+ * to set the 5 second delay
+ * Ben TODO need to finish this
+ */
+void* check_node_connection(void* arg){
+	controller_data_t* controller_data = (controller_data_t*) arg;
+	timer_t timer;
+	while(1){
+
+	}
+}
+
+/* **************************************************************************
+ * Hardware input thread template (so be modified for the hardware by Dave) *
+ * TODO DAVE
+ ****************************************************************************
+ */
+void* hardware_input_thread(void* arg){
+	controller_data_t* controller_data = (controller_data_t*) arg;
+
+	// Put hardware initialisation code here
+
+	// The rest of the functionality from software_input_thread needs to go here.
+	while(1){
+		// Blocking Digital read call to get button presses and decode their values.
+
+		// use the switch case from software thread. All data manipulation and logic should remain the same, just the case statements that will change
+
+	}
+}
+
+
+/* Software thread that is to be replaced by hardware @Dave
  * Reads button presses and sends messages to other nodes
  *
  */
@@ -340,6 +375,42 @@ void* software_input_thread(void* arg){
 }
 
 
+/********************************************
+ * TODO Dave to code in the HW for this thread
+ ********************************************
+ */
+void* hardware_output_thread(void* arg){
+	printf("Begin Output Thread\n");
+	controller_data_t* out_data = (controller_data_t*) arg;
+
+	/***** LCD INITIALISATION CODE HERE *****/
+
+	while(1){
+		// Need to project global struct
+		sem_wait(&out_data->sem);
+		// Wait for struct to be updated
+		if(out_data->priority.signal_sent){
+			if(out_data->priority.i1_ready && out_data->priority.i2_ready && out_data->priority.x1_ready){
+				printf("All states ready for priority traffic\n");
+				/***** OUTPUT SCREEN LOGIC HERE - message to say all nodes are in priority state *****/
+			}else if(out_data->updated){
+				out_data->updated = 0;
+				printf("I1 Status:%d I2 Status:%d X1 Status:%d\n", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+				/***** OUTPUT SCREEN - Current status of priority states for all nodes (displays this until above loop is entered) *****/
+			}
+		}else if(out_data->updated){
+			out_data->updated = 0;
+			printf("Would update screen here\n");
+			printf("I1 Current State_%d\n", out_data->i1_current_state);
+//			printf("I2 Current State_%d\n", out_data->i2_current_state);
+			printf("X1 Current State_%d\n", out_data->x1_current_state);
+			/***** OUTPUT TO SCREEN - Current State of each node. This is stored in Global struct and is already protected *****/
+		}
+		sem_post(&out_data->sem);
+	}
+}
+
+
 /* Software output thread - This needs to be replaced by a hardware output to LCD
  * Use the same structure that is here - eg cast global struct and wrap in sem_wait and post
  * to ensure data integrity
@@ -381,6 +452,9 @@ void c1_global_init(controller_data_t* data){
 	data->priority.x1_ready = 0;
 	data->priority.signal_sent = 0;
 	data->peak = 0;
+	data->x1_connection_status = 0;
+	data->i1_connection_status = 0;
+	data->i2_connection_status = 0;
 	// Initialise the global semaphore
 	sem_init(&data->sem, 0, 1);
 }
