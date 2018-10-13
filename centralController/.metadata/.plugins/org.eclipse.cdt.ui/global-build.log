@@ -1286,3 +1286,47 @@ qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64
 make -j4 all 
 qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+11:35:24 **** Build of configuration x86_64-debug for project timer ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/timer.d,-MT,build/x86_64-debug/src/timer.o -o build/x86_64-debug/src/timer.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/timer.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/timer   build/x86_64-debug/src/timer.o  
+11:37:00 **** Incremental Build of configuration x86_64-debug for project timer ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/timer.d,-MT,build/x86_64-debug/src/timer.o -o build/x86_64-debug/src/timer.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/timer.c
+src/timer.c: In function 'main':
+src/timer.c:62:12: warning: passing argument 1 of 'printf' from incompatible pointer type [-Wincompatible-pointer-types]
+     printf(stderr, "%s:  couldn't ConnectAttach to self!\n", progname);
+            ^
+In file included from src/timer.c:11:0:
+C:/QNX/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'FILE * {aka struct _Filet *}'
+ extern int printf(const char *__format, ...);
+            ^
+src/timer.c:68:2: warning: implicit declaration of function 'pthread_getschedparam' [-Wimplicit-function-declaration]
+  pthread_getschedparam(pthread_self(), NULL, &th_param);
+  ^
+src/timer.c:68:24: warning: implicit declaration of function 'pthread_self' [-Wimplicit-function-declaration]
+  pthread_getschedparam(pthread_self(), NULL, &th_param);
+                        ^
+src/timer.c:76:13: warning: passing argument 1 of 'printf' from incompatible pointer type [-Wincompatible-pointer-types]
+     printf (stderr, "%s:  couldn't create a timer, errno %d\n", progname, errno);
+             ^
+In file included from src/timer.c:11:0:
+C:/QNX/qnx700/target/qnx7/usr/include/stdio.h:176:12: note: expected 'const char *' but argument is of type 'FILE * {aka struct _Filet *}'
+ extern int printf(const char *__format, ...);
+            ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/timer   build/x86_64-debug/src/timer.o  
+17:05:45 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'check_node_connection':
+src/central_controller_node.c:193:10: warning: unused variable 'timer' [-Wunused-variable]
+  timer_t timer;
+          ^
+src/central_controller_node.c:192:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+src/central_controller_node.c: In function 'hardware_input_thread':
+src/central_controller_node.c:205:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  

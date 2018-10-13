@@ -70,3 +70,20 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.qnx.tools.ide.capabilities.ui 4 0 2018-10-13 00:44:38.144
 !MESSAGE activityProfiles.activityRequirementBinding: Invalid requiredActivityId com.qnx.tools.ide.capabilities.ui.activity.qnxDeveloper
+
+!ENTRY com.qnx.tools.ide.qde.debug.core 4 0 2018-10-13 10:01:04.822
+!MESSAGE Launch cleaning error
+!SUBENTRY 1 com.qnx.tools.ide.qde.debug.core 4 0 2018-10-13 10:01:04.824
+!MESSAGE Attempt to delete remote file failed:
+!STACK 0
+com.qnx.tools.ide.utils.target.RemoteIOException: Remove No such file or directory
+	at com.qnx.tools.ide.utils.target.TargetServiceFile.rm(TargetServiceFile.java:329)
+	at com.qnx.tools.ide.utils.target.TargetServiceFile.rm(TargetServiceFile.java:317)
+	at com.qnx.tools.ide.qde.debug.internal.core.dsf.QDELaunch.cleanRemoteFiles(QDELaunch.java:712)
+	at com.qnx.tools.ide.qde.debug.internal.core.dsf.QDELaunch.cleanup(QDELaunch.java:171)
+	at com.qnx.tools.ide.qde.debug.internal.core.dsf.QDELaunch.handleDebugEvents(QDELaunch.java:426)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.run(DebugPlugin.java:1151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.debug.core.DebugPlugin$EventNotifier.dispatch(DebugPlugin.java:1185)
+	at org.eclipse.debug.core.DebugPlugin$EventDispatchJob.run(DebugPlugin.java:441)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

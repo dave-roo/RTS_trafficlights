@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <sys/netmgr.h>
+#include <sys/neutrino.h>
+
+int main(void) {
+	timer_t                 timer_id;
+	while(1){
+
+	}
+}

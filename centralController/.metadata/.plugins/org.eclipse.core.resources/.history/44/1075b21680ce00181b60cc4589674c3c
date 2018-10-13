@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <sys/netmgr.h>
+#include <sys/neutrino.h>
+
+int main(void) {
+	struct sigevent event;
+	struct itimerspec itime;
+	timer_t timer_id;
+	event.sigev_notify = SIGEV_PULSE;
+	while(1){
+
+	}
+}
