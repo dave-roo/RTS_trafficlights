@@ -14,8 +14,11 @@ struct priority_struct{
 // Struct to hold global struct for the controller
 typedef struct{
     x1_states x1_current_state;
+    uint8_t x1_connection_status;
     i1_states i1_current_state;
+    uint8_t i1_connection_status;
     // i2_states i2_current_state; // TODO Get these from Jacob
+    uint8_t i2_connection_status;
     uint8_t updated;
     struct priority_struct priority;
     uint8_t peak;
