@@ -102,7 +102,8 @@ void* x1_message_server_thread(void* arg){
 					printf("Signal Message Request\n");
 					// Train is present in any state except 0
 					sem_wait(&state_data->sem);
-					if(&state_data->current_state){
+					//error was here, you were check memory address not value of memory
+					if(state_data->current_state){
 					msg_reply.data = 1;
 					}else{
 					msg_reply.data = 0;
@@ -203,6 +204,7 @@ void* sensor_send_thread(void* data){
 				sem_wait(&sens_data->sem);
 				sens_data->sensor_received = 1;
 				sens_data->signal |= 1 << X1_SIGNAL_Eout;
+
 				sem_post(&sens_data->sem);
 
 				printf("Train clear on the East line\n");
