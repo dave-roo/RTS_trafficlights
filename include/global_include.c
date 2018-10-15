@@ -21,6 +21,8 @@ message_data_t send_message(message_data_t* msg, char* attach_point){
 		ConnectDetach(server_coid);
 		return msg_reply; // error
 	}else{
+		msg_reply.msg_type = msg->msg_type;
+		msg_reply.data = msg->data;
 		ConnectDetach(server_coid);
 		return msg_reply; // success
 	}
