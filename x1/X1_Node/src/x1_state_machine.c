@@ -88,7 +88,7 @@ void* x1_hardware_state_machine_outputs(void* arg){
 /* State machine output thread used to handle the outputs of the state machine
  * -> This wil be converted to hardware when implemented on the beaglebone to output
  * 	  to the LCD
- */ software
+ */
 void* x1_state_machine_outputs(void* arg){
 	// Cast the global struct
 	sm_data_t* sm_data = (sm_data_t*) arg;
