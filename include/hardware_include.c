@@ -15,6 +15,17 @@ typedef union _CONF_MODULE_PIN_STRUCT   // See TRM Page 1420
          } b;
 } _CONF_MODULE_PIN;
 
+void delaySCL()  {// Small delay used to get timing correct for BBB
+  volatile int i, a;
+  for(i=0;i<0x1F;i++) // 0x1F results in a delay that sets F_SCL to ~480 kHz
+  {   // i*1 is faster than i+1 (i+1 results in F_SCL ~454 kHz, whereas i*1 is the same as a=i)
+     a = i;
+  }
+  // usleep(1);  //why doesn't this work? Ans: Results in a period of 4ms as
+  // fastest time, which is 250Hz (This is to slow for the TTP229 chip as it
+  // requires F_SCL to be between 1 kHz and 512 kHz)
+}
+
 void strobe_SCL(uintptr_t gpio_port_add) {
    uint32_t PortData;
    PortData = in32(gpio_port_add + GPIO_DATAOUT);// value that is currently on the GPIO port
@@ -26,17 +37,6 @@ void strobe_SCL(uintptr_t gpio_port_add) {
    PortData |= SCL;// Clock high
    out32(gpio_port_add + GPIO_DATAOUT, PortData);
    delaySCL();
-}
-
-void delaySCL()  {// Small delay used to get timing correct for BBB
-  volatile int i, a;
-  for(i=0;i<0x1F;i++) // 0x1F results in a delay that sets F_SCL to ~480 kHz
-  {   // i*1 is faster than i+1 (i+1 results in F_SCL ~454 kHz, whereas i*1 is the same as a=i)
-     a = i;
-  }
-  // usleep(1);  //why doesn't this work? Ans: Results in a period of 4ms as
-  // fastest time, which is 250Hz (This is to slow for the TTP229 chip as it
-  // requires F_SCL to be between 1 kHz and 512 kHz)
 }
 
 uint32_t KeypadReadIObit(uintptr_t gpio_base, uint32_t BitsToRead)  {
