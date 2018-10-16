@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<trgtproject id="com.qnx.tools.ide.target.core.target">
+    <data>
+        <item id="com.qnx.tools.ide.target">
+            <qconnport value="8000"/>
+            <qconnguid value="647b554d-93b4-4183-b498-f503b16556db"/>
+            <qconnostype value="nto"/>
+            <qconnhostname value="192.168.201.60"/>
+            <project>
+                <name value="192.168.201.60"/>
+            </project>
+            <targettmpdir value="/tmp"/>
+        </item>
+    </data>
+</trgtproject>

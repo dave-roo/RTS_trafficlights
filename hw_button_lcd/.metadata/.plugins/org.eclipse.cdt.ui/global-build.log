@@ -1,0 +1,105 @@
+18:34:48 **** Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/hw_button_lcd.d,-MT,build/x86_64-debug/src/hw_button_lcd.o -o build/x86_64-debug/src/hw_button_lcd.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/hw_button_lcd.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/hw_button_lcd   build/x86_64-debug/src/hw_button_lcd.o  
+18:35:19 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+18:35:22 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+18:35:42 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/hardware_include.d,-MT,build/x86_64-debug/../../include/hardware_include.o -o build/x86_64-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+../../include/hardware_include.c: In function 'strobe_SCL':
+../../include/hardware_include.c:23:4: warning: implicit declaration of function 'delaySCL' [-Wimplicit-function-declaration]
+    delaySCL();
+    ^
+../../include/hardware_include.c: At top level:
+../../include/hardware_include.c:31:6: warning: conflicting types for 'delaySCL'
+ void delaySCL()  {// Small delay used to get timing correct for BBB
+      ^
+../../include/hardware_include.c:23:4: note: previous implicit declaration of 'delaySCL' was here
+    delaySCL();
+    ^
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:32:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/x86_64/inout.h:132:54: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ static __inline__ void * __attribute__((__unused__)) in32s(void *__addr, unsigned __count, _Uint16t __port) {
+                                                      ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/x86_64/inout.h:132:54: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ static __inline__ void * __attribute__((__unused__)) in32s(void *__addr, unsigned __count, _Uint16t __port) {
+                                                      ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/hw_button_lcd   build/x86_64-debug/src/hw_button_lcd.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+18:37:12 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/hardware_include.d,-MT,build/x86_64-debug/../../include/hardware_include.o -o build/x86_64-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:19:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/x86_64/inout.h:132:54: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ static __inline__ void * __attribute__((__unused__)) in32s(void *__addr, unsigned __count, _Uint16t __port) {
+                                                      ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/x86_64/inout.h:132:54: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ static __inline__ void * __attribute__((__unused__)) in32s(void *__addr, unsigned __count, _Uint16t __port) {
+                                                      ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/hw_button_lcd   build/x86_64-debug/src/hw_button_lcd.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+18:38:12 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+18:38:44 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/hw_button_lcd.d,-MT,build/x86_64-debug/src/hw_button_lcd.o -o build/x86_64-debug/src/hw_button_lcd.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/hw_button_lcd.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/hw_button_lcd   build/x86_64-debug/src/hw_button_lcd.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+18:41:12 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/hw_button_lcd.d,-MT,build/x86_64-debug/src/hw_button_lcd.o -o build/x86_64-debug/src/hw_button_lcd.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/hw_button_lcd.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/hw_button_lcd   build/x86_64-debug/src/hw_button_lcd.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+18:42:02 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/hw_button_lcd.d,-MT,build/x86_64-debug/src/hw_button_lcd.o -o build/x86_64-debug/src/hw_button_lcd.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/hw_button_lcd.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/hw_button_lcd   build/x86_64-debug/src/hw_button_lcd.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  

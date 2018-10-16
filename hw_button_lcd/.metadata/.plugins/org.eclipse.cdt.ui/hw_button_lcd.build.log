@@ -1,0 +1,7 @@
+18:42:02 **** Incremental Build of configuration x86_64-debug for project hw_button_lcd ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/hw_button_lcd.d,-MT,build/x86_64-debug/src/hw_button_lcd.o -o build/x86_64-debug/src/hw_button_lcd.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/hw_button_lcd.c
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/hw_button_lcd   build/x86_64-debug/src/hw_button_lcd.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+
+18:42:02 Build Finished (took 259ms)
+
