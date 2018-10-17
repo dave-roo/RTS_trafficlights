@@ -9,17 +9,12 @@ message_data_t send_message(message_data_t* msg, char* attach_point){
 	msg_reply.msg_type = MSG_ERROR;
 	msg_reply.data = MSG_NO_VALID_RESPONSE;
 	int server_coid;
-
-	printf("here\n");
 	if ((server_coid = name_open(attach_point, 0)) == -1){
-		printf("here1\n");
 		msg_reply.msg_type = MSG_ERROR;
 		msg_reply.data = MSG_CONNECTION_ERROR;
 		ConnectDetach(server_coid);
 		return msg_reply;
 	}
-	printf("here2\n");
-	fflush(stdout);
 	if (MsgSend(server_coid, msg, sizeof(*msg), &msg_reply, sizeof(msg_reply)) == -1){
 		msg_reply.msg_type = MSG_ERROR;
 		msg_reply.data = MSG_SENDING_ERROR;

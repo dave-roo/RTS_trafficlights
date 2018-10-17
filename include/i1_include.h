@@ -23,6 +23,32 @@ typedef enum {
 	i1_State_18,
 	i1_State_19
 } i1_states;
+typedef struct
+{
+	 int train_status;
+	 int NE;
+	 int SW;
+	 int ES;
+	 int WN;
 
+	 int NS;
+	 int EW;
+	 pthread_mutex_t mutex;
+} intersection_message;
 
+typedef struct
+{
+	i1_states state;
+	int lock_status;
+	uint8_t peak_status;
+	intersection_message msg;
+	pthread_mutex_t mutex;
+	sem_t sem;
+} state_data;
+enum lights {
+	GREEN_STRT = 1,
+	GREEN_TURN = 1,
+	YELLOW = 1,
+	RED = 1
+};
 #endif
