@@ -9,10 +9,17 @@
 #include <sys/dispatch.h>
 #include <fcntl.h>
 #include <share.h>
+#include <time.h>
 
-#define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // X1 Remote attach point
-#define C1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" // C1 Remote attach point
 
+
+#include <sys/netmgr.h>
+#include <sys/neutrino.h>
+
+#define X1_QNET_ATTACH_POINT "/net/vm2/dev/name/local/x1_group_14" // X1 Remote attach point
+#define C1_QNET_ATTACH_POINT "/net/RMIT_BBB_v5_02/dev/name/local/c1_group_14" // C1 Remote attach point
+#define I1_QNET_ATTACH_POINT "/net/vm3/dev/name/local/i1_group_14" // C1 Remote attach point
+#define MY_PULSE_CODE   _PULSE_CODE_MINAVAIL
 // Message types for data between nodes
 typedef enum{
     MSG_TRAIN_SIGNAL = 0,
@@ -52,7 +59,16 @@ typedef struct{
     uint8_t data;
 } message_data_t;
 
+
+
+typedef union
+{
+	struct _pulse   pulse;
+    // your other message structures would go here too
+} my_message_t;
+
+
 // Function Definitions
 message_data_t send_message(message_data_t*, char*);
-
+int timer_funct(int time_period);
 #endif
