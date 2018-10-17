@@ -23,8 +23,8 @@
 #include <fcntl.h>
 #include <share.h>
 #include <semaphore.h>
-
-#include <stateController.h>
+#include "stateController.h"
+#include <stateStrings.h>
 #include <global_include.h>
 #include <x1_include.h>
 #include <i1_include.h>

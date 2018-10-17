@@ -28,7 +28,7 @@ int getTrainStatus()
 	message_data_t msg;
 	message_data_t reply;
 
-    msg.sending_node = NODE_I1; // set message signal
+    msg.sending_node = NODE_I2; // set message signal
     msg.receiving_node = NODE_X1;
     msg.msg_type = MSG_TRAIN_SIGNAL;
     msg.data = 1;
