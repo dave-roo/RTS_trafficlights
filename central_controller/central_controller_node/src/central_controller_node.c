@@ -336,7 +336,7 @@ void* hardware_input_thread(void* arg){
 					msg.msg_type = MSG_CONTROL_PEAK;
 					msg.data = controller_data->peak;
 					// Send to both traffic light controllers
-					for(int i=1; i<2; i++){ // TODO THIS ONLY UPDATES I1 at the moment
+					for(int i=1; i<=2; i++){
 						msg_reply = send_message(&msg, sending_name[i]);
 						if(msg_reply.msg_type == MSG_ERROR){
 							msg.receiving_node = i;
@@ -572,7 +572,7 @@ void* hardware_output_thread(void* arg){
 		}else if(out_data->updated){
 			out_data->updated = 0;
 			printf("Would update screen here\n");
-			sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+			sprintf(line1, "I1:%d, I2:%d, X1:%d ", out_data->i1_current_state, out_data->i2_current_state, out_data->x1_current_state);
 			sprintf(line2, "Peak Status: %d  ", out_data->peak);
 			lcd_write_to_screen(lcd, line1, line2);
 //			lcd_write_to_screen(lcd, "TRAIN", "TEST");

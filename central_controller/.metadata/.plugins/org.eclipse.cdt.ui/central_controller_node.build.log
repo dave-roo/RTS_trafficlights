@@ -1,6 +1,6 @@
-01:36:57 **** Clean-only build of configuration armv7le-release for project central_controller_node ****
+02:18:31 **** Clean-only build of configuration armv7le-release for project central_controller_node ****
 make -j4 clean 
 rm -fr build/armv7le-release
 
-01:36:57 Build Finished (took 281ms)
+02:18:31 Build Finished (took 109ms)
 

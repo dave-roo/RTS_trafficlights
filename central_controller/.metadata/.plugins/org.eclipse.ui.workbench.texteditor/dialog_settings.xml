@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="sending_name" key="selection"/>
+		<item value="I2 Status" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="I2 Status"/>
 			<item value="controller_data-&gt;peak"/>
 			<item value="sending_name"/>
 			<item value="&apos;l&apos;"/>
@@ -15,7 +16,6 @@
 			<item value="output_thread"/>
 			<item value="sem_post("/>
 			<item value="printf"/>
-			<item value="priority.signal_sent"/>
 		</list>
 		<list key="replacehistory">
 		</list>
