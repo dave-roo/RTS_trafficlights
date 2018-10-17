@@ -82,7 +82,7 @@ int updateController(state_data *td)
 	message_data_t msg;
 	message_data_t reply;
 
-    msg.sending_node = NODE_I1; // set message signal
+    msg.sending_node = NODE_I2; // set message signal
     msg.receiving_node = NODE_CONTROLLER;
     msg.msg_type = MSG_CURRENT_STATE_UPDATE;
 
@@ -133,7 +133,7 @@ int updateControllerLocked(state_data *td)
 	message_data_t msg;
 	message_data_t reply;
 
-    msg.sending_node = NODE_I1; // set message signal
+    msg.sending_node = NODE_I2; // set message signal
     msg.receiving_node = NODE_CONTROLLER;
     msg.msg_type = MSG_CONTROL_STATE_LOCKED;
     msg.data = 1;
