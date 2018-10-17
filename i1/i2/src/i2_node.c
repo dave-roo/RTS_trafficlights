@@ -34,7 +34,7 @@
 
 
 #include "messageController.h"
-#define LOCAL_ATTACH_POINT "i1_group_14"
+#define LOCAL_ATTACH_POINT "i2_group_14"
 
 
 
@@ -65,7 +65,7 @@ void Print_State(state_data *td, lcd_data_t *lcd){
 
 	sem_wait(&td->sem);
 	printf("%s\n", toString(td));
-	lcd_write_to_screen(*lcd, "Intersection 1", toString(td));
+	lcd_write_to_screen(*lcd, "Intersection 2", toString(td));
   	sem_post(&td->sem);
   }
 //LIGHTS
@@ -264,13 +264,6 @@ void* input_thread(void* data){
 					printf("====> Change Peak/Off-Peak\n", data.key_pressed);
 					sem_wait(&td->sem);
 						td->peak_status = !td->peak_status;
-					sem_post(&td->sem);
-					break;
-				case BUTTON_8:
-					printf("====> Change Lock\n", data.key_pressed);
-					sem_wait(&td->sem);
-						td->lock_status = !td->lock_status;
-						printf("lock status = %d\n", td->lock_status);
 					sem_post(&td->sem);
 					break;
 			}
