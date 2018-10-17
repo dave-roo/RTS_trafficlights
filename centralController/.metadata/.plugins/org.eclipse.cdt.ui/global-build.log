@@ -1598,3 +1598,1149 @@ qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv
 make -j4 all 
 qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
 qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:21:16 **** Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/hardware_include.d,-MT,build/armv7le-debug/../../include/hardware_include.o -o build/armv7le-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:19:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:33:29 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:34:07 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+D:\qnx700_QNX_SDK\host\win64\x86_64\usr\bin\x86_64-pc-nto-qnx7.0.0-ld: build/x86_64-debug/../../include/global_include.o: Relocations in generic ELF (EM: 40)
+D:\qnx700_QNX_SDK\host\win64\x86_64\usr\bin\x86_64-pc-nto-qnx7.0.0-ld: build/x86_64-debug/../../include/global_include.o: Relocations in generic ELF (EM: 40)
+D:\qnx700_QNX_SDK\host\win64\x86_64\usr\bin\x86_64-pc-nto-qnx7.0.0-ld: build/x86_64-debug/../../include/global_include.o: Relocations in generic ELF (EM: 40)
+D:\qnx700_QNX_SDK\host\win64\x86_64\usr\bin\x86_64-pc-nto-qnx7.0.0-ld: build/x86_64-debug/../../include/global_include.o: Relocations in generic ELF (EM: 40)
+D:\qnx700_QNX_SDK\host\win64\x86_64\usr\bin\x86_64-pc-nto-qnx7.0.0-ld: build/x86_64-debug/../../include/global_include.o: Relocations in generic ELF (EM: 40)
+build/x86_64-debug/../../include/global_include.o: error adding symbols: File in wrong format
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/bin/x86_64-pc-nto-qnx7.0.0-ld caught signal 1
+make: *** [build/x86_64-debug/central_controller_node] Error 1
+Makefile:62: recipe for target 'build/x86_64-debug/central_controller_node' failed
+22:34:23 **** Clean-only build of configuration x86_64-debug for project central_controller_node ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+22:34:23 **** Clean-only build of configuration armv7le-debug for project tmp ****
+make -j4 clean 
+rm -fr build/armv7le-debug
+22:34:25 **** Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/hardware_include.d,-MT,build/x86_64-debug/../../include/hardware_include.o -o build/x86_64-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:19:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/x86_64/inout.h:132:54: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ static __inline__ void * __attribute__((__unused__)) in32s(void *__addr, unsigned __count, _Uint16t __port) {
+                                                      ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/x86_64/inout.h:132:54: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ static __inline__ void * __attribute__((__unused__)) in32s(void *__addr, unsigned __count, _Uint16t __port) {
+                                                      ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+22:34:34 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+22:42:19 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+build/armv7le-debug/../../include/global_include.o: file not recognized: File format not recognized
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/bin/arm-unknown-nto-qnx7.0.0eabi-ld caught signal 1
+Makefile:62: recipe for target 'build/armv7le-debug/central_controller_node' failed
+make: *** [build/armv7le-debug/central_controller_node] Error 1
+22:42:28 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/hardware_include.d,-MT,build/armv7le-debug/../../include/hardware_include.o -o build/armv7le-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:19:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:48:04 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:00:40 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:01:31 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:03:42 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:04:30 **** Clean-only build of configuration armv7le-debug for project central_controller_node ****
+make -j4 clean 
+rm -fr build/armv7le-debug
+23:04:30 **** Clean-only build of configuration armv7le-debug for project tmp ****
+make -j4 clean 
+rm -fr build/armv7le-debug
+23:05:00 **** Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:11:47 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'main':
+src/central_controller_node.c:26:60: warning: unused variable 'hardware_input_th' [-Wunused-variable]
+  pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+                                                            ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:21:57 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:386:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:409:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, I2%d, X1:%d");
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:410:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:411:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:411:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:22:57 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:386:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:409:77: error: 'controller_data_t {aka struct <anonymous>}' has no member named 'i2_current_state'
+    sprintf(line1, "I1:%d, I2%d, X1:%d", out_data->i1_current_state, out_data->i2_current_state, out_data->x1_current_state);
+                                                                             ^
+src/central_controller_node.c:414:44: error: 'controller_data_t {aka struct <anonymous>}' has no member named 'i2_current_state'
+    printf("I2 Current State_%d\n", out_data->i2_current_state);
+                                            ^
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/arm-unknown-nto-qnx7.0.0eabi/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/armv7le-debug/src/central_controller_node.o' failed
+make: *** [build/armv7le-debug/src/central_controller_node.o] Error 1
+23:23:19 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:386:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:409:77: error: 'controller_data_t {aka struct <anonymous>}' has no member named 'i2_current_state'
+    sprintf(line1, "I1:%d, I2%d, X1:%d", out_data->i1_current_state, out_data->i2_current_state, out_data->x1_current_state);
+                                                                             ^
+src/central_controller_node.c:409:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, I2%d, X1:%d", out_data->i1_current_state, out_data->i2_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:410:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:411:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:411:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:414:44: error: 'controller_data_t {aka struct <anonymous>}' has no member named 'i2_current_state'
+    printf("I2 Current State_%d\n", out_data->i2_current_state);
+                                            ^
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/arm-unknown-nto-qnx7.0.0eabi/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/armv7le-debug/src/central_controller_node.o' failed
+make: *** [build/armv7le-debug/src/central_controller_node.o] Error 1
+23:23:48 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:386:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:415:44: error: 'controller_data_t {aka struct <anonymous>}' has no member named 'i2_current_state'
+    printf("I2 Current State_%d\n", out_data->i2_current_state);
+                                            ^
+src/central_controller_node.c:408:10: warning: unused variable 'line2' [-Wunused-variable]
+    char* line2[21];
+          ^
+src/central_controller_node.c:407:10: warning: unused variable 'line1' [-Wunused-variable]
+    char* line1[21];
+          ^
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/arm-unknown-nto-qnx7.0.0eabi/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/armv7le-debug/src/central_controller_node.o' failed
+make: *** [build/armv7le-debug/src/central_controller_node.o] Error 1
+23:23:53 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:386:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:408:10: warning: unused variable 'line2' [-Wunused-variable]
+    char* line2[21];
+          ^
+src/central_controller_node.c:407:10: warning: unused variable 'line1' [-Wunused-variable]
+    char* line1[21];
+          ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:24:06 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:386:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:408:10: warning: unused variable 'line2' [-Wunused-variable]
+    char* line2[21];
+          ^
+src/central_controller_node.c:407:10: warning: unused variable 'line1' [-Wunused-variable]
+    char* line1[21];
+          ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:24:14 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:386:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:409:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:410:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:411:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:411:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:24:53 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:386:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:409:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:410:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:411:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:411:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:24:56 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:27:51 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:389:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:414:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:415:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:416:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:416:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:27:53 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:28:49 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:409:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:434:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:435:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:436:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:436:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:34:04 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:545:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:570:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:571:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:572:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:572:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:37:40 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:38:34 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:46:58 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:547:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:572:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:573:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:574:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:574:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:48:44 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:547:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:572:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:573:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:574:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:574:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:48:46 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:51:29 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:51:45 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:53:43 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:56:27 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:57:52 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:01:53 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:04:01 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:04:36 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:06:20 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:08:56 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:549:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:567:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:574:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:575:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:576:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:576:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+00:09:08 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:12:33 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:549:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:567:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:574:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:575:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:576:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:576:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+00:12:43 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:15:02 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:16:04 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:547:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:565:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:572:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:573:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:574:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:574:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+00:16:33 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:36:22 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+In file included from src/central_controller_node.c:7:0:
+../../include/controller_include.h:20:5: error: unknown type name 'i2_states'
+     i2_states i1_current_state;
+     ^
+../../include/controller_include.h:20:15: error: duplicate member 'i1_current_state'
+     i2_states i1_current_state;
+               ^
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:547:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:565:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:572:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:573:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:574:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:574:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c: In function 'software_output_thread':
+src/central_controller_node.c:609:44: error: 'controller_data_t {aka struct <anonymous>}' has no member named 'i2_current_state'
+    printf("I2 Current State_%d\n", out_data->i2_current_state);
+                                            ^
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/arm-unknown-nto-qnx7.0.0eabi/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/armv7le-debug/src/central_controller_node.o' failed
+make: *** [build/armv7le-debug/src/central_controller_node.o] Error 1
+00:37:03 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:547:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:565:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:572:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:573:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:574:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:574:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+00:42:55 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:548:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:567:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:568:5: error: too few arguments to function 'lcd_write_to_screen'
+     lcd_write_to_screen(lcd, "Node Priority Status");
+     ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: declared here
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:575:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:576:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:577:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:577:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/arm-unknown-nto-qnx7.0.0eabi/5.4.0/cc1 caught signal 1
+Makefile:57: recipe for target 'build/armv7le-debug/src/central_controller_node.o' failed
+make: *** [build/armv7le-debug/src/central_controller_node.o] Error 1
+00:43:13 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:548:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:567:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:568:54: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+     lcd_write_to_screen(lcd, "Node Priority Status", line2);
+                                                      ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:575:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:576:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:577:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:577:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+00:43:17 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:48:15 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:548:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:567:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d    ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:568:54: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+     lcd_write_to_screen(lcd, "Node Priority Status", line2);
+                                                      ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:575:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:576:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:577:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:577:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+00:48:58 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:548:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:567:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d    ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:568:54: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+     lcd_write_to_screen(lcd, "Node Priority Status", line2);
+                                                      ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:575:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:576:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:577:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:577:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+00:49:02 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+01:15:18 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:548:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:567:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d     ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:568:54: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+     lcd_write_to_screen(lcd, "Node Priority Status", line2);
+                                                      ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:575:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:576:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:577:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:577:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  

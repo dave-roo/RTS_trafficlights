@@ -1,6 +1,6 @@
-19:47:39 **** Incremental Build of configuration armv7le-debug for project tmp ****
-make -j4 all 
-make: Nothing to be done for 'all'.
+23:04:30 **** Clean-only build of configuration armv7le-debug for project tmp ****
+make -j4 clean 
+rm -fr build/armv7le-debug
 
-19:47:39 Build Finished (took 93ms)
+23:04:30 Build Finished (took 82ms)
 

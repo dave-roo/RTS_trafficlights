@@ -1,7 +1,54 @@
-19:54:06 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+01:15:18 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
 make -j4 all 
 qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'hardware_output_thread':
+src/central_controller_node.c:548:10: warning: return makes pointer from integer without a cast [-Wint-conversion]
+   return EXIT_FAILURE;
+          ^
+src/central_controller_node.c:567:13: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+     sprintf(line2, "I1:%d I2:%d X1:%d     ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+             ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:568:54: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+     lcd_write_to_screen(lcd, "Node Priority Status", line2);
+                                                      ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:575:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:576:12: warning: passing argument 1 of 'sprintf' from incompatible pointer type [-Wincompatible-pointer-types]
+    sprintf(line2, "Peak Status: %d  ", out_data->peak);
+            ^
+In file included from src/central_controller_node.c:1:0:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/stdio.h:184:12: note: expected 'char *' but argument is of type 'char **'
+ extern int sprintf(char *__s, const char *__format, ...);
+            ^
+src/central_controller_node.c:577:29: warning: passing argument 2 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                             ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
+src/central_controller_node.c:577:36: warning: passing argument 3 of 'lcd_write_to_screen' from incompatible pointer type [-Wincompatible-pointer-types]
+    lcd_write_to_screen(lcd, line1, line2);
+                                    ^
+In file included from src/central_controller_node.c:8:0:
+../../include/hardware_include.h:122:11: note: expected 'char *' but argument is of type 'char **'
+ lcd_error lcd_write_to_screen(lcd_data_t data, char* line_1, char* line_2);
+           ^
 qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
 
-19:54:06 Build Finished (took 247ms)
+01:15:19 Build Finished (took 277ms)
 

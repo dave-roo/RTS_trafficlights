@@ -51,7 +51,7 @@
 <booleanAttribute key="com.qnx.tools.ide.qde.core.DO_UPLOAD" value="true"/>
 <listAttribute key="com.qnx.tools.ide.qde.core.SOLIB_PATH"/>
 <listAttribute key="com.qnx.tools.ide.qde.core.SOLIB_PATH_SAVE"/>
-<stringAttribute key="com.qnx.tools.ide.qde.core.TARGET_ATTR" value="192.168.201.60"/>
+<stringAttribute key="com.qnx.tools.ide.qde.core.TARGET_ATTR" value="192.168.201.24"/>
 <booleanAttribute key="com.qnx.tools.ide.qde.core.TOOL.run.com.qnx.tools.ide.qde.debug" value="false"/>
 <booleanAttribute key="com.qnx.tools.ide.qde.core.TOOL.run.com.qnx.tools.ide.valgrind.ui.launch.ValgrindLaunch" value="false"/>
 <booleanAttribute key="com.qnx.tools.ide.valgrind.ui.launch.boolean_start_symbol_server" value="true"/>

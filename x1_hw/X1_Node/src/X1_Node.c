@@ -14,7 +14,7 @@
 #define LOCAL_ATTACH_POINT "x1_group_14"
 
 // Func prototypes
-void* sensor_send_thread(void*);
+void* software_input_thread(void*);
 void* x1_message_server_thread(void*);
 void x1_global_init(sm_data_t*);
 void* hardware_input_thread(void*);
@@ -33,7 +33,7 @@ int main(void) {
 		state_machine_output_thread,
 		msg_srv_thread, hardware_input_th,
 		hardware_output_th;
-	pthread_create(&sensor_thread, NULL, sensor_send_thread, &global_data);
+	pthread_create(&sensor_thread, NULL, software_input_thread, &global_data);
 	pthread_create(&state_machine_thread, NULL, x1_state_machine, &global_data);
 	pthread_create(&state_machine_output_thread, NULL, x1_state_machine_outputs, &global_data);
 	pthread_create(&msg_srv_thread, NULL, x1_message_server_thread, &global_data);
@@ -86,25 +86,27 @@ void* x1_message_server_thread(void* arg){
 		if(rcvid == 0){
 			switch(msg.hdr.code){
 				case _PULSE_CODE_DISCONNECT:
-					printf("_PULSE_CODE_DISCONNECT\n");
+//					printf("_PULSE_CODE_DISCONNECT\n");
 					break;
 				case _PULSE_CODE_UNBLOCK:
-					printf("_PULSE_CODE_UNBLOCK\n");
+//					printf("_PULSE_CODE_UNBLOCK\n");
 					break;
 				case _PULSE_CODE_COIDDEATH:
-					printf("_PULSE_CODE_COIDDEATH\n");
+//					printf("_PULSE_CODE_COIDDEATH\n");
 					break;
 				case _PULSE_CODE_THREADDEATH:
-					printf("_PULSE_CODE_THREADDEATH\n");
+//					printf("_PULSE_CODE_THREADDEATH\n");
 					break;
 				default:
-					printf("Something else received\n");
+//					printf("Something else received\n");
 					break;
 			}
 		continue;
 		}
 		if(rcvid > 0){
 			printf("Message Received %d\n", msg.sending_node);
+			printf("Message Type %d\n", msg.msg_type);
+			printf("Message Data %d\n", msg.data);
 			msg_reply.sending_node = NODE_X1;
 			msg_reply.receiving_node = msg.sending_node;
 			msg_reply.msg_type = msg.msg_type;
@@ -203,7 +205,7 @@ void* hardware_input_thread(void* data){
 					break;
 
 				// East Leaving signal
-				case BUTTON_2:
+				case BUTTON_5:
 
 					sem_wait(&sens_data->sem);
 					sens_data->sensor_received = 1;
@@ -214,7 +216,7 @@ void* hardware_input_thread(void* data){
 					break;
 
 				// West Approaching signal
-				case BUTTON_3:
+				case BUTTON_2:
 					sem_wait(&sens_data->sem);
 					sens_data->sensor_received = 1;
 					sens_data->signal |= 1 << X1_SIGNAL_Win;
@@ -224,7 +226,7 @@ void* hardware_input_thread(void* data){
 					break;
 
 				// West Departing signal
-				case BUTTON_4:
+				case BUTTON_6:
 					sem_wait(&sens_data->sem);
 					sens_data->sensor_received = 1;
 					sens_data->signal |= 1 << X1_SIGNAL_Wout;
@@ -234,7 +236,7 @@ void* hardware_input_thread(void* data){
 					break;
 
 				// Boom gate down signal
-				case BUTTON_5:
+				case BUTTON_3:
 					sem_wait(&sens_data->sem);
 					sens_data->sensor_received = 1;
 					sens_data->signal |= 1 << X1_SIGNAL_BoomGateDown;
@@ -244,7 +246,7 @@ void* hardware_input_thread(void* data){
 					break;
 
 				// Boom gate up signal
-				case BUTTON_6:
+				case BUTTON_7:
 					sem_wait(&sens_data->sem);
 					sens_data->sensor_received = 1;
 					sens_data->signal &= ~(1 << X1_SIGNAL_BoomGateDown);
@@ -271,7 +273,7 @@ void* hardware_input_thread(void* data){
  * Thread to get char and send to x1 node. (will be replaced by a hardware thread)
  *
  */
-void* sensor_send_thread(void* data){
+void* software_input_thread(void* data){
 	sm_data_t* sens_data = (sm_data_t*) data;
 
 	// Main Loop

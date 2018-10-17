@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="keypad_setup(" key="selection"/>
+		<item value="sensor_send" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="sensor_send"/>
+			<item value="&apos;l&apos;"/>
 			<item value="keypad_setup("/>
 			<item value="printf(&quot;sensor"/>
 			<item value="printf(&quot;Sensor"/>
 			<item value="val"/>
 			<item value="Status"/>
 			<item value="send_message"/>
-			<item value="send"/>
-			<item value="send_"/>
 		</list>
 		<list key="replacehistory">
 			<item value=":"/>

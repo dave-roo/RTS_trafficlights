@@ -1,0 +1,378 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+// Global includes
+#include <global_include.h>
+#include <x1_include.h>
+#include <hardware_include.h>
+
+
+// Local Includes
+#include "x1_state_machine.h"
+
+#define LOCAL_ATTACH_POINT "x1_group_14"
+
+// Func prototypes
+void* sensor_send_thread(void*);
+void* x1_message_server_thread(void*);
+void x1_global_init(sm_data_t*);
+void* hardware_input_thread(void*);
+
+
+int main(void) {
+	printf("Begin X1 State Machine Node\n");
+
+	// Initialise global variable
+	sm_data_t global_data;
+	x1_global_init(&global_data);
+
+	// Create the threads
+	pthread_t sensor_thread,
+		state_machine_thread,
+		state_machine_output_thread,
+		msg_srv_thread, hardware_input_th,
+		hardware_output_th;
+	pthread_create(&sensor_thread, NULL, sensor_send_thread, &global_data);
+	pthread_create(&state_machine_thread, NULL, x1_state_machine, &global_data);
+	pthread_create(&state_machine_output_thread, NULL, x1_state_machine_outputs, &global_data);
+	pthread_create(&msg_srv_thread, NULL, x1_message_server_thread, &global_data);
+	pthread_create(&hardware_input_th, NULL, hardware_input_thread, &global_data);
+	pthread_create(&hardware_output_th, NULL, x1_hardware_state_machine_outputs, &global_data);
+
+	// Join on all threads (should never return a value however should handle anyway)
+	pthread_join(sensor_thread, NULL);
+	pthread_join(state_machine_thread, NULL);
+	pthread_join(state_machine_output_thread, NULL);
+	pthread_join(msg_srv_thread, NULL);
+	pthread_join(hardware_input_th, NULL);
+	pthread_join(hardware_output_th, NULL);
+
+	printf("State Machine Node Ended\n");
+	return EXIT_SUCCESS;
+}
+
+void* x1_message_server_thread(void* arg){
+
+	sm_data_t* state_data = (sm_data_t*) arg;
+
+	name_attach_t *attach;
+	if ((attach = name_attach(NULL, LOCAL_ATTACH_POINT, 0)) == NULL){
+		printf("\nFailed to name_attach on LOCAL_ATTACH_POINT: %s \n", LOCAL_ATTACH_POINT);
+		printf("\n Possibly another server with the same name is already running !\n");
+		return 0;
+	}
+	printf("Server Listening for Clients on LOCAL_ATTACH_POINT: %s \n", LOCAL_ATTACH_POINT);
+
+	// Setup the sending and receiving message structs
+	message_data_t msg;
+	message_data_t msg_reply;
+	msg_reply.hdr.type = 0x01;
+	msg_reply.hdr.subtype = 0x00;
+
+
+	int rcvid=0;
+	while (1){
+		// Receive any message
+		rcvid = MsgReceive(attach->chid, &msg, sizeof(msg), NULL);
+
+		// Message receive failed
+		if (rcvid == -1){
+			printf("\nFailed to MsgReceive\n");
+			break;
+		}
+
+		// Determine the pulse code
+		if(rcvid == 0){
+			switch(msg.hdr.code){
+				case _PULSE_CODE_DISCONNECT:
+//					printf("_PULSE_CODE_DISCONNECT\n");
+					break;
+				case _PULSE_CODE_UNBLOCK:
+//					printf("_PULSE_CODE_UNBLOCK\n");
+					break;
+				case _PULSE_CODE_COIDDEATH:
+//					printf("_PULSE_CODE_COIDDEATH\n");
+					break;
+				case _PULSE_CODE_THREADDEATH:
+//					printf("_PULSE_CODE_THREADDEATH\n");
+					break;
+				default:
+//					printf("Something else received\n");
+					break;
+			}
+		continue;
+		}
+		if(rcvid > 0){
+			printf("Message Received %d\n", msg.sending_node);
+			printf("Message Type %d\n", msg.msg_type);
+			printf("Message Data %d\n", msg.data);
+			msg_reply.sending_node = NODE_X1;
+			msg_reply.receiving_node = msg.sending_node;
+			msg_reply.msg_type = msg.msg_type;
+			switch(msg.msg_type){
+				case MSG_TRAIN_SIGNAL:
+					printf("Signal Message Request\n");
+					// Train is present in any state except 0
+					sem_wait(&state_data->sem);
+					//error was here, you were check memory address not value of memory
+					if(state_data->current_state){
+					msg_reply.data = 1;
+					}else{
+					msg_reply.data = 0;
+					}
+					sem_post(&state_data->sem);
+					break;
+				case MSG_CURRENT_STATE_REQUEST:
+					printf("Current State Request\n");
+					sem_wait(&state_data->sem);
+					msg_reply.data = state_data->current_state;
+					sem_post(&state_data->sem);
+					break;
+				case MSG_CONTROL_STATE_LOCK:
+					printf("Locking State\n");
+					sem_wait(&state_data->sem);
+					state_data->priority.reponse_required = 1;
+					state_data->priority.set = 1;
+					state_data->priority.x1_reset = 1;
+					state_data->sensor_received = 1;
+					sem_post(&state_data->sem);
+					break;
+				case MSG_CONTROL_STATE_RELEASE:
+					printf("Releasing State\n");
+					sem_wait(&state_data->sem);
+					state_data->priority.set = 0;
+					state_data->sensor_received = 1; // Notify the state machine that something happened (should be a cond var)
+					sem_post(&state_data->sem);
+					break;
+				default:
+					printf("Unknown Message Type\n");
+					break;
+			}
+			MsgReply(rcvid, EOK, &msg_reply, sizeof(msg_reply));
+		}
+		else{
+			printf("\nERROR: Server received something, but could not handle it correctly\n");
+		}
+	}
+	// Remove the attach point name from the file system (i.e. /dev/name/local/<myname>)
+	name_detach(attach, 0);
+	return EXIT_SUCCESS;
+}
+
+/*******************************
+ * TODO DAVE TO IMPLEMENT HARDWARE INSTEAD OF getchar from console
+ * this is modelled on the sensor_send_thread thread
+ *******************************
+ */
+void* hardware_input_thread(void* data){
+	sm_data_t* sens_data = (sm_data_t*) data;
+	keypad_data_t key, key_1;
+
+	// Keypad Setup function
+	key = keypad_setup();
+	if(key.err != KEYPAD_OK){
+		printf("Initialisation failed\n");
+	}else{
+		printf("Keypad Setup Complete!\n");
+	}
+
+		// Main Loop
+		while(1){
+			volatile uint32_t val;
+			key_1 = keypad_get_key(key);
+			if(key_1.valid){
+				val = key_1.key_pressed;
+			}
+
+			// Clear the sensor data except the latching boomgate sensor (only needed for sensor thread)
+			sem_wait(&sens_data->sem);
+			sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
+			sem_post(&sens_data->sem);
+
+
+			switch(val){
+
+				// East approching signal
+				case BUTTON_1:
+
+					sem_wait(&sens_data->sem);
+					sens_data->sensor_received = 1;
+					sens_data->signal |= 1 << X1_SIGNAL_Ein;
+					sem_post(&sens_data->sem);
+
+					printf("Train Approaching from the East\n");
+					break;
+
+				// East Leaving signal
+				case BUTTON_2:
+
+					sem_wait(&sens_data->sem);
+					sens_data->sensor_received = 1;
+					sens_data->signal |= 1 << X1_SIGNAL_Eout;
+					sem_post(&sens_data->sem);
+
+					printf("Train clear on the East line\n");
+					break;
+
+				// West Approaching signal
+				case BUTTON_3:
+					sem_wait(&sens_data->sem);
+					sens_data->sensor_received = 1;
+					sens_data->signal |= 1 << X1_SIGNAL_Win;
+					sem_post(&sens_data->sem);
+
+					printf("Train Approaching from the West\n");
+					break;
+
+				// West Departing signal
+				case BUTTON_4:
+					sem_wait(&sens_data->sem);
+					sens_data->sensor_received = 1;
+					sens_data->signal |= 1 << X1_SIGNAL_Wout;
+					sem_post(&sens_data->sem);
+
+					printf("Train clear on the West line\n");
+					break;
+
+				// Boom gate down signal
+				case BUTTON_5:
+					sem_wait(&sens_data->sem);
+					sens_data->sensor_received = 1;
+					sens_data->signal |= 1 << X1_SIGNAL_BoomGateDown;
+					sem_post(&sens_data->sem);
+
+					printf("Boom gate down\n");
+					break;
+
+				// Boom gate up signal
+				case BUTTON_6:
+					sem_wait(&sens_data->sem);
+					sens_data->sensor_received = 1;
+					sens_data->signal &= ~(1 << X1_SIGNAL_BoomGateDown);
+					sem_post(&sens_data->sem);
+
+					printf("Boom gate up\n");
+					break;
+
+				case 0x00:
+					// Button released
+					break;
+				default:
+//					printf("Unrecognised character, please try again\n");
+					break;
+			}
+//			sem_wait(&sens_data->sem);
+//			printf("Sensor Values:%#x\n", sens_data->signal);
+//			sem_post(&sens_data->sem);
+		}
+}
+
+
+/*
+ * Thread to get char and send to x1 node. (will be replaced by a hardware thread)
+ *
+ */
+void* sensor_send_thread(void* data){
+	sm_data_t* sens_data = (sm_data_t*) data;
+
+	// Main Loop
+	while(1){
+		char x = getchar();
+		while(getchar() != '\n'); // Get remaining characters and discard
+
+		// Clear the sensor data except the latching boomgate sensor (only needed for sensor thread)
+		sem_wait(&sens_data->sem);
+		sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
+		sem_post(&sens_data->sem);
+
+		switch(x){
+			// East approching signal
+			case 'e':
+
+				sem_wait(&sens_data->sem);
+				sens_data->sensor_received = 1;
+				sens_data->signal |= 1 << X1_SIGNAL_Ein;
+				sem_post(&sens_data->sem);
+
+				printf("Train Approaching from the East\n");
+				break;
+
+			// East Leaving signal
+			case 'd':
+
+				sem_wait(&sens_data->sem);
+				sens_data->sensor_received = 1;
+				sens_data->signal |= 1 << X1_SIGNAL_Eout;
+
+				sem_post(&sens_data->sem);
+
+				printf("Train clear on the East line\n");
+				break;
+
+			// West Approaching signal
+			case 'w':
+
+				sem_wait(&sens_data->sem);
+				sens_data->sensor_received = 1;
+				sens_data->signal |= 1 << X1_SIGNAL_Win;
+				sem_post(&sens_data->sem);
+
+				printf("Train Approaching from the West\n");
+				break;
+
+			// West Departing signal
+			case 's':
+
+				sem_wait(&sens_data->sem);
+				sens_data->sensor_received = 1;
+				sens_data->signal |= 1 << X1_SIGNAL_Wout;
+				sem_post(&sens_data->sem);
+
+				printf("Train clear on the West line\n");
+				break;
+
+			// Boom gate down signal
+			case 'b':
+
+				sem_wait(&sens_data->sem);
+				sens_data->sensor_received = 1;
+				sens_data->signal |= 1 << X1_SIGNAL_BoomGateDown;
+				sem_post(&sens_data->sem);
+
+				printf("Boom gate down\n");
+				break;
+
+			// Boom gate up signal
+			case 'u':
+
+				sem_wait(&sens_data->sem);
+				sens_data->sensor_received = 1;
+				sens_data->signal &= ~(1 << X1_SIGNAL_BoomGateDown);
+				sem_post(&sens_data->sem);
+
+				printf("Boom gate up\n");
+				break;
+			default:
+				printf("Unrecognised character, please try again\n");
+				break;
+		}
+		sem_wait(&sens_data->sem);
+		printf("Sensor Values:%#x\n", sens_data->signal);
+		sem_post(&sens_data->sem);
+	}
+}
+
+/* Function to initialise the x1 global struct
+ */
+void x1_global_init(sm_data_t* data){
+	data->current_state = X1_STATE_0;
+	data->priority.last_state = X1_STATE_0;
+	data->priority.set = 0;
+	data->priority.x1_reset = 0;
+	data->priority.reponse_required = 0;
+	// Initialise the global semaphore
+	sem_init(&data->sem, 0, 1);
+	data->sensor_received = 0;
+	data->signal = X1_SIGNAL_NONE;
+}

@@ -15,6 +15,7 @@ void  c1_global_init(controller_data_t*);
 void* software_output_thread(void*);
 void* software_input_thread(void*);
 void* hardware_input_thread(void*);
+void* hardware_output_thread(void*);
 
 
 int main(void) {
@@ -23,15 +24,18 @@ int main(void) {
 	c1_global_init(&global_data);
 
 	// Setup the threads
-	pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
+	pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th, hardware_output_th;
 	pthread_create(&c1_message_thread, NULL, c1_message_server_thread, &global_data);
 	pthread_create(&output_thread, NULL, software_output_thread, &global_data);
 	pthread_create(&input_thread, NULL, software_input_thread, &global_data);
 	pthread_create(&hardware_input_th, NULL, hardware_input_thread, &global_data);
+	pthread_create(&hardware_output_th, NULL, hardware_output_thread, &global_data);
 
 	pthread_join(output_thread, NULL);
 	pthread_join(c1_message_thread, NULL);
 	pthread_join(input_thread, NULL);
+	pthread_join(hardware_input_th, NULL);
+	pthread_join(hardware_output_th, NULL);
 }
 
 /* Controller Message Server Thread - This will handle all messages received from
@@ -118,6 +122,7 @@ void* c1_message_server_thread(void* arg){
 							// TODO
 							sem_wait(&controller_data->sem);
 							controller_data->updated = 1;
+							controller_data->i2_current_state = msg.data;
 							printf("NODE_I2 Current State %d\n", msg.data);
 							sem_post(&controller_data->sem);
 							break;
@@ -207,6 +212,162 @@ void* c1_message_server_thread(void* arg){
  */
 void* hardware_input_thread(void* arg){
 	printf("Started Hardware Input Thread\n");
+
+	controller_data_t* controller_data = (controller_data_t*) arg;
+
+	char* sending_name[3] = {X1_QNET_ATTACH_POINT, I1_QNET_ATTACH_POINT, I2_QNET_ATTACH_POINT}; // TODO need to update these global names in the global include
+
+	message_data_t msg;
+	message_data_t msg_reply;
+
+	msg_reply.msg_type = MSG_ERROR;
+	msg_reply.msg_type = MSG_NO_VALID_RESPONSE;
+
+	msg.sending_node = NODE_CONTROLLER;
+
+	keypad_data_t key;
+	// Keypad Setup function
+	key = keypad_setup();
+	if(key.err != KEYPAD_OK){
+		printf("Initialisation failed\n");
+	}else{
+		printf("Keypad Setup Complete!\n");
+	}
+
+	// Read the struct from the keypad_get_key function and determine if valid
+	// could be improved but not enough time
+	while(1){
+		keypad_data_t data;
+		data = keypad_get_key(key); //Blocking
+		if(data.valid){
+			printf("Button Value:%d\n", data.key_pressed);
+			switch(data.key_pressed){
+				case BUTTON_1:
+					sem_wait(&controller_data->sem);
+
+					// Don't send again if has already been sent
+					if(!controller_data->priority.signal_sent){
+						controller_data->updated = 1;
+						controller_data->priority.signal_sent = 1;
+						controller_data->priority.i1_ready = 0;
+						controller_data->priority.i2_ready = 0;
+						controller_data->priority.x1_ready = 0;
+
+						sem_post(&controller_data->sem);
+						msg.msg_type = MSG_CONTROL_STATE_LOCK;
+						msg.data = 0;
+						// Send to all nodes
+						for(int i=0; i<3; i++){
+							msg_reply = send_message(&msg, sending_name[i]);
+							if(msg_reply.msg_type == MSG_ERROR){
+								switch(msg_reply.data){
+									case MSG_CONNECTION_ERROR:
+										printf("Connection error to %s!\n", sending_name[i]);
+										break;
+									case MSG_SENDING_ERROR:
+										printf("Message did not send to %s\n", sending_name[i]);
+										break;
+									case MSG_BAD_REQUEST:
+										printf("%s rejected this message type\n", sending_name[i]);
+										break;
+									case MSG_NO_VALID_RESPONSE:
+										printf("%s connected but did not respond\n", sending_name[i]);
+										break;
+									default:
+										printf("Unknown Error when sending lock to %s!\n", sending_name[i]);
+										break;
+								}
+							}else{
+								printf("Successfully sent lock to %s\n", sending_name[i]);
+							}
+						}
+					}else{
+						sem_post(&controller_data->sem); // If already here, release semaphore
+					}
+					break;
+				case BUTTON_2:
+					sem_wait(&controller_data->sem);
+					if(controller_data->priority.signal_sent){
+						controller_data->updated = 1;
+						controller_data->priority.signal_sent = 0;
+						controller_data->priority.i1_ready = 0;
+						controller_data->priority.i2_ready = 0;
+						controller_data->priority.x1_ready = 0;
+						sem_post(&controller_data->sem);
+						msg.msg_type = MSG_CONTROL_STATE_RELEASE;
+						msg.data = 0;
+						// Send to all nodes
+						for(int i=0; i<3; i++){
+							msg_reply = send_message(&msg, sending_name[i]);
+							if(msg_reply.msg_type == MSG_ERROR){
+								switch(msg_reply.data){
+									case MSG_CONNECTION_ERROR:
+										printf("Connection error to %s!\n", sending_name[i]);
+										break;
+									case MSG_SENDING_ERROR:
+										printf("Message did not send to %s\n", sending_name[i]);
+										break;
+									case MSG_BAD_REQUEST:
+										printf("%s rejected this message type\n", sending_name[i]);
+										break;
+									case MSG_NO_VALID_RESPONSE:
+										printf("%s connected but did not respond\n", sending_name[i]);
+										break;
+									default:
+										printf("Unknown Error when sending release to %s!\n", sending_name[i]);
+										break;
+								}
+							}else{
+								printf("Successfully sent release to %s\n", sending_name[i]);
+							}
+						}
+					}else{
+						sem_post(&controller_data->sem); // If already here, release semaphore
+					}
+					break;
+				case BUTTON_3:
+					sem_wait(&controller_data->sem);
+					controller_data->peak = !controller_data->peak;
+					if(controller_data->peak){
+						printf("  ->Peak Mode Active\n\n");
+					}else{
+						printf("  ->Peak Mode Inactive\n\n");
+					}
+					msg.msg_type = MSG_CONTROL_PEAK;
+					msg.data = controller_data->peak;
+					// Send to both traffic light controllers
+					for(int i=1; i<2; i++){ // TODO THIS ONLY UPDATES I1 at the moment
+						msg_reply = send_message(&msg, sending_name[i]);
+						if(msg_reply.msg_type == MSG_ERROR){
+							msg.receiving_node = i;
+							switch(msg_reply.data){
+								case MSG_CONNECTION_ERROR:
+									printf("Connection error to %s!\n", sending_name[i]);
+									break;
+								case MSG_SENDING_ERROR:
+									printf("Message did not send to %s\n", sending_name[i]);
+									break;
+								case MSG_BAD_REQUEST:
+									printf("%s rejected this message type\n", sending_name[i]);
+									break;
+								case MSG_NO_VALID_RESPONSE:
+									printf("%s connected but did not respond\n", sending_name[i]);
+									break;
+								default:
+									printf("Unknown Error when sending release to %s!\n", sending_name[i]);
+									break;
+							}
+						}else{
+							printf("Successfully sent release to %s\n", sending_name[i]);
+						}
+					}
+					sem_post(&controller_data->sem);
+					break;
+			}
+		}
+
+	}
+
 	return 0;
 }
 
@@ -218,7 +379,7 @@ void* hardware_input_thread(void* arg){
 void* software_input_thread(void* arg){
 	controller_data_t* controller_data = (controller_data_t*) arg;
 
-	char* sending_name[3] = {X1_QNET_ATTACH_POINT, "I1_GLOBAL", "I2_GLOBAL"}; // TODO need to update these global names in the global include
+	char* sending_name[3] = {X1_QNET_ATTACH_POINT, I1_QNET_ATTACH_POINT, I2_QNET_ATTACH_POINT}; // TODO need to update these global names in the global include
 
 	message_data_t msg;
 	message_data_t msg_reply;
@@ -332,7 +493,7 @@ void* software_input_thread(void* arg){
 					msg.msg_type = MSG_CONTROL_PEAK;
 					msg.data = controller_data->peak;
 					// Send to both traffic light controllers
-					for(int i=NODE_I1; i<=NODE_I2; i++){
+					for(int i=1; i<2; i++){ // TODO THIS ONLY UPDATES I1 at the moment
 						msg_reply = send_message(&msg, sending_name[i]);
 						if(msg_reply.msg_type == MSG_ERROR){
 							msg.receiving_node = i;
@@ -374,10 +535,22 @@ void* software_input_thread(void* arg){
  ********************************************
  */
 void* hardware_output_thread(void* arg){
+	char* line1[21];
+	char* line2[21];
 	printf("Begin Output Thread\n");
 	controller_data_t* out_data = (controller_data_t*) arg;
 
-	/***** LCD INITIALISATION CODE HERE *****/
+	lcd_data_t lcd;
+	// LCD Setup function
+	lcd = lcd_setup();
+	if(lcd.err != LCD_OK){
+		printf("Failed to initialise LCD\n");
+		return EXIT_FAILURE;
+	}else{
+		printf("LCD Setup complete\n");
+		lcd_write_to_screen(lcd, "Central", "Controller");
+
+	}
 
 	while(1){
 		// Need to project global struct
@@ -386,17 +559,26 @@ void* hardware_output_thread(void* arg){
 		if(out_data->priority.signal_sent){
 			if(out_data->priority.i1_ready && out_data->priority.i2_ready && out_data->priority.x1_ready){
 				printf("All states ready for priority traffic\n");
+				lcd_write_to_screen(lcd, "ALL NODES PRIOTIY", "");
 				/***** OUTPUT SCREEN LOGIC HERE - message to say all nodes are in priority state *****/
 			}else if(out_data->updated){
 				out_data->updated = 0;
+//				sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+				sprintf(line2, "I1:%d I2:%d X1:%d     ", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
+				lcd_write_to_screen(lcd, "Node Priority Status", line2);
 				printf("I1 Status:%d I2 Status:%d X1 Status:%d\n", out_data->priority.i1_ready, out_data->priority.i2_ready, out_data->priority.x1_ready);
 				/***** OUTPUT SCREEN - Current status of priority states for all nodes (displays this until above loop is entered) *****/
 			}
 		}else if(out_data->updated){
 			out_data->updated = 0;
 			printf("Would update screen here\n");
+			sprintf(line1, "I1:%d, X1:%d ", out_data->i1_current_state, out_data->x1_current_state);
+			sprintf(line2, "Peak Status: %d  ", out_data->peak);
+			lcd_write_to_screen(lcd, line1, line2);
+//			lcd_write_to_screen(lcd, "TRAIN", "TEST");
+
 			printf("I1 Current State_%d\n", out_data->i1_current_state);
-//			printf("I2 Current State_%d\n", out_data->i2_current_state);
+			printf("I2 Current State_%d\n", out_data->i2_current_state);
 			printf("X1 Current State_%d\n", out_data->x1_current_state);
 			/***** OUTPUT TO SCREEN - Current State of each node. This is stored in Global struct and is already protected *****/
 		}
@@ -427,7 +609,7 @@ void* software_output_thread(void* arg){
 			out_data->updated = 0;
 			printf("Would update screen here\n");
 			printf("I1 Current State_%d\n", out_data->i1_current_state);
-//			printf("I2 Current State_%d\n", out_data->i2_current_state);
+			printf("I2 Current State_%d\n", out_data->i2_current_state);
 			printf("X1 Current State_%d\n", out_data->x1_current_state);
 		}
 		sem_post(&out_data->sem);
@@ -440,6 +622,7 @@ void* software_output_thread(void* arg){
 void c1_global_init(controller_data_t* data){
 	data->x1_current_state = X1_STATE_0;
 	data->i1_current_state = i1_State_0;
+	data->i2_current_state = i1_State_0;
 	data->updated = 0;
 	data->priority.i1_ready = 0;
 	data->priority.i2_ready = 0;

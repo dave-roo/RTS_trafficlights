@@ -10,20 +10,17 @@
 #include <fcntl.h>
 #include <share.h>
 #include <time.h>
-
-#define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // X1 Remote attach point
-#define C1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" // C1 Remote attach point
-#define I1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/i1_group_14" // C1 Remote attach point
-#define I2_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/i2_group_14" // C1 Remote attach point
-
-
 #include <sys/netmgr.h>
 #include <sys/neutrino.h>
 
-#define X1_QNET_ATTACH_POINT "/net/vm2/dev/name/local/x1_group_14" // X1 Remote attach point
-#define C1_QNET_ATTACH_POINT "/net/RMIT_BBB_v5_02/dev/name/local/c1_group_14" // C1 Remote attach point
-#define I1_QNET_ATTACH_POINT "/net/vm3/dev/name/local/i1_group_14" // C1 Remote attach point
+#define X1_QNET_ATTACH_POINT "/net/RMIT_BBB_v5_03/dev/name/local/x1_group_14" // X1 Remote attach point
+#define C1_QNET_ATTACH_POINT "/net/RMIT_BBB_v5_06/dev/name/local/c1_group_14" // C1 Remote attach point
+#define I1_QNET_ATTACH_POINT "/net/RMIT_BBB_v5_02/dev/name/local/i1_group_14" // C1 Remote attach point
+#define I2_QNET_ATTACH_POINT "/net/vvv/dev/name/local/i2_group_14" // C1 Remote attach point
 #define MY_PULSE_CODE   _PULSE_CODE_MINAVAIL
+
+#define NO_STRING "                     "
+
 // Message types for data between nodes
 typedef enum{
     MSG_TRAIN_SIGNAL = 0,

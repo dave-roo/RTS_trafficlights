@@ -2663,3 +2663,258 @@ make: Nothing to be done for 'all'.
 19:49:35 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
 make -j4 all 
 make: Nothing to be done for 'all'.
+21:54:07 **** Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/hardware_include.d,-MT,build/armv7le-debug/../../include/hardware_include.o -o build/armv7le-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:19:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+In file included from src/x1_state_machine.h:5:0,
+                 from src/x1_state_machine.c:1:
+../../include/global_include.h:23:0: warning: "X1_QNET_ATTACH_POINT" redefined
+ #define X1_QNET_ATTACH_POINT "/net/vm2/dev/name/local/x1_group_14" // X1 Remote attach point
+ ^
+In file included from src/x1_state_machine.h:5:0,
+                 from src/x1_state_machine.c:1:
+../../include/global_include.h:14:0: note: this is the location of the previous definition
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // X1 Remote attach point
+ ^
+In file included from src/x1_state_machine.h:5:0,
+                 from src/x1_state_machine.c:1:
+../../include/global_include.h:24:0: warning: "C1_QNET_ATTACH_POINT" redefined
+ #define C1_QNET_ATTACH_POINT "/net/RMIT_BBB_v5_02/dev/name/local/c1_group_14" // C1 Remote attach point
+ ^
+In file included from src/x1_state_machine.h:5:0,
+                 from src/x1_state_machine.c:1:
+../../include/global_include.h:15:0: note: this is the location of the previous definition
+ #define C1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" // C1 Remote attach point
+ ^
+In file included from src/x1_state_machine.h:5:0,
+                 from src/x1_state_machine.c:1:
+../../include/global_include.h:25:0: warning: "I1_QNET_ATTACH_POINT" redefined
+ #define I1_QNET_ATTACH_POINT "/net/vm3/dev/name/local/i1_group_14" // C1 Remote attach point
+ ^
+In file included from src/x1_state_machine.h:5:0,
+                 from src/x1_state_machine.c:1:
+../../include/global_include.h:16:0: note: this is the location of the previous definition
+ #define I1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/i1_group_14" // C1 Remote attach point
+ ^
+In file included from ../../include/global_include.c:1:0:
+../../include/global_include.h:23:0: warning: "X1_QNET_ATTACH_POINT" redefined
+ #define X1_QNET_ATTACH_POINT "/net/vm2/dev/name/local/x1_group_14" // X1 Remote attach point
+ ^
+In file included from ../../include/global_include.c:1:0:
+../../include/global_include.h:14:0: note: this is the location of the previous definition
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // X1 Remote attach point
+ ^
+In file included from ../../include/global_include.c:1:0:
+../../include/global_include.h:24:0: warning: "C1_QNET_ATTACH_POINT" redefined
+ #define C1_QNET_ATTACH_POINT "/net/RMIT_BBB_v5_02/dev/name/local/c1_group_14" // C1 Remote attach point
+ ^
+In file included from ../../include/global_include.c:1:0:
+../../include/global_include.h:15:0: note: this is the location of the previous definition
+ #define C1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" // C1 Remote attach point
+ ^
+In file included from ../../include/global_include.c:1:0:
+../../include/global_include.h:25:0: warning: "I1_QNET_ATTACH_POINT" redefined
+ #define I1_QNET_ATTACH_POINT "/net/vm3/dev/name/local/i1_group_14" // C1 Remote attach point
+ ^
+In file included from ../../include/global_include.c:1:0:
+../../include/global_include.h:16:0: note: this is the location of the previous definition
+ #define I1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/i1_group_14" // C1 Remote attach point
+ ^
+In file included from src/X1_Node.c:6:0:
+../../include/global_include.h:23:0: warning: "X1_QNET_ATTACH_POINT" redefined
+ #define X1_QNET_ATTACH_POINT "/net/vm2/dev/name/local/x1_group_14" // X1 Remote attach point
+ ^
+In file included from src/X1_Node.c:6:0:
+../../include/global_include.h:14:0: note: this is the location of the previous definition
+ #define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // X1 Remote attach point
+ ^
+In file included from src/X1_Node.c:6:0:
+../../include/global_include.h:24:0: warning: "C1_QNET_ATTACH_POINT" redefined
+ #define C1_QNET_ATTACH_POINT "/net/RMIT_BBB_v5_02/dev/name/local/c1_group_14" // C1 Remote attach point
+ ^
+In file included from src/X1_Node.c:6:0:
+../../include/global_include.h:15:0: note: this is the location of the previous definition
+ #define C1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" // C1 Remote attach point
+ ^
+In file included from src/X1_Node.c:6:0:
+../../include/global_include.h:25:0: warning: "I1_QNET_ATTACH_POINT" redefined
+ #define I1_QNET_ATTACH_POINT "/net/vm3/dev/name/local/i1_group_14" // C1 Remote attach point
+ ^
+In file included from src/X1_Node.c:6:0:
+../../include/global_include.h:16:0: note: this is the location of the previous definition
+ #define I1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/i1_group_14" // C1 Remote attach point
+ ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+21:57:00 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+21:57:14 **** Clean-only build of configuration armv7le-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/armv7le-debug
+21:57:20 **** Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+21:57:26 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+22:09:50 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:14:36 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:19:17 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:19:19 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+22:21:27 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+22:22:50 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:22:56 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+22:28:36 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+22:34:49 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:48:14 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+22:48:48 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:01:45 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:05:04 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:11:53 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+23:37:48 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+23:47:26 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:01:58 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:04:03 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:04:39 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+00:30:15 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+00:56:03 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+01:06:06 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+01:07:33 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+01:08:21 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+01:12:21 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/X1_Node.d,-MT,build/armv7le-debug/src/X1_Node.o -o build/armv7le-debug/src/X1_Node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/X1_Node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+01:12:24 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+01:13:32 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/x1_state_machine.d,-MT,build/armv7le-debug/src/x1_state_machine.o -o build/armv7le-debug/src/x1_state_machine.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/x1_state_machine.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/X1_Node   build/armv7le-debug/src/x1_state_machine.o build/armv7le-debug/src/X1_Node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+01:13:41 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+01:13:50 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+01:32:28 **** Clean-only build of configuration armv7le-debug for project X1_Node ****
+make -j4 clean 
+rm -fr build/armv7le-debug

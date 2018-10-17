@@ -68,35 +68,41 @@ void* x1_hardware_state_machine_outputs(void* arg){
 			/***** @DAVE THIS IS WHERE THE LCD IS UPDATED WITH THE CURRENT STATE STATUS FOR X1 *****/
 			switch(sm_data->current_state){
 				case X1_STATE_0:
-					lcd_write_to_screen(lcd, "X1_Node", "State_0");
+//					lcd_write_to_screen(lcd, "X1_Node", "State_0");
+					lcd_write_to_screen(lcd, "Waiting for Train...", "E:R W:R BoomSig:0  ");
 //					printf("X1_STATE_0\n");
 					break;
 				case X1_STATE_1:
-					lcd_write_to_screen(lcd, "X1_Node", "State_1");
+//					lcd_write_to_screen(lcd, "X1_Node", "State_1");
+					lcd_write_to_screen(lcd, "Train from East.", "E:R W:R BoomSig:1  ");
 //					printf("X1_STATE_1\n");
 					break;
 				case X1_STATE_2:
-					lcd_write_to_screen(lcd, "X1_Node", "State_2");
+//					lcd_write_to_screen(lcd, "X1_Node", "State_2");
+					lcd_write_to_screen(lcd, "Train from West.", "E:R W:R BoomSig:1  ");
 //					printf("X1_STATE_2\n");
 					break;
 				case X1_STATE_3:
 					lcd_write_to_screen(lcd, "X1_Node", "State_3");
+					lcd_write_to_screen(lcd, "Train from both.", "E:R W:R BoomSig:1  ");
 //					printf("X1_STATE_3\n");
 					break;
 				case X1_STATE_4:
-					lcd_write_to_screen(lcd, "X1_Node", "State_4");
+					lcd_write_to_screen(lcd, "BoomDown, wait Eclr", "E:G W:R BoomSig:1  ");
+//					lcd_write_to_screen(lcd, "X1_Node", "State_4");
 //					printf("X1_STATE_4\n");
 					break;
 				case X1_STATE_5:
-					lcd_write_to_screen(lcd, "X1_Node", "State_5");
+					lcd_write_to_screen(lcd, "BoomDown, wait Wclr", "E:R W:G BoomSig:1   ");
+//					lcd_write_to_screen(lcd, "X1_Node", "State_5");
 //					printf("X1_STATE_5\n");
 					break;
 				case X1_STATE_6:
-					lcd_write_to_screen(lcd, "X1_Node", "State_6");
+					lcd_write_to_screen(lcd, "BoomDown, wait both clr", "E:G W:G BoomSig:1  ");
 //					printf("X1_STATE_6\n");
 					break;
 				case X1_STATE_7:
-					lcd_write_to_screen(lcd, "X1_Node", "State_7");
+					lcd_write_to_screen(lcd, "BoomSig:0", "Wait for boom open");
 //					printf("X1_STATE_7\n");
 					break;
 			}
