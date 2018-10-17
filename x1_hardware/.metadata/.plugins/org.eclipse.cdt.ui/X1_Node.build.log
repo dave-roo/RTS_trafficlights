@@ -1,0 +1,6 @@
+01:54:01 **** Incremental Build of configuration armv7le-debug for project X1_Node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+01:54:01 Build Finished (took 112ms)
+

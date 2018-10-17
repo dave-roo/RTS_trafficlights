@@ -1,0 +1,6 @@
+01:36:57 **** Clean-only build of configuration armv7le-debug for project tmp ****
+make -j4 clean 
+rm -fr build/armv7le-debug
+
+01:36:57 Build Finished (took 206ms)
+

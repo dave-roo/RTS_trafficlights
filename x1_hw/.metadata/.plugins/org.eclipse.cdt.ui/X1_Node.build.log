@@ -1,6 +1,0 @@
-01:32:28 **** Clean-only build of configuration armv7le-debug for project X1_Node ****
-make -j4 clean 
-rm -fr build/armv7le-debug
-
-01:32:28 Build Finished (took 181ms)
-
