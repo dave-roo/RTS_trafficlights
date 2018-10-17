@@ -1330,3 +1330,271 @@ src/central_controller_node.c:205:21: warning: unused variable 'controller_data'
   controller_data_t* controller_data = (controller_data_t*) arg;
                      ^
 qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+18:27:45 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/hardware_include.d,-MT,build/x86_64-debug/../../include/hardware_include.o -o build/x86_64-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:19:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/x86_64/inout.h:132:54: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ static __inline__ void * __attribute__((__unused__)) in32s(void *__addr, unsigned __count, _Uint16t __port) {
+                                                      ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/x86_64/inout.h:132:54: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ static __inline__ void * __attribute__((__unused__)) in32s(void *__addr, unsigned __count, _Uint16t __port) {
+                                                      ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+src/central_controller_node.c: In function 'check_node_connection':
+src/central_controller_node.c:194:10: warning: unused variable 'timer' [-Wunused-variable]
+  timer_t timer;
+          ^
+src/central_controller_node.c:193:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+src/central_controller_node.c: In function 'hardware_input_thread':
+src/central_controller_node.c:206:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+18:41:58 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/../../include/global_include.d,-MT,build/x86_64-debug/../../include/global_include.o -o build/x86_64-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'check_node_connection':
+src/central_controller_node.c:195:10: warning: unused variable 'timer' [-Wunused-variable]
+  timer_t timer;
+          ^
+src/central_controller_node.c:194:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o build/x86_64-debug/../../include/hardware_include.o  
+18:43:14 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'check_node_connection':
+src/central_controller_node.c:195:10: warning: unused variable 'timer' [-Wunused-variable]
+  timer_t timer;
+          ^
+src/central_controller_node.c:194:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+build/armv7le-debug/../../include/global_include.o: file not recognized: File format not recognized
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/bin/arm-unknown-nto-qnx7.0.0eabi-ld caught signal 1
+Makefile:62: recipe for target 'build/armv7le-debug/central_controller_node' failed
+make: *** [build/armv7le-debug/central_controller_node] Error 1
+18:43:25 **** Clean-only build of configuration armv7le-debug for project central_controller_node ****
+make -j4 clean 
+rm -fr build/armv7le-debug
+18:45:58 **** Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/hardware_include.d,-MT,build/armv7le-debug/../../include/hardware_include.o -o build/armv7le-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+src/central_controller_node.c: In function 'check_node_connection':
+src/central_controller_node.c:195:10: warning: unused variable 'timer' [-Wunused-variable]
+  timer_t timer;
+          ^
+src/central_controller_node.c:194:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:19:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+18:46:23 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+18:46:26 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+18:48:07 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+18:49:05 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+18:49:08 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+18:49:38 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+18:50:30 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:14:30 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+19:14:35 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:18:00 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:19:03 **** Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/tmp.d,-MT,build/armv7le-debug/src/tmp.o -o build/armv7le-debug/src/tmp.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/tmp   build/armv7le-debug/src/tmp.o  
+19:23:57 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/tmp.d,-MT,build/armv7le-debug/src/tmp.o -o build/armv7le-debug/src/tmp.o  -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp.c
+src/tmp.c:3:30: fatal error: hardware_include.h: No such file or directory
+compilation terminated.
+cc: D:/qnx700_QNX_SDK/host/win64/x86_64/usr/lib/gcc/arm-unknown-nto-qnx7.0.0eabi/5.4.0/cc1 caught signal 1
+make: *** [build/armv7le-debug/src/tmp.o] Error 1
+Makefile:55: recipe for target 'build/armv7le-debug/src/tmp.o' failed
+19:24:27 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/tmp.d,-MT,build/armv7le-debug/src/tmp.o -o build/armv7le-debug/src/tmp.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/global_include.d,-MT,build/armv7le-debug/../../include/global_include.o -o build/armv7le-debug/../../include/global_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/global_include.c
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/../../include/hardware_include.d,-MT,build/armv7le-debug/../../include/hardware_include.o -o build/armv7le-debug/../../include/hardware_include.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  ../../include/hardware_include.c
+../../include/hardware_include.c: In function 'delaySCL':
+../../include/hardware_include.c:19:19: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+   volatile int i, a;
+                   ^
+../../include/hardware_include.c: In function 'lcd_write_to_screen':
+../../include/hardware_include.c:170:2: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+  strcpy(LCDdata, line_1);
+  ^
+../../include/hardware_include.c: In function 'keypad_setup':
+../../include/hardware_include.c:211:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig );
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:226:12: warning: passing argument 1 of 'in32s' discards 'volatile' qualifier from pointer target type [-Wdiscarded-qualifiers]
+      in32s(&val, 1, control_module + P9_12_pinConfig);   // Read it back
+            ^
+In file included from D:/qnx700_QNX_SDK/target/qnx7/usr/include/hw/inout.h:37:0,
+                 from ../../include/hardware_include.h:6,
+                 from ../../include/hardware_include.c:1:
+D:/qnx700_QNX_SDK/target/qnx7/usr/include/arm/inout.h:106:1: note: expected 'void *' but argument is of type 'volatile uint32_t * {aka volatile unsigned int *}'
+ in32s(void *__buff, unsigned __len, _Uintptrt __addr)
+ ^
+../../include/hardware_include.c:237:6: warning: implicit declaration of function 'memset' [-Wimplicit-function-declaration]
+      memset(&event, 0, sizeof(event));
+      ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/tmp   build/armv7le-debug/src/tmp.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+19:24:31 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:25:11 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/tmp.d,-MT,build/armv7le-debug/src/tmp.o -o build/armv7le-debug/src/tmp.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/tmp   build/armv7le-debug/src/tmp.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+19:25:38 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:30:35 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_input_thread':
+src/central_controller_node.c:235:21: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+   volatile uint32_t val;
+                     ^
+src/central_controller_node.c:214:17: warning: variable 'msg_reply' set but not used [-Wunused-but-set-variable]
+  message_data_t msg_reply;
+                 ^
+src/central_controller_node.c:213:17: warning: variable 'msg' set but not used [-Wunused-but-set-variable]
+  message_data_t msg;
+                 ^
+src/central_controller_node.c:211:8: warning: unused variable 'sending_name' [-Wunused-variable]
+  char* sending_name[3] = {X1_QNET_ATTACH_POINT, I1_QNET_ATTACH_POINT, I2_QNET_ATTACH_POINT};
+        ^
+src/central_controller_node.c:209:21: warning: unused variable 'controller_data' [-Wunused-variable]
+  controller_data_t* controller_data = (controller_data_t*) arg;
+                     ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+19:31:12 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:42:18 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:44:22 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:44:28 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/tmp.d,-MT,build/armv7le-debug/src/tmp.o -o build/armv7le-debug/src/tmp.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/tmp.c
+src/tmp.c: In function 'main':
+src/tmp.c:25:17: warning: unused variable 'th2' [-Wunused-variable]
+  pthread_t th1, th2;
+                 ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/tmp   build/armv7le-debug/src/tmp.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+19:45:44 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:47:39 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:48:04 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+19:53:50 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+src/central_controller_node.c: In function 'hardware_input_thread':
+src/central_controller_node.c:210:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
+19:54:06 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
+make -j4 all 
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  

@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <hardware_include.h>
+
+int main(void) {
+	keypad_data_t key, key_1;
+	while(1){
+
+
+	}
+	return EXIT_SUCCESS;
+}

@@ -1,5 +1,7 @@
 # Don't upload binary files
 build/
+*/*/include/*.o
+*/*/include/*.d
 *.o
 
 # This file stores make path info, should be recreated every time there is a computer change

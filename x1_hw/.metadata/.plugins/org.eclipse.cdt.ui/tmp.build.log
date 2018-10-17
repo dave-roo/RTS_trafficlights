@@ -1,0 +1,6 @@
+20:09:07 **** Clean-only build of configuration x86_64-debug for project tmp ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+
+20:09:07 Build Finished (took 89ms)
+

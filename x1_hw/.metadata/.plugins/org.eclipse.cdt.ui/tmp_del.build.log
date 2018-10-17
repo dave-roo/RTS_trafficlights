@@ -1,0 +1,6 @@
+20:33:24 **** Incremental Build of configuration x86_64-debug for project tmp_del ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+20:33:24 Build Finished (took 102ms)
+

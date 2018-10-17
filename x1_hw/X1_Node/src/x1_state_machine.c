@@ -117,11 +117,12 @@ void* x1_state_machine_outputs(void* arg){
 	sm_data_t* sm_data = (sm_data_t*) arg;
 
 	// Setup the messages
-	message_data_t msg;
-	msg.sending_node = NODE_X1;
-	msg.receiving_node = NODE_CONTROLLER;
-	msg.msg_type = MSG_CURRENT_STATE_UPDATE;
-	message_data_t msg_reply;
+	/* This section moved into the hardware thread*/
+//	message_data_t msg;
+//	msg.sending_node = NODE_X1;
+//	msg.receiving_node = NODE_CONTROLLER;
+//	msg.msg_type = MSG_CURRENT_STATE_UPDATE;
+//	message_data_t msg_reply;
 
 	// Last state variable so that the print statements don't spam the console (should
 	// probably remove this on hardware..?)
@@ -134,23 +135,24 @@ void* x1_state_machine_outputs(void* arg){
 		if(last_state != sm_data->current_state){
 
 			// Update controller with the new state information
-			msg.data = sm_data->current_state;
-			msg_reply = send_message(&msg, C1_QNET_ATTACH_POINT);
-			if(msg_reply.msg_type == MSG_ERROR){
-				switch(msg_reply.data){
-					case MSG_CONNECTION_ERROR:
-						printf("Connection Error When Updating State!\n");
-						break;
-					case MSG_SENDING_ERROR:
-						printf("State update message did not send\n");
-						break;
-					case MSG_BAD_REQUEST:
-						printf("Server rejected this message type\n"); // Shouldn't get this
-						break;
-				}
-			}else{
-				// State updated successfully to controller
-			}
+			// Moved into hardware thread
+//			msg.data = sm_data->current_state;
+//			msg_reply = send_message(&msg, C1_QNET_ATTACH_POINT);
+//			if(msg_reply.msg_type == MSG_ERROR){
+//				switch(msg_reply.data){
+//					case MSG_CONNECTION_ERROR:
+//						printf("Connection Error When Updating State!\n");
+//						break;
+//					case MSG_SENDING_ERROR:
+//						printf("State update message did not send\n");
+//						break;
+//					case MSG_BAD_REQUEST:
+//						printf("Server rejected this message type\n"); // Shouldn't get this
+//						break;
+//				}
+//			}else{
+//				// State updated successfully to controller
+//			}
 			switch(sm_data->current_state){
 				case X1_STATE_0:
 					printf("X1_STATE_0\n");

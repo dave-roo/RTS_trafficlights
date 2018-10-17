@@ -12,6 +12,8 @@
 
 #define X1_QNET_ATTACH_POINT "/net/s3484378-01/dev/name/local/x1_group_14" // X1 Remote attach point
 #define C1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/c1_group_14" // C1 Remote attach point
+#define I1_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/i1_group_14" // C1 Remote attach point
+#define I2_QNET_ATTACH_POINT "/net/s3484378-02/dev/name/local/i2_group_14" // C1 Remote attach point
 
 // Message types for data between nodes
 typedef enum{

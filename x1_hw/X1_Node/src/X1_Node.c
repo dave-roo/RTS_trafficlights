@@ -177,13 +177,10 @@ void* hardware_input_thread(void* data){
 
 		// Main Loop
 		while(1){
-//			char x = getchar();
-//			while(getchar() != '\n'); // Get remaining characters and discard
 			volatile uint32_t val;
 			key_1 = keypad_get_key(key);
 			if(key_1.valid){
 				val = key_1.key_pressed;
-//				printf("Button Value:%d\n", key_1.key_pressed);
 			}
 
 			// Clear the sensor data except the latching boomgate sensor (only needed for sensor thread)
@@ -191,7 +188,6 @@ void* hardware_input_thread(void* data){
 			sens_data->signal &= (1 << X1_SIGNAL_BoomGateDown);
 			sem_post(&sens_data->sem);
 
-//			printf("%d\n", val);
 
 			switch(val){
 

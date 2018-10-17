@@ -5,6 +5,7 @@
 #include <x1_include.h>
 #include <i1_include.h>
 #include <controller_include.h>
+#include <hardware_include.h>
 
 #define LOCAL_ATTACH_POINT "c1_group_14"
 
@@ -13,6 +14,7 @@ void* c1_message_server_thread(void*);
 void  c1_global_init(controller_data_t*);
 void* software_output_thread(void*);
 void* software_input_thread(void*);
+void* hardware_input_thread(void*);
 
 
 int main(void) {
@@ -21,10 +23,11 @@ int main(void) {
 	c1_global_init(&global_data);
 
 	// Setup the threads
-	pthread_t c1_message_thread, output_thread, input_thread;
+	pthread_t c1_message_thread, output_thread, input_thread, hardware_input_th;
 	pthread_create(&c1_message_thread, NULL, c1_message_server_thread, &global_data);
 	pthread_create(&output_thread, NULL, software_output_thread, &global_data);
 	pthread_create(&input_thread, NULL, software_input_thread, &global_data);
+	pthread_create(&hardware_input_th, NULL, hardware_input_thread, &global_data);
 
 	pthread_join(output_thread, NULL);
 	pthread_join(c1_message_thread, NULL);
@@ -189,13 +192,13 @@ void* c1_message_server_thread(void* arg){
  * to set the 5 second delay
  * Ben TODO need to finish this
  */
-void* check_node_connection(void* arg){
-	controller_data_t* controller_data = (controller_data_t*) arg;
-	timer_t timer;
-	while(1){
-
-	}
-}
+//void* check_node_connection(void* arg){
+//	controller_data_t* controller_data = (controller_data_t*) arg;
+//	timer_t timer;
+//	while(1){
+//
+//	}
+//}
 
 /* **************************************************************************
  * Hardware input thread template (so be modified for the hardware by Dave) *
@@ -203,17 +206,8 @@ void* check_node_connection(void* arg){
  ****************************************************************************
  */
 void* hardware_input_thread(void* arg){
-	controller_data_t* controller_data = (controller_data_t*) arg;
-
-	// Put hardware initialisation code here
-
-	// The rest of the functionality from software_input_thread needs to go here.
-	while(1){
-		// Blocking Digital read call to get button presses and decode their values.
-
-		// use the switch case from software thread. All data manipulation and logic should remain the same, just the case statements that will change
-
-	}
+	printf("Started Hardware Input Thread\n");
+	return 0;
 }
 
 

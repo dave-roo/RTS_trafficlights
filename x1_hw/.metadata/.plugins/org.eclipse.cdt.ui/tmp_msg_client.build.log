@@ -1,0 +1,6 @@
+00:05:19 **** Clean-only build of configuration x86_64-debug for project tmp_msg_client ****
+make -j4 clean 
+rm -fr build/x86_64-debug
+
+00:05:19 Build Finished (took 87ms)
+

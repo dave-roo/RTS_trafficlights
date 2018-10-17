@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <hardware_include.h>
+
+int main(void) {
+	keypad_data_t key, key_1;
+	while(1){
+		volatile uint32_t val;
+		key_1 = keypad_get_key(key);
+		if(key_1.valid){
+			val = key_1.key_pressed;
+		}
+		printf("Button %d pressed\n")
+
+
+	}
+	return EXIT_SUCCESS;
+}

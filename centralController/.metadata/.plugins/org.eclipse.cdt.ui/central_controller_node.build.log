@@ -1,18 +1,7 @@
-17:05:45 **** Incremental Build of configuration x86_64-debug for project central_controller_node ****
+19:54:06 **** Incremental Build of configuration armv7le-debug for project central_controller_node ****
 make -j4 all 
-qcc -Vgcc_ntox86_64 -c -Wp,-MMD,build/x86_64-debug/src/central_controller_node.d,-MT,build/x86_64-debug/src/central_controller_node.o -o build/x86_64-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
-src/central_controller_node.c: In function 'check_node_connection':
-src/central_controller_node.c:193:10: warning: unused variable 'timer' [-Wunused-variable]
-  timer_t timer;
-          ^
-src/central_controller_node.c:192:21: warning: unused variable 'controller_data' [-Wunused-variable]
-  controller_data_t* controller_data = (controller_data_t*) arg;
-                     ^
-src/central_controller_node.c: In function 'hardware_input_thread':
-src/central_controller_node.c:205:21: warning: unused variable 'controller_data' [-Wunused-variable]
-  controller_data_t* controller_data = (controller_data_t*) arg;
-                     ^
-qcc -Vgcc_ntox86_64 -o build/x86_64-debug/central_controller_node   build/x86_64-debug/src/central_controller_node.o build/x86_64-debug/../../include/global_include.o  
+qcc -Vgcc_ntoarmv7le -c -Wp,-MMD,build/armv7le-debug/src/central_controller_node.d,-MT,build/armv7le-debug/src/central_controller_node.o -o build/armv7le-debug/src/central_controller_node.o -I ../../include -Wall -fmessage-length=0 -g -O0 -fno-builtin  src/central_controller_node.c
+qcc -Vgcc_ntoarmv7le -o build/armv7le-debug/central_controller_node   build/armv7le-debug/src/central_controller_node.o build/armv7le-debug/../../include/global_include.o build/armv7le-debug/../../include/hardware_include.o  
 
-17:05:47 Build Finished (took 1s.661ms)
+19:54:06 Build Finished (took 247ms)
 

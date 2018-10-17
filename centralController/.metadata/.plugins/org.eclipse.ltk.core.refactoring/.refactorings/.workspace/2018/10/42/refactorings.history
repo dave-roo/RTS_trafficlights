@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/central_controller_node/include/global_include.o" element2="/central_controller_node/include/hardware_include.o" element3="/central_controller_node/include/global_include.d" element4="/central_controller_node/include/hardware_include.d" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1539762356949"/>
+</session>

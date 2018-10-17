@@ -1,0 +1,6 @@
+19:47:39 **** Incremental Build of configuration armv7le-debug for project tmp ****
+make -j4 all 
+make: Nothing to be done for 'all'.
+
+19:47:39 Build Finished (took 93ms)
+
