@@ -66,6 +66,26 @@
 #define DATA_SEND 0x40  // sets the Rs value high
 #define Co_Ctrl   0x00  // mode to tell LCD we are sending a single command
 
+// Button Enum
+typedef enum{
+	BUTTON_1 = 0x0001,
+	BUTTON_2 = 0x0002,
+	BUTTON_3 = 0x0004,
+	BUTTON_4 = 0x0008,
+	BUTTON_5 = 0x0010,
+	BUTTON_6 = 0x0020,
+	BUTTON_7 = 0x0040,
+	BUTTON_8 = 0x0080,
+	BUTTON_9 = 0x0100,
+	BUTTON_10 = 0x0200,
+	BUTTON_11 = 0x0400,
+	BUTTON_12 = 0x0800,
+	BUTTON_13 = 0x1000,
+	BUTTON_14 = 0x2000,
+	BUTTON_15 = 0x4000,
+	BUTTON_16 = 0x8000
+} keypad_buttons;
+
 // Enum for LCD Errors
 typedef enum{
     LCD_OK,
